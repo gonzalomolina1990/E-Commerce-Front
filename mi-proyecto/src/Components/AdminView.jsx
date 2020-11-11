@@ -52,7 +52,6 @@ const AdminView = () => {
       },
     })
       .then((res) => {
-        dispatch(login(res.data));
         history.push("/");
       })
       .catch((err) => {

@@ -16,6 +16,7 @@ import NotificationsIcon from "@material-ui/icons/Notifications";
 import MoreIcon from "@material-ui/icons/MoreVert";
 import { logout } from "../redux/actions/actions";
 import { useSelector, useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -114,7 +115,7 @@ export default function PrimarySearchAppBar() {
   };
 
   const menuId = "primary-search-account-menu";
-  const renderMenu = (
+  const renderMenuLogged = (
     <Menu
       anchorEl={anchorEl}
       anchorOrigin={{ vertical: "top", horizontal: "right" }}
@@ -127,6 +128,22 @@ export default function PrimarySearchAppBar() {
       <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
       <MenuItem onClick={handleMenuClose}>My account</MenuItem>
       <MenuItem onClick={handleLogOut}>Logout</MenuItem>
+    </Menu>
+  );
+
+  const renderMenuUnlogged = (
+    <Menu
+      anchorEl={anchorEl}
+      anchorOrigin={{ vertical: "top", horizontal: "right" }}
+      id={menuId}
+      keepMounted
+      transformOrigin={{ vertical: "top", horizontal: "right" }}
+      open={isMenuOpen}
+      onClose={handleMenuClose}
+    >
+      <MenuItem>
+        <Link to="/login">Login</Link>
+      </MenuItem>
     </Menu>
   );
 
@@ -211,6 +228,11 @@ export default function PrimarySearchAppBar() {
                 <NotificationsIcon />
               </Badge>
             </IconButton>
+            {user.usertoken && (
+              <span className="mx-2" variant="h6">
+                {user.name} {user.lastname}
+              </span>
+            )}
             <IconButton
               edge="end"
               aria-label="account of current user"
@@ -236,7 +258,7 @@ export default function PrimarySearchAppBar() {
         </Toolbar>
       </AppBar>
       {renderMobileMenu}
-      {renderMenu}
+      {user.usertoken ? renderMenuLogged : renderMenuUnlogged}
     </div>
   );
 }
