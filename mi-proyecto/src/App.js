@@ -1,9 +1,11 @@
 import "./App.css";
 import Login from "./Components/Login";
 import Home from "./Components/Home";
+import AdminView from "./Components/AdminView";
 
 import { BrowserRouter as Router } from "react-router-dom";
 import PublicRoute from "./Components/PublicRoute";
+import PrivateRoute from "./Components/PrivateRoute";
 import Register from "./Components/Register";
 
 function App() {
@@ -18,6 +20,7 @@ function App() {
           path="/register"
           exact
         />
+        <PrivateRoute component={AdminView} path="/adminview" exact />
 
         {/* <PrivateRoute component={Home} path="/home" exact />
         <PrivateRoute component={User} path="/user" exact />
