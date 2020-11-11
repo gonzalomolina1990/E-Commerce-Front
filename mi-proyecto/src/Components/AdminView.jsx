@@ -8,6 +8,7 @@ import { useHistory } from "react-router-dom";
 import Input from "@material-ui/core/Input";
 import InputLabel from "@material-ui/core/InputLabel";
 import InputAdornment from "@material-ui/core/InputAdornment";
+import { useSelector } from "react-redux";
 
 import AccountCircle from "@material-ui/icons/AccountCircle";
 import { makeStyles } from "@material-ui/core/styles";
@@ -30,12 +31,16 @@ const AdminView = () => {
   const dispatch = useDispatch();
   const history = useHistory();
   const classes = useStyles();
+  const token = useSelector((state) => state.users.usertoken);
 
   const handleCreateProduct = (e) => {
     e.preventDefault();
     axios({
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
       url: "http://localhost:8000/api/v1/products/",
       data: {
         name: name,
