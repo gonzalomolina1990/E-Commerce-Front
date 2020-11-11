@@ -12,6 +12,7 @@ const Home = () => {
         "http://localhost:8000/api/v1/products/"
       );
       setProductsList(response.data);
+      console.log(response.data);
     };
     getProducts();
   }, []);
@@ -23,10 +24,9 @@ const Home = () => {
         <div className="row">
           <div className="col">
             <h3>HOME</h3>
-            {console.log(productsList)}
             {productsList &&
               productsList.map((product) => {
-                <p>product.name</p>;
+                return <p>{product.name}</p>;
               })}
           </div>
         </div>
