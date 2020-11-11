@@ -2,6 +2,7 @@ import React from "react";
 import "../App.css";
 import Navbar from "./Navbar";
 import axios from "axios";
+import ImgMediaCard from "./ProductCard";
 
 const Home = () => {
   const [productsList, setProductsList] = React.useState(null);
@@ -21,14 +22,19 @@ const Home = () => {
     <>
       <Navbar />
       <div className="container">
+        <h3 className="mt-4">PRODUCTOS</h3>
+
         <div className="row">
-          <div className="col">
-            <h3>HOME</h3>
-            {productsList &&
-              productsList.map((product) => {
-                return <p>{product.name}</p>;
-              })}
-          </div>
+          {productsList &&
+            productsList.map((product) => {
+              return (
+                <>
+                  <div className="col-md-3">
+                    <ImgMediaCard product={product}></ImgMediaCard>
+                  </div>
+                </>
+              );
+            })}
         </div>
       </div>
     </>

@@ -16,12 +16,22 @@ import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import { TextareaAutosize } from "@material-ui/core";
 
+import Select from "@material-ui/core/Select";
+import MenuItem from "@material-ui/core/MenuItem";
+
 const AdminView = () => {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [image, setImage] = useState("");
   const [price, setPrice] = useState("");
   const [category, setCategory] = useState("");
+  const [categoriesList, setCategoriesList] = React.useState(null);
+
+  const [age, setAge] = React.useState("");
+
+  const handleChange = (event) => {
+    setAge(event.target.value);
+  };
 
   const useStyles = makeStyles((theme) => ({
     margin: {
@@ -57,6 +67,26 @@ const AdminView = () => {
       .catch((err) => {
         console.log(err);
       });
+  };
+
+  React.useEffect(() => {
+    const getCategories = async () => {
+      const response = await axios({
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        url: "http://localhost:8000/api/v1/categories/",
+      });
+      setCategoriesList(response.data);
+      console.log(response.data);
+    };
+    getCategories();
+  }, []);
+
+  const handleCategoryChange = (event) => {
+    setCategory(event.target.value);
   };
 
   return (
@@ -122,15 +152,18 @@ const AdminView = () => {
 
               <div className="form-group mt-5">
                 <InputLabel htmlFor="email">Category</InputLabel>
-                <Input
-                  type="text"
-                  id="category"
-                  name="category"
-                  placeholder="Categoría"
-                  onChange={(e) => {
-                    setCategory(e.target.value);
-                  }}
-                />
+                <Select
+                  labelId="demo-simple-select-label"
+                  id="demo-simple-select"
+                  value={null}
+                  onChange={handleCategoryChange}
+                >
+                  <MenuItem value={category.id}>{category.name}</MenuItem>
+                  {categoriesList &&
+                    categoriesList.map((category) => {
+                      <MenuItem value={category.id}>{category.name}</MenuItem>;
+                    })}
+                </Select>
               </div>
 
               <Button

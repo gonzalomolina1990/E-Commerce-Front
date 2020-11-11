@@ -12,7 +12,7 @@ import MenuIcon from "@material-ui/icons/Menu";
 import SearchIcon from "@material-ui/icons/Search";
 import AccountCircle from "@material-ui/icons/AccountCircle";
 import MailIcon from "@material-ui/icons/Mail";
-import NotificationsIcon from "@material-ui/icons/Notifications";
+import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import MoreIcon from "@material-ui/icons/MoreVert";
 import { logout } from "../redux/actions/actions";
 import { useSelector, useDispatch } from "react-redux";
@@ -172,10 +172,10 @@ export default function PrimarySearchAppBar() {
       <MenuItem>
         <IconButton aria-label="show 11 new notifications" color="inherit">
           <Badge badgeContent={11} color="secondary">
-            <NotificationsIcon />
+            <ShoppingCartIcon />
           </Badge>
         </IconButton>
-        <p>Notifications</p>
+        <p>Shopping Cart</p>
       </MenuItem>
       <MenuItem onClick={handleProfileMenuOpen}>
         <IconButton
@@ -184,7 +184,11 @@ export default function PrimarySearchAppBar() {
           aria-haspopup="true"
           color="inherit"
         >
-          <AccountCircle />
+          {user.usertoken ? (
+            <AccountCircle />
+          ) : (
+            <AccountCircle color="disabled" />
+          )}
         </IconButton>
         <p>Profile</p>
       </MenuItem>
@@ -228,7 +232,7 @@ export default function PrimarySearchAppBar() {
             </IconButton>
             <IconButton aria-label="show 17 new notifications" color="inherit">
               <Badge badgeContent={17} color="secondary">
-                <NotificationsIcon />
+                <ShoppingCartIcon />
               </Badge>
             </IconButton>
             {user.usertoken && (
@@ -244,7 +248,11 @@ export default function PrimarySearchAppBar() {
               onClick={handleProfileMenuOpen}
               color="inherit"
             >
-              <AccountCircle />
+              {user.usertoken ? (
+                <AccountCircle />
+              ) : (
+                <AccountCircle color="disabled" />
+              )}
             </IconButton>
           </div>
           <div className={classes.sectionMobile}>
