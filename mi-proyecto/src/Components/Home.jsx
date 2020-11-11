@@ -1,6 +1,6 @@
 import React from "react";
 import "../App.css";
-import Navbar from "./Navbar";
+import Navigation from "./Navigation";
 import axios from "axios";
 import ImgMediaCard from "./ProductCard";
 
@@ -20,7 +20,7 @@ const Home = () => {
 
   return (
     <>
-      <Navbar />
+      <Navigation />
       <div className="container">
         <h3 className="mt-4">PRODUCTOS</h3>
 

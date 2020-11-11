@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "../App.css";
-import Navbar from "./Navbar";
+import Navigation from "./Navigation";
 
 const Categories = () => {
   const [categoriesList, setCategoriesList] = React.useState(null);
@@ -19,7 +19,7 @@ const Categories = () => {
 
   return (
     <>
-      <Navbar />
+      <Navigation />
 
       <div className="container">
         <div className="row">

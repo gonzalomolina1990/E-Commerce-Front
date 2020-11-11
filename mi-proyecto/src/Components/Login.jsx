@@ -1,21 +1,10 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "../App.css";
-import Navbar from "./Navbar";
+import Navigation from "./Navigation";
 import { useDispatch } from "react-redux";
 import { login } from "../redux/actions/actions";
 import { useHistory } from "react-router-dom";
-import Input from "@material-ui/core/Input";
-import InputLabel from "@material-ui/core/InputLabel";
-import InputAdornment from "@material-ui/core/InputAdornment";
-import TextField from "@material-ui/core/TextField";
-import FormControl from "@material-ui/core/FormControl";
-import AccountCircle from "@material-ui/icons/AccountCircle";
-import { makeStyles } from "@material-ui/core/styles";
-import IconButton from "@material-ui/core/IconButton";
-import Visibility from "@material-ui/icons/Visibility";
-import VisibilityOff from "@material-ui/icons/VisibilityOff";
-import Button from "@material-ui/core/Button";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -72,7 +61,7 @@ const Login = () => {
 
   return (
     <>
-      <Navbar />
+      <Navigation />
       <div className="container">
         <div className="row">
           <div className="col">

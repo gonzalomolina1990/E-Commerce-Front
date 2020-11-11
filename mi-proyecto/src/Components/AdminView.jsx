@@ -1,23 +1,12 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "../App.css";
-import Navbar from "./Navbar";
+import Navbar from "./Navigation";
 import { useDispatch } from "react-redux";
 import { login } from "../redux/actions/actions";
 import { useHistory } from "react-router-dom";
-import Input from "@material-ui/core/Input";
-import InputLabel from "@material-ui/core/InputLabel";
-import InputAdornment from "@material-ui/core/InputAdornment";
+
 import { useSelector } from "react-redux";
-
-import AccountCircle from "@material-ui/icons/AccountCircle";
-import { makeStyles } from "@material-ui/core/styles";
-
-import Button from "@material-ui/core/Button";
-import { TextareaAutosize } from "@material-ui/core";
-
-import Select from "@material-ui/core/Select";
-import MenuItem from "@material-ui/core/MenuItem";
 
 const AdminView = () => {
   const [name, setName] = useState("");
@@ -91,7 +80,7 @@ const AdminView = () => {
 
   return (
     <>
-      <Navbar />
+      <Navigation />
 
       <div className="container">
         <div className="row">
@@ -100,7 +89,7 @@ const AdminView = () => {
             <form className={classes.margin} noValidate autoComplete="off">
               <div className="form-group mt-5">
                 <InputLabel htmlFor="email">Name</InputLabel>
-                <Input
+                <input
                   type="text"
                   id="name"
                   name="name"
@@ -113,7 +102,7 @@ const AdminView = () => {
 
               <div className="form-group mt-5">
                 <InputLabel htmlFor="email">Description</InputLabel>
-                <TextareaAutosize
+                <textarea
                   type="text"
                   id="description"
                   name="description"
@@ -126,7 +115,7 @@ const AdminView = () => {
 
               <div className="form-group mt-5">
                 <InputLabel htmlFor="email">Image</InputLabel>
-                <Input
+                <input
                   type="text"
                   id="image"
                   name="image"
@@ -139,7 +128,7 @@ const AdminView = () => {
 
               <div className="form-group mt-5">
                 <InputLabel htmlFor="email">Price</InputLabel>
-                <Input
+                <input
                   type="text"
                   id="price"
                   name="price"
