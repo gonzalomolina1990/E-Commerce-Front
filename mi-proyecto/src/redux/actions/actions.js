@@ -19,4 +19,4 @@ const createUser = (user) => {
   };
 };
 
-export { login, createUser };
+export { login, createUser, logout };

@@ -9,7 +9,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
     <Route
       {...rest}
       render={(props) =>
-        isLogin(token) ? <Component {...props} /> : <Redirect to="/welcome" />
+        isLogin(token) ? <Component {...props} /> : <Redirect to="/" />
       }
     />
   );

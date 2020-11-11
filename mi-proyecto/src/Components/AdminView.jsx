@@ -14,6 +14,7 @@ import AccountCircle from "@material-ui/icons/AccountCircle";
 import { makeStyles } from "@material-ui/core/styles";
 
 import Button from "@material-ui/core/Button";
+import { TextareaAutosize } from "@material-ui/core";
 
 const AdminView = () => {
   const [name, setName] = useState("");
@@ -66,7 +67,7 @@ const AdminView = () => {
       <div className="container">
         <div className="row">
           <div className="col">
-            <h3 className="mt-4">Iniciar Sesión</h3>
+            <h3 className="mt-4">Crear nuevo producto</h3>
             <form className={classes.margin} noValidate autoComplete="off">
               <div className="form-group mt-5">
                 <InputLabel htmlFor="email">Name</InputLabel>
@@ -83,7 +84,7 @@ const AdminView = () => {
 
               <div className="form-group mt-5">
                 <InputLabel htmlFor="email">Description</InputLabel>
-                <Input
+                <TextareaAutosize
                   type="text"
                   id="description"
                   name="description"
