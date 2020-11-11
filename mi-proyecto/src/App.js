@@ -26,7 +26,6 @@ function App() {
           restricted={false}
           component={Categories}
           path="/categories"
-          exact
         />
         <PrivateRoute component={AdminView} path="/adminview" exact />
 

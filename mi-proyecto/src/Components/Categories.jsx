@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../App.css";
 import Navigation from "./Navigation";
@@ -6,10 +6,10 @@ import Navigation from "./Navigation";
 const Categories = () => {
   const [categoriesList, setCategoriesList] = React.useState(null);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const getCategories = async () => {
       const response = await axios.get(
-        "http://localhost:8000/api/v1/categories/"
+        "http://localhost:8000/api/v1/categories"
       );
       setCategoriesList(response.data);
       console.log(response.data);
