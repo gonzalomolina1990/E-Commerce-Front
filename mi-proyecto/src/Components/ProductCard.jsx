@@ -1,10 +1,22 @@
 import React from "react";
+import Card from "react-bootstrap/Card";
+import CardGroup from "react-bootstrap/CardGroup";
 
 export default function ImgMediaCard({ product }) {
   return (
     <>
-      <div>{product.name}</div>
-      <img src={product.image} height="140" alt="" />
+      <CardGroup>
+        <Card className="mb-4 productCard">
+          <Card.Header>{product.name} </Card.Header>
+          <Card.Img variant="top" src={product.image} width="100" />
+          <Card.Body>
+            <Card.Text>{product.description}</Card.Text>
+          </Card.Body>
+          <Card.Footer>
+            <small className="text-muted">{product.category.name}</small>
+          </Card.Footer>
+        </Card>
+      </CardGroup>
     </>
   );
 }
