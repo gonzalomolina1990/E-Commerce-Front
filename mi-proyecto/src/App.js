@@ -7,6 +7,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import PublicRoute from "./Components/PublicRoute";
 import PrivateRoute from "./Components/PrivateRoute";
 import Register from "./Components/Register";
+import Categories from "./Components/Categories";
 
 function App() {
   return (
@@ -18,6 +19,12 @@ function App() {
           restricted={true}
           component={Register}
           path="/register"
+          exact
+        />
+        <PublicRoute
+          restricted={false}
+          component={Categories}
+          path="/categories"
           exact
         />
         <PrivateRoute component={AdminView} path="/adminview" exact />
