@@ -5,6 +5,13 @@ const login = (user) => {
   };
 };
 
+const logout = (obj) => {
+  return {
+    type: "LOG_OUT",
+    payload: obj,
+  };
+};
+
 const createUser = (user) => {
   return {
     type: "CREATE_USER",
