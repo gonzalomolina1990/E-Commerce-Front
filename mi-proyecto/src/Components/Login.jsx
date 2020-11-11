@@ -5,6 +5,7 @@ import Navigation from "./Navigation";
 import { useDispatch } from "react-redux";
 import { login } from "../redux/actions/actions";
 import { useHistory } from "react-router-dom";
+import { Button } from "react-bootstrap";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -16,15 +17,9 @@ const Login = () => {
     weightRange: "",
     showPassword: false,
   });
-  const useStyles = makeStyles((theme) => ({
-    margin: {
-      margin: theme.spacing(1),
-    },
-  }));
 
   const dispatch = useDispatch();
   const history = useHistory();
-  const classes = useStyles();
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -46,39 +41,21 @@ const Login = () => {
       });
   };
 
-  const handleChange = (prop) => (event) => {
-    setValues({ ...values, [prop]: event.target.value });
-    setPassword(event.target.value);
-  };
-
-  const handleClickShowPassword = () => {
-    setValues({ ...values, showPassword: !values.showPassword });
-  };
-
-  const handleMouseDownPassword = (event) => {
-    event.preventDefault();
-  };
-
   return (
     <>
       <Navigation />
       <div className="container">
         <div className="row">
           <div className="col">
-            <h3 className="mt-4">Iniciar Sesión</h3>
-            <form className={classes.margin} noValidate autoComplete="off">
+            <h3 className="mt-5">Iniciar Sesión</h3>
+            <form>
               <div className="form-group mt-5">
-                <InputLabel htmlFor="email">E-mail</InputLabel>
-                <Input
+                <label for="email">Email</label>
+                <input
                   type="text"
                   id="email"
                   name="email"
                   placeholder=" Ej: tunombre@mail.com"
-                  startAdornment={
-                    <InputAdornment>
-                      <AccountCircle />
-                    </InputAdornment>
-                  }
                   onChange={(e) => {
                     setEmail(e.target.value);
                   }}
@@ -86,42 +63,25 @@ const Login = () => {
               </div>
 
               <div className="form-group">
-                <InputLabel htmlFor="password">Password</InputLabel>
-                <Input
-                  type={values.showPassword ? "text" : "password"}
-                  value={values.password}
-                  onChange={handleChange("password")}
+                <label for="password">Password</label>
+                <input
+                  type="password"
+                  onChange={(e) => {
+                    setPassword(e.target.value);
+                  }}
                   id="password"
                   name="password"
-                  endAdornment={
-                    <InputAdornment position="end">
-                      <IconButton
-                        aria-label="toggle password visibility"
-                        onClick={handleClickShowPassword}
-                        onMouseDown={handleMouseDownPassword}
-                      >
-                        {values.showPassword ? (
-                          <Visibility />
-                        ) : (
-                          <VisibilityOff />
-                        )}
-                      </IconButton>
-                    </InputAdornment>
-                  }
                 />
               </div>
 
-              <Button
-                type="button"
-                className="mt-3"
-                variant="contained"
-                color="primary"
+              <button
+                className="btn btn-primary mt-3"
                 onClick={(e) => {
                   handleLogin(e);
                 }}
               >
                 Iniciar sesión
-              </Button>
+              </button>
             </form>
           </div>
         </div>
