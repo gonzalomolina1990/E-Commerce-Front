@@ -2,9 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import axios from "axios";
 import { createUser } from "../redux/actions/actions";
-import { useHistory } from "react-router-dom";
-
-import Navigation from "./Navigation";
+import { useHistory, Link } from "react-router-dom";
 
 const Register = () => {
   const [name, setName] = useState("");
@@ -43,170 +41,137 @@ const Register = () => {
   };
 
   return (
-    <>
-      <Navigation />
-
-      <div>
-        <div className="topcontainer">
-          <div className="topbar">
-            <i className="fab fa-twitter logocenter" aria-hidden="true"></i>
-          </div>
-
-          <div
-            className="AppContent wrapper wrapper-signup"
-            id="page-container"
-          >
-            <link
-              rel="stylesheet"
-              href="https://abs.twimg.com/a/1511833274/css/t1/t1_signup.bundle.css"
-            />
-            <div className="page-canvas">
-              <div className="signup-wrapper">
-                <h1>Create user on Electro-Hack</h1>
-                <div className="t1-form signup" id="phx-signup-form">
-                  <form className="" onSubmit={handleSubmit}>
-                    <div className="textbox">
-                      <div className="prompt name">
-                        <div data-fieldname="name" className="field">
-                          <InputLabel htmlFor="firstname">Firstname</InputLabel>
-
-                          <Input
-                            type="text"
-                            placeholder="Insert your firstname"
-                            aria-required="true"
-                            maxLength="50"
-                            name="name"
-                            id="name"
-                            className=""
-                            onChange={(e) => setName(e.target.value)}
-                          />
-                        </div>
-                      </div>
-                      <div className="prompt name">
-                        <div data-fieldname="name" className="field">
-                          <InputLabel htmlFor="lastname">Lastname</InputLabel>
-
-                          <Input
-                            type="text"
-                            placeholder="Insert your lastname"
-                            aria-required="true"
-                            maxLength="50"
-                            name="lastname"
-                            id="lastname"
-                            className=""
-                            onChange={(e) => setLastname(e.target.value)}
-                          />
-                        </div>
-                      </div>
-
-                      <div className="prompt email">
-                        <div data-fieldname="email" className="field">
-                          <InputLabel htmlFor="email">Email</InputLabel>
-
-                          <Input
-                            type="text"
-                            placeholder="Insert your email"
-                            aria-required="true"
-                            className="email-input"
-                            id="email"
-                            name="email"
-                            onChange={(e) => setEmail(e.target.value)}
-                          />
-                        </div>
-                      </div>
-                      {/*                     <div className="prompt name">
-                      <div data-fieldname="name" className="field">
-                        <div className="sidetip">
-                          <p
-                            id="uiderror"
-                            role="alert"
-                            className="blank invalid error"
-                          >
-                            Write a username
-                          </p>
-                        </div>
-                        <input
-                          type="text"
-                          placeholder="User name"
-                          aria-required="true"
-                          maxLength="20"
-                          id="uid"
-                          className=""
-                          name="username"
-                          onChange={(e) => setUsername(e.target.value)}
-                        />
-                      </div>
-                    </div> */}
-                      <div className="prompt password">
-                        <div data-fieldname="password" className="field">
-                          <InputLabel htmlFor="password">Password</InputLabel>
-
-                          <Input
-                            type="password"
-                            placeholder="Insert your password"
-                            aria-required="true"
-                            id="password"
-                            name="password"
-                            onChange={(e) => setPassword(e.target.value)}
-                          />
-                        </div>
-                      </div>
-                      <div className="prompt name">
-                        <div data-fieldname="name" className="field">
-                          <InputLabel htmlFor="address">Address</InputLabel>
-
-                          <Input
-                            type="text"
-                            placeholder="Insert your address"
-                            aria-required="true"
-                            maxLength="20"
-                            name="address"
-                            id="address"
-                            className=""
-                            onChange={(e) => setAddress(e.target.value)}
-                          />
-                        </div>
-                      </div>
-                      <div className="prompt name">
-                        <div data-fieldname="name" className="field">
-                          <InputLabel htmlFor="phone">Phone</InputLabel>
-
-                          <Input
-                            type="text"
-                            placeholder="Insert your phone"
-                            aria-required="true"
-                            maxLength="50"
-                            name="phone"
-                            id="phone"
-                            className=""
-                            onChange={(e) => setPhone(e.target.value)}
-                          />
-                        </div>
-                      </div>
-                    </div>
-                    <div className="doit">
-                      <div>
-                        <Button
-                          type="submit"
-                          value="Sign up"
-                          color="primary"
-                          variant="contained"
-                          name="button"
-                          id="submit_button"
-                          className="signup EdgeButton EdgeButton--primary EdgeButton--large submit mb-5"
-                        >
-                          Submit
-                        </Button>
-                      </div>
-                    </div>
-                  </form>
-                </div>
-              </div>
+    <div className="limiter">
+      <div className="container-login100">
+        <div className="wrap-login100 ">
+          <form className="login100-form center" onSubmit={handleSubmit}>
+            <span className="login100-form-title mt-5"> Registro </span>
+            <div
+              className="wrap-input100 mt-3 ml-3 mr-3"
+              data-validate="Password is required"
+            >
+              <input
+                className="input100"
+                type="text"
+                name="name"
+                onChange={(e) => setName(e.target.value)}
+                id="name"
+                aria-describedby="helpId"
+                placeholder="Ingrese un nombre..."
+              />
+              <span className="focus-input100"></span>
+              <span className="">
+                <span className=""></span>
+              </span>
             </div>
-          </div>
+            <div className="wrap-input100 mt-3 ml-3 mr-3">
+              <input
+                className="input100 "
+                type="text"
+                name="lastname"
+                onChange={(e) => setLastname(e.target.value)}
+                id="lastname"
+                aria-describedby="helpId"
+                placeholder="Ingrese un apellido..."
+              />
+              <span className="focus-input100"></span>
+              <span className="">
+                <span className=""></span>
+              </span>
+            </div>
+            <div
+              className="wrap-input100  mt-3 ml-3 mr-3"
+              data-validate="Valid email is required: ex@abc.xyz"
+            >
+              <input
+                className="input100 "
+                type="text"
+                name="email"
+                id="email"
+                onChange={(e) => setEmail(e.target.value)}
+                aria-describedby="helpId"
+                placeholder="Ingrese un email..."
+              />
+              <span className="focus-input100"></span>
+              <span className="">
+                <span className=""></span>
+              </span>
+            </div>
+            <div
+              className="wrap-input100  mt-3 ml-3 mr-3"
+              data-validate="Password is required"
+            >
+              <input
+                className="input100 "
+                type="password"
+                name="password"
+                onChange={(e) => setPassword(e.target.value)}
+                id="password"
+                aria-describedby="helpId"
+                placeholder="Ingrese un password..."
+              />
+              <span className="focus-input100"></span>
+              <span className="">
+                <span className=""></span>
+              </span>
+            </div>
+            <div
+              className="wrap-input100  mt-3 ml-3 mr-3"
+              data-validate="Password is required"
+            >
+              <input
+                className="input100 "
+                type="text"
+                name="address"
+                onChange={(e) => setAddress(e.target.value)}
+                id="address"
+                aria-describedby="helpId"
+                placeholder="Ingrese una dirección..."
+              />
+              <span className="focus-input100"></span>
+              <span className="">
+                <span className=""></span>
+              </span>
+            </div>
+            <div
+              className="wrap-input100  mt-3 ml-3 mr-3"
+              data-validate="Password is required"
+            >
+              <input
+                className="input100 "
+                type="number"
+                name="phone"
+                onChange={(e) => setPhone(e.target.value)}
+                id="phone"
+                aria-describedby="helpId"
+                placeholder="Ingrese un telefono..."
+              />
+              <span className="focus-input100  mt-3 ml-3 mr-3"></span>
+              <span className="">
+                <span className=""></span>
+              </span>
+            </div>
+            <span className=""></span>
+            <span className="">
+              <span className=""></span>
+            </span>
+
+            <div className="container-login100-form-btn  mt-5 ml-3 mr-3 ">
+              <button type="submit" className="login100-form-btn ">
+                Registrarse
+              </button>
+            </div>
+            <div className="text-center  mt-3 ml-3 mr-3 mb-5 w-full ">
+              <span className="txt1"> ¿Ya tienes una cuenta? </span>
+
+              <Link to={"/login"} className="">
+                Inicia sesion
+              </Link>
+            </div>
+          </form>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
