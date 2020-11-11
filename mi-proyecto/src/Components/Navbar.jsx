@@ -126,7 +126,10 @@ export default function PrimarySearchAppBar() {
       onClose={handleMenuClose}
     >
       <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+      <Link to="/adminview">
+        <MenuItem>Create Product</MenuItem>
+      </Link>
+
       <MenuItem onClick={handleLogOut}>Logout</MenuItem>
     </Menu>
   );
