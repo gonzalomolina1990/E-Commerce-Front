@@ -3,6 +3,7 @@ import Login from "./Components/Login";
 import Home from "./Components/Home";
 import AdminView from "./Components/AdminView";
 import CreateProduct from "./Components/CreateProduct";
+import UpdateProduct from "./Components/UpdateProduct";
 
 import { BrowserRouter as Router } from "react-router-dom";
 import PublicRoute from "./Components/PublicRoute";
@@ -30,6 +31,7 @@ function App() {
         />
         <PrivateRoute component={AdminView} path="/adminview" exact />
         <PrivateRoute component={CreateProduct} path="/create-product" exact />
+        <PrivateRoute component={UpdateProduct} path="/update-product" exact />
 
         <PrivateRoute
           component={CreateCategory}

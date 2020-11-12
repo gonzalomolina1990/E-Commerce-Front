@@ -19,4 +19,11 @@ const createUser = (user) => {
   };
 };
 
-export { login, createUser, logout };
+const updateProduct = (product) => {
+  return {
+    type: "UPDATE_PRODUCT",
+    payload: product,
+  };
+};
+
+export { login, createUser, logout, updateProduct };

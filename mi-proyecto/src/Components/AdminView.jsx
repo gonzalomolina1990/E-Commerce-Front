@@ -3,7 +3,7 @@ import axios from "axios";
 import "../App.css";
 import Navigation from "./Navigation";
 import { useDispatch } from "react-redux";
-import { login } from "../redux/actions/actions";
+import { updateProduct } from "../redux/actions/actions";
 import { useHistory, Link } from "react-router-dom";
 import Form from "react-bootstrap/Form";
 import { useSelector } from "react-redux";
@@ -15,6 +15,7 @@ const AdminView = () => {
   const [productsList, setProductsList] = useState(null);
   const [toDeleteProduct, setToDeleteProduct] = useState();
   const [toDeleteCategory, setToDeleteCategory] = useState();
+  const [toUpdateProduct, setToUpdateProduct] = useState();
 
   const dispatch = useDispatch();
   const history = useHistory();
@@ -74,6 +75,17 @@ const AdminView = () => {
     });
   };
 
+  const handleUpdateProductEvent = (e) => {
+    axios({
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      url: `http://localhost:8000/api/v1/products/${toUpdateProduct}`,
+    });
+  };
+
   return (
     <>
       <Navigation />
@@ -105,12 +117,19 @@ const AdminView = () => {
                       <td>{product.name}</td>
                       <td>{product.category.name}</td>
                       <td>
-                        <button
-                          className="btn btn-warning btn-sm"
-                          onClick={console.log("modificar producto")}
-                        >
-                          Modificar
-                        </button>
+                        <Link to={"/update-product"}>
+                          <button
+                            className="btn btn-warning btn-sm"
+                            onClick={() => {
+                              setToUpdateProduct(product.id);
+                              handleUpdateProductEvent();
+                              dispatch(updateProduct(product));
+                            }}
+                          >
+                            Modificar
+                          </button>{" "}
+                        </Link>
+
                         <button
                           className="btn btn-danger btn-sm"
                           onClick={() => {
