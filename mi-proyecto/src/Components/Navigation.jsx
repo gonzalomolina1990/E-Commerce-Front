@@ -41,9 +41,11 @@ function Navigation() {
         </div>
       ) : (
         <>
-          <Link to={"/adminview"}>
-            <button className="btn btn-light">Administrador</button>
-          </Link>
+          {user && user.admin && (
+            <Link to={"/adminview"}>
+              <button className="btn btn-light">Administrador</button>
+            </Link>
+          )}
 
           <Link to={"/login"}>
             <button className="btn btn-light">Login</button>
