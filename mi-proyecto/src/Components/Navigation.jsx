@@ -25,6 +25,7 @@ function Navigation() {
         <Nav className="mr-auto">
           <Nav.Link href="/">Home</Nav.Link>
           <Nav.Link href="/categories">Categorias</Nav.Link>
+          {user.admin && <Nav.Link href="/adminview">Administrar</Nav.Link>}
         </Nav>
       </Navbar.Collapse>
       {user && user.usertoken ? (
@@ -40,17 +41,9 @@ function Navigation() {
           </button>
         </div>
       ) : (
-        <>
-          {user && user.admin && (
-            <Link to={"/adminview"}>
-              <button className="btn btn-light">Administrador</button>
-            </Link>
-          )}
-
-          <Link to={"/login"}>
-            <button className="btn btn-light">Login</button>
-          </Link>
-        </>
+        <Link to={"/login"}>
+          <button className="btn btn-light">Login</button>
+        </Link>
       )}
     </Navbar>
   );
