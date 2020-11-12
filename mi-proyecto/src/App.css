@@ -199,3 +199,26 @@
 body {
   font-family: Roboto;
 }
+
+.links {
+  text-decoration: none;
+  color: white;
+}
+
+.linksCategories {
+  text-decoration: none;
+  color: white;
+}
+
+.navbarColor {
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.productCard {
+  transition: 0.25s ease-in-out;
+}
+
+.productCard:hover {
+  box-shadow: 0 0 2rem rgba(128, 128, 128, 0.699);
+  transform: translateY(-0.5rem);
+}

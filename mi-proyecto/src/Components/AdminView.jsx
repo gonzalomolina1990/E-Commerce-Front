@@ -1,11 +1,11 @@
-/* import React, { useState } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import "../App.css";
-import Navbar from "./Navigation";
+import Navigation from "./Navigation";
 import { useDispatch } from "react-redux";
 import { login } from "../redux/actions/actions";
 import { useHistory } from "react-router-dom";
-
+import Form from "react-bootstrap/Form";
 import { useSelector } from "react-redux";
 
 const AdminView = () => {
@@ -16,21 +16,8 @@ const AdminView = () => {
   const [category, setCategory] = useState("");
   const [categoriesList, setCategoriesList] = React.useState(null);
 
-  const [age, setAge] = React.useState("");
-
-  const handleChange = (event) => {
-    setAge(event.target.value);
-  };
-
-  const useStyles = makeStyles((theme) => ({
-    margin: {
-      margin: theme.spacing(1),
-    },
-  }));
-
   const dispatch = useDispatch();
   const history = useHistory();
-  const classes = useStyles();
   const token = useSelector((state) => state.users.usertoken);
 
   const handleCreateProduct = (e) => {
@@ -86,9 +73,9 @@ const AdminView = () => {
         <div className="row">
           <div className="col">
             <h3 className="mt-4">Crear nuevo producto</h3>
-            <form className={classes.margin} noValidate autoComplete="off">
+            <form noValidate autoComplete="off">
               <div className="form-group mt-5">
-                <InputLabel htmlFor="email">Name</InputLabel>
+                <label for="name">Name</label>
                 <input
                   type="text"
                   id="name"
@@ -101,7 +88,7 @@ const AdminView = () => {
               </div>
 
               <div className="form-group mt-5">
-                <InputLabel htmlFor="email">Description</InputLabel>
+                <label for="description">Descripción</label>
                 <textarea
                   type="text"
                   id="description"
@@ -114,7 +101,7 @@ const AdminView = () => {
               </div>
 
               <div className="form-group mt-5">
-                <InputLabel htmlFor="email">Image</InputLabel>
+                <label for="image">Imagen</label>
                 <input
                   type="text"
                   id="image"
@@ -127,7 +114,7 @@ const AdminView = () => {
               </div>
 
               <div className="form-group mt-5">
-                <InputLabel htmlFor="email">Price</InputLabel>
+                <label for="price">Precio</label>
                 <input
                   type="text"
                   id="price"
@@ -140,22 +127,28 @@ const AdminView = () => {
               </div>
 
               <div className="form-group mt-5">
-                <InputLabel htmlFor="email">Category</InputLabel>
-                <Select
-                  labelId="demo-simple-select-label"
-                  id="demo-simple-select"
-                  value={null}
-                  onChange={handleCategoryChange}
-                >
-                  <MenuItem value={category.id}>{category.name}</MenuItem>
-                  {categoriesList &&
-                    categoriesList.map((category) => {
-                      <MenuItem value={category.id}>{category.name}</MenuItem>;
-                    })}
-                </Select>
+                <label for="description">Categoría</label>
+
+                <Form.Group controlId="exampleForm.SelectCustomSizeSm">
+                  <Form.Control
+                    as="select"
+                    multiple
+                    onChange={(e) => {
+                      setCategory(e.target.value);
+                    }}
+                  >
+                    <option value="Limpieza">Limpieza</option>
+                    <option value="Climatización">Climatización</option>
+
+                    {categoriesList &&
+                      categoriesList.map((category) => {
+                        <option value={category.name}>{category.name}</option>;
+                      })}
+                  </Form.Control>
+                </Form.Group>
               </div>
 
-              <Button
+              <button
                 type="button"
                 className="mt-3"
                 variant="contained"
@@ -165,7 +158,7 @@ const AdminView = () => {
                 }}
               >
                 Crear Producto
-              </Button>
+              </button>
             </form>
           </div>
         </div>
@@ -175,4 +168,3 @@ const AdminView = () => {
 };
 
 export default AdminView;
- */
