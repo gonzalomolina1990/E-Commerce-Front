@@ -1,5 +1,4 @@
 import "./App.css";
-import "./register.css";
 import Login from "./Components/Login";
 import Home from "./Components/Home";
 import AdminView from "./Components/AdminView";
@@ -9,6 +8,7 @@ import PublicRoute from "./Components/PublicRoute";
 import PrivateRoute from "./Components/PrivateRoute";
 import Register from "./Components/Register";
 import Categories from "./Components/Categories";
+import CreateCategory from "./Components/CreateCategory";
 
 function App() {
   return (
@@ -28,7 +28,11 @@ function App() {
           path="/categories"
         />
         <PrivateRoute component={AdminView} path="/adminview" exact />
-
+        <PrivateRoute
+          component={CreateCategory}
+          path="/create-category"
+          exact
+        />
         {/* <PrivateRoute component={Home} path="/home" exact />
         <PrivateRoute component={User} path="/user" exact />
         <PrivateRoute component={Profile} path="/profile/:username" exact />

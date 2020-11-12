@@ -24,7 +24,6 @@ function Navigation() {
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">
           <Nav.Link href="/">Home</Nav.Link>
-          <Nav.Link href="/adminview">Admin</Nav.Link>
           <Nav.Link href="/categories">Categorias</Nav.Link>
         </Nav>
       </Navbar.Collapse>
@@ -41,9 +40,15 @@ function Navigation() {
           </button>
         </div>
       ) : (
-        <Link to={"/login"}>
-          <button className="btn btn-light">Login</button>
-        </Link>
+        <>
+          <Link to={"/adminview"}>
+            <button className="btn btn-light">Administrador</button>
+          </Link>
+
+          <Link to={"/login"}>
+            <button className="btn btn-light">Login</button>
+          </Link>
+        </>
       )}
     </Navbar>
   );

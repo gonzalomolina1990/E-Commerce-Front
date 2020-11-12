@@ -22,7 +22,7 @@
 }
 .login100-form-title {
   font-family: Roboto;
-  font-size: 30px;
+  font-size: 2rem;
   color: #333333;
   line-height: 1.2;
   text-transform: uppercase;
@@ -39,17 +39,14 @@
 }
 
 .input100 {
-  font-family: Raleway-SemiBold;
-  font-size: 18px;
-  line-height: 1.2;
   color: #686868;
 
   display: block;
   width: 100%;
   background: #e6e6e6;
-  height: 62px;
+  height: 2rem;
   border-radius: 3px;
-  padding: 0 30px 0 65px;
+  padding: 0 1rem;
 }
 
 .focus-input100 {
@@ -77,13 +74,6 @@
   justify-content: center;
   align-items: center;
   padding: 15px;
-  background: #426aed; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #42a8ed,
-    #bcdfff
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #426aed, #bcd6ff);
   position: relative;
   z-index: 1;
 }
@@ -148,7 +138,6 @@
 }
 
 .txt1 {
-  font-family: Raleway-Regular;
   font-size: 16px;
   color: #999999;
   line-height: 1.4;

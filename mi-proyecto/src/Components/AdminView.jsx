@@ -13,8 +13,11 @@ const AdminView = () => {
   const [description, setDescription] = useState("");
   const [image, setImage] = useState("");
   const [price, setPrice] = useState("");
+  const [stock, setStock] = useState("");
+  const [slug, setSlug] = useState("");
+  const [featured, setFeatured] = useState("");
   const [category, setCategory] = useState("");
-  const [categoriesList, setCategoriesList] = React.useState(null);
+  const [categoriesList, setCategoriesList] = useState(null);
 
   const dispatch = useDispatch();
   const history = useHistory();
@@ -34,7 +37,10 @@ const AdminView = () => {
         description: description,
         image: image,
         price: price,
+        stock: stock,
         category: category,
+        slug: slug,
+        featured: featured,
       },
     })
       .then((res) => {
@@ -127,13 +133,38 @@ const AdminView = () => {
               </div>
 
               <div className="form-group mt-5">
+                <label for="price">Stock</label>
+                <input
+                  type="number"
+                  id="stock"
+                  name="stock"
+                  placeholder="Stock"
+                  onChange={(e) => {
+                    setStock(e.target.value);
+                  }}
+                />
+              </div>
+
+              <div className="form-group mt-5">
+                <label for="price">Slug</label>
+                <input
+                  type="text"
+                  id="slug"
+                  name="slug"
+                  placeholder="Slug"
+                  onChange={(e) => {
+                    setSlug(e.target.value);
+                  }}
+                />
+              </div>
+
+              <div className="form-group mt-5">
                 <label for="description">Categoría</label>
 
                 <Form.Group controlId="exampleForm.SelectCustomSizeSm">
                   <Form.Control
                     as="select"
                     multiple
-                    id="inlineFormCustomSelect"
                     onChange={(e) => {
                       setCategory(e.target.value);
                     }}
@@ -142,6 +173,24 @@ const AdminView = () => {
                       categoriesList.map((category) => {
                         return <option>{category.name}</option>;
                       })}
+                  </Form.Control>
+                </Form.Group>
+              </div>
+
+              <div className="form-group mt-5">
+                <label for="description">Feautered</label>
+
+                <Form.Group controlId="exampleForm.SelectCustomSizeSm">
+                  <Form.Control
+                    as="select"
+                    multiple
+                    id="inlineFormCustomSelect"
+                    onChange={(e) => {
+                      setFeatured(e.target.value);
+                    }}
+                  >
+                    <option value={true}>true</option>;
+                    <option value={false}>false</option>;
                   </Form.Control>
                 </Form.Group>
               </div>
