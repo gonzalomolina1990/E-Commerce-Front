@@ -133,7 +133,6 @@ const AdminView = () => {
                   <Form.Control
                     as="select"
                     multiple
-                    id="inlineFormCustomSelect"
                     onChange={(e) => {
                       setCategory(e.target.value);
                     }}

@@ -1,5 +1,4 @@
 import "./App.css";
-import "./register.css";
 import Login from "./Components/Login";
 import Home from "./Components/Home";
 import AdminView from "./Components/AdminView";

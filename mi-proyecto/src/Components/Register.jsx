@@ -45,7 +45,7 @@ const Register = () => {
     <>
       <Navigation />
 
-      <div className="limiter">
+      <div>
         <div className="container-login100">
           <div className="wrap-login100 ">
             <form className="login100-form center" onSubmit={handleSubmit}>
@@ -160,15 +160,15 @@ const Register = () => {
                 <span className=""></span>
               </span>
 
-              <div className="container-login100-form-btn  mt-5 ml-3 mr-3 ">
+              <div className="container-login100-form-btn  mt-3 ml-3 mr-3 ">
                 <button type="submit" className="btn btn-primary">
                   Registrarse
                 </button>
               </div>
-              <div className="text-center  mt-3 ml-3 mr-3 mb-5 w-full ">
-                <span className="txt1"> ¿Ya tienes una cuenta? </span>
+              <div className="text-center  mt-5 ml-3 mr-3 mb-5 w-full ">
+                <span> ¿Ya tienes una cuenta? </span>
 
-                <Link to={"/login"} className="btn btn-primary">
+                <Link to={"/login"} className="btn btn-dark">
                   Inicia sesion
                 </Link>
               </div>
