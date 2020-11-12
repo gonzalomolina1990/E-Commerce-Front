@@ -2,6 +2,7 @@ import "./App.css";
 import Login from "./Components/Login";
 import Home from "./Components/Home";
 import AdminView from "./Components/AdminView";
+import CreateProduct from "./Components/CreateProduct";
 
 import { BrowserRouter as Router } from "react-router-dom";
 import PublicRoute from "./Components/PublicRoute";
@@ -28,6 +29,8 @@ function App() {
           path="/categories"
         />
         <PrivateRoute component={AdminView} path="/adminview" exact />
+        <PrivateRoute component={CreateProduct} path="/create-product" exact />
+
         <PrivateRoute
           component={CreateCategory}
           path="/create-category"

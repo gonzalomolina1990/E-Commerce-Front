@@ -4,52 +4,21 @@ import "../App.css";
 import Navigation from "./Navigation";
 import { useDispatch } from "react-redux";
 import { login } from "../redux/actions/actions";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 import Form from "react-bootstrap/Form";
 import { useSelector } from "react-redux";
+import Table from "react-bootstrap/Table";
+import Categories from "./Categories";
 
 const AdminView = () => {
-  const [name, setName] = useState("");
-  const [description, setDescription] = useState("");
-  const [image, setImage] = useState("");
-  const [price, setPrice] = useState("");
-  const [stock, setStock] = useState("");
-  const [slug, setSlug] = useState("");
-  const [featured, setFeatured] = useState("");
-  const [category, setCategory] = useState("");
   const [categoriesList, setCategoriesList] = useState(null);
+  const [productsList, setProductsList] = useState(null);
+  const [toDeleteProduct, setToDeleteProduct] = useState();
+  const [toDeleteCategory, setToDeleteCategory] = useState();
 
   const dispatch = useDispatch();
   const history = useHistory();
   const token = useSelector((state) => state.users.usertoken);
-
-  const handleCreateProduct = (e) => {
-    e.preventDefault();
-    axios({
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-      url: "http://localhost:8000/api/v1/products/",
-      data: {
-        name: name,
-        description: description,
-        image: image,
-        price: price,
-        stock: stock,
-        category: category,
-        slug: slug,
-        featured: featured,
-      },
-    })
-      .then((res) => {
-        history.push("/");
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
 
   React.useEffect(() => {
     const getCategories = async () => {
@@ -67,146 +36,141 @@ const AdminView = () => {
     getCategories();
   }, []);
 
-  const handleCategoryChange = (event) => {
-    setCategory(event.target.value);
+  React.useEffect(() => {
+    const getProducts = async () => {
+      const response = await axios({
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        url: "http://localhost:8000/api/v1/products/",
+      });
+      setProductsList(response.data);
+      console.log(response.data);
+    };
+    getProducts();
+  }, []);
+
+  const handleDeleteProductEvent = (e) => {
+    axios({
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      url: `http://localhost:8000/api/v1/products/${toDeleteProduct}`,
+    });
+  };
+
+  const handleDeleteCategoryEvent = (e) => {
+    axios({
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      url: `http://localhost:8000/api/v1/category/${toDeleteCategory}`,
+    });
   };
 
   return (
     <>
       <Navigation />
 
-      <div className="container">
+      <div className="container mt-5">
         <div className="row">
-          <div className="col">
-            <h3 className="mt-4">Crear nuevo producto</h3>
-            <form noValidate autoComplete="off">
-              <div className="form-group mt-5">
-                <label for="name">Name</label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  placeholder="Nombre"
-                  onChange={(e) => {
-                    setName(e.target.value);
-                  }}
-                />
-              </div>
+          <div className="col-md-6">
+            <h3 className="mt-4">Productos</h3>
+            <Link
+              to={"/create-product"}
+              className="btn btn-success btn-lg btn-block"
+            >
+              Crear producto nuevo
+            </Link>
 
-              <div className="form-group mt-5">
-                <label for="description">Descripción</label>
-                <textarea
-                  type="text"
-                  id="description"
-                  name="description"
-                  placeholder="Descripción del producto"
-                  onChange={(e) => {
-                    setDescription(e.target.value);
-                  }}
-                />
-              </div>
+            <Table striped bordered hover>
+              <thead>
+                <tr>
+                  <th>Producto</th>
+                  <th>Categoria</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
 
-              <div className="form-group mt-5">
-                <label for="image">Imagen</label>
-                <input
-                  type="text"
-                  id="image"
-                  name="image"
-                  placeholder="Ruta de imagen"
-                  onChange={(e) => {
-                    setImage(e.target.value);
-                  }}
-                />
-              </div>
+              {productsList &&
+                productsList.map((product) => {
+                  return (
+                    <tbody>
+                      <td>{product.name}</td>
+                      <td>{product.category.name}</td>
+                      <td>
+                        <button
+                          className="btn btn-warning btn-sm"
+                          onClick={console.log("modificar producto")}
+                        >
+                          Modificar
+                        </button>
+                        <button
+                          className="btn btn-danger btn-sm"
+                          onClick={() => {
+                            setToDeleteProduct(product._id);
+                            handleDeleteProductEvent();
+                            console.log(toDeleteProduct);
+                          }}
+                        >
+                          Eliminar
+                        </button>
+                      </td>
+                    </tbody>
+                  );
+                })}
+            </Table>
+          </div>
+          <div className="col-md-6">
+            <h3 className="mt-4">Categorías</h3>
+            <Link
+              to={"/create-category"}
+              className="btn btn-success btn-lg btn-block"
+            >
+              Crear categoría nueva
+            </Link>
+            <Table striped bordered hover>
+              <thead>
+                <tr>
+                  <th>Categoria</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
 
-              <div className="form-group mt-5">
-                <label for="price">Precio</label>
-                <input
-                  type="text"
-                  id="price"
-                  name="price"
-                  placeholder="Precio"
-                  onChange={(e) => {
-                    setPrice(e.target.value);
-                  }}
-                />
-              </div>
+              {categoriesList &&
+                categoriesList.map((category) => {
+                  return (
+                    <tbody>
+                      <td>{category.name}</td>
+                      <td>
+                        <button
+                          className="btn btn-warning btn-sm"
+                          onClick={console.log("modificar category")}
+                        >
+                          Modificar
+                        </button>
+                        <button
+                          className="btn btn-danger btn-sm"
+                          onClick={() => {
+                            setToDeleteCategory(category._id);
+                            handleDeleteCategoryEvent();
 
-              <div className="form-group mt-5">
-                <label for="price">Stock</label>
-                <input
-                  type="number"
-                  id="stock"
-                  name="stock"
-                  placeholder="Stock"
-                  onChange={(e) => {
-                    setStock(e.target.value);
-                  }}
-                />
-              </div>
-
-              <div className="form-group mt-5">
-                <label for="price">Slug</label>
-                <input
-                  type="text"
-                  id="slug"
-                  name="slug"
-                  placeholder="Slug"
-                  onChange={(e) => {
-                    setSlug(e.target.value);
-                  }}
-                />
-              </div>
-
-              <div className="form-group mt-5">
-                <label for="description">Categoría</label>
-
-                <Form.Group controlId="exampleForm.SelectCustomSizeSm">
-                  <Form.Control
-                    as="select"
-                    multiple
-                    onChange={(e) => {
-                      setCategory(e.target.value);
-                    }}
-                  >
-                    {categoriesList &&
-                      categoriesList.map((category) => {
-                        return <option>{category.name}</option>;
-                      })}
-                  </Form.Control>
-                </Form.Group>
-              </div>
-
-              <div className="form-group mt-5">
-                <label for="description">Feautered</label>
-
-                <Form.Group controlId="exampleForm.SelectCustomSizeSm">
-                  <Form.Control
-                    as="select"
-                    multiple
-                    id="inlineFormCustomSelect"
-                    onChange={(e) => {
-                      setFeatured(e.target.value);
-                    }}
-                  >
-                    <option value={true}>true</option>;
-                    <option value={false}>false</option>;
-                  </Form.Control>
-                </Form.Group>
-              </div>
-
-              <button
-                type="button"
-                className="mt-3"
-                variant="contained"
-                color="primary"
-                onClick={(e) => {
-                  handleCreateProduct(e);
-                }}
-              >
-                Crear Producto
-              </button>
-            </form>
+                            console.log(toDeleteCategory);
+                          }}
+                        >
+                          Eliminar
+                        </button>
+                      </td>
+                    </tbody>
+                  );
+                })}
+            </Table>
           </div>
         </div>
       </div>

@@ -16,7 +16,7 @@ const AdminView = () => {
   const history = useHistory();
   const token = useSelector((state) => state.users.usertoken);
 
-  const handleCreateProduct = (e) => {
+  const handleCreateCategory = (e) => {
     e.preventDefault();
     axios({
       method: "POST",
@@ -99,7 +99,7 @@ const AdminView = () => {
                 variant="contained"
                 color="primary"
                 onClick={(e) => {
-                  handleCreateProduct(e);
+                  handleCreateCategory(e);
                 }}
               >
                 Crear Categoria
