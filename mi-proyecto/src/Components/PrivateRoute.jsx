@@ -5,11 +5,13 @@ import isLogin from "../utils";
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
   const token = useSelector((state) => state.users.usertoken);
+  const admin = useSelector((state) => state.users.admin);
+
   return (
     <Route
       {...rest}
       render={(props) =>
-        isLogin(token) ? <Component {...props} /> : <Redirect to="/" />
+        isLogin(token) && admin ? <Component {...props} /> : <Redirect to="/" />
       }
     />
   );
