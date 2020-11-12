@@ -133,16 +133,14 @@ const AdminView = () => {
                   <Form.Control
                     as="select"
                     multiple
+                    id="inlineFormCustomSelect"
                     onChange={(e) => {
                       setCategory(e.target.value);
                     }}
                   >
-                    <option value="Limpieza">Limpieza</option>
-                    <option value="Climatización">Climatización</option>
-
                     {categoriesList &&
                       categoriesList.map((category) => {
-                        <option value={category.name}>{category.name}</option>;
+                        return <option>{category.name}</option>;
                       })}
                   </Form.Control>
                 </Form.Group>
