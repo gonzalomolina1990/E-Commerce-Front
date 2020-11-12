@@ -19,16 +19,32 @@ function Navigation() {
       variant="dark"
     >
       <Navbar.Brand href="/">ElectroHack</Navbar.Brand>
+
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">
           <Nav.Link href="/">Home</Nav.Link>
-          <Nav.Link href="search">Buscar</Nav.Link>
-          <Nav.Link href="About">Sobre Nosotros</Nav.Link>
-          <Nav.Link href="Contact">Contacto</Nav.Link>
+          <Nav.Link href="/adminview">Admin</Nav.Link>
+          <Nav.Link href="/categories">Categorias</Nav.Link>
         </Nav>
-        {user.usertoken ? <span>Online</span> : <span>Offline</span>}
       </Navbar.Collapse>
+      {user && user.usertoken ? (
+        <div>
+          <span className="userIcon">
+            <i class="fas fa-user-circle"></i> {user.name} {user.lastname}
+          </span>
+          <button
+            className="btn btn-light"
+            onClick={() => dispatch(logout({}))}
+          >
+            Logout
+          </button>
+        </div>
+      ) : (
+        <Link to={"/login"}>
+          <button className="btn btn-light">Login</button>
+        </Link>
+      )}
     </Navbar>
   );
 }

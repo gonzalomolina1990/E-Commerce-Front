@@ -88,7 +88,7 @@ const Register = () => {
                 data-validate="Valid email is required: ex@abc.xyz"
               >
                 <input
-                  className="input100 "
+                  className="input100"
                   type="text"
                   name="email"
                   id="email"

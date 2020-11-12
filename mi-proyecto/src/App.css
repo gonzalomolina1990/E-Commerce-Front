@@ -222,3 +222,8 @@ body {
   box-shadow: 0 0 2rem rgba(128, 128, 128, 0.699);
   transform: translateY(-0.5rem);
 }
+
+.userIcon {
+  color: white;
+  margin-right: 2rem;
+}
