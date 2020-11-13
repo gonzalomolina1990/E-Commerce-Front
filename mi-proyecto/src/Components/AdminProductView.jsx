@@ -4,17 +4,15 @@ import "../App.css";
 import Navigation from "./Navigation";
 import { useDispatch } from "react-redux";
 import { updateProduct } from "../redux/actions/actions";
-import { saveProducts } from "../redux/actions/productsActions";
+import { saveProducts, deleteProduct } from "../redux/actions/productsActions";
 import { useHistory, Link } from "react-router-dom";
 import Form from "react-bootstrap/Form";
 import { useSelector } from "react-redux";
 import Table from "react-bootstrap/Table";
 
 const AdminProductView = () => {
-  const [productsList, setProductsList] = useState(null);
-  const [toDeleteProduct, setToDeleteProduct] = useState();
+  const [toDeleteProduct, setToDeleteProduct] = useState("");
   const [toUpdateProduct, setToUpdateProduct] = useState();
-
   const dispatch = useDispatch();
   const history = useHistory();
   const token = useSelector((state) => state.users.usertoken);
@@ -36,19 +34,17 @@ const AdminProductView = () => {
     getProducts();
   }, []);
 
-  const handleDeleteProduct = () => {
-    const getDelete = async () => {
-      const response = await axios({
-        method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-        url: `http://localhost:8000/api/v1/products/${toDeleteProduct}`,
-      });
-      console.log(response.data);
-    };
-    getDelete();
+  const handleDeleteProduct = (id) => {
+    const response = axios({
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      url: `http://localhost:8000/api/v1/products/${id}`,
+    });
+    dispatch(deleteProduct(id));
+    console.log(id);
   };
 
   /*   const handleUpdateProductEvent = (e) => {
@@ -105,16 +101,9 @@ const AdminProductView = () => {
                             Modificar
                           </button>{" "}
                         </Link>
-
                         <button
                           className="btn btn-danger btn-sm"
-                          onClick={() => {
-                            handleDeleteProduct();
-                            setToDeleteProduct(product._id);
-
-                            /*    handleDeleteProductEvent();
-                            console.log(toDeleteProduct);  */
-                          }}
+                          onClick={() => handleDeleteProduct(product._id)}
                         >
                           Eliminar
                         </button>

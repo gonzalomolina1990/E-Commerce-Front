@@ -5,4 +5,11 @@ const saveProducts = (products) => {
   };
 };
 
-export { saveProducts };
+const deleteProduct = (productId) => {
+  return {
+    type: "DELETE_PRODUCT",
+    payload: productId,
+  };
+};
+
+export { saveProducts, deleteProduct };
