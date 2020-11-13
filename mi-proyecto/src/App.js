@@ -14,12 +14,19 @@ import PrivateRoute from "./Components/PrivateRoute";
 import Register from "./Components/Register";
 import Categories from "./Components/Categories";
 import CreateCategory from "./Components/CreateCategory";
+import eachCategory from "./Components/EachCategory";
 
 function App() {
   return (
     <Router>
       <div className="App">
         <PublicRoute restricted={false} component={Home} path="/" exact />
+        <PublicRoute
+          restricted={false}
+          component={eachCategory}
+          path="/categories/:slug"
+          exact
+        />
         <PublicRoute restricted={true} component={Login} path="/login" exact />
         <PublicRoute
           restricted={true}

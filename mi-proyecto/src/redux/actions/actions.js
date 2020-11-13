@@ -25,5 +25,11 @@ const updateProduct = (product) => {
     payload: product,
   };
 };
+const eachCategoryList = (category) => {
+  return {
+    type: "EACH_CATEGORY",
+    payload: category,
+  };
+};
 
-export { login, createUser, logout, updateProduct };
+export { login, createUser, logout, updateProduct, eachCategoryList };
