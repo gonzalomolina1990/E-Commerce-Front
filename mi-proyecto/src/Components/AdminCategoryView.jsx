@@ -73,12 +73,11 @@ const AdminCategoryView = () => {
                     <tbody>
                       <td>{category.name}</td>
                       <td>
-                        <button
-                          className="btn btn-warning btn-sm"
-                          onClick={() => console.log("modificar category")}
-                        >
-                          Modificar
-                        </button>
+                        <Link to={`/update-category/${category.slug}`}>
+                          <button className="btn btn-warning btn-sm">
+                            Modificar
+                          </button>
+                        </Link>
                         <button
                           className="btn btn-danger btn-sm"
                           onClick={() => {

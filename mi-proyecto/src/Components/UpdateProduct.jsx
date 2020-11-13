@@ -4,21 +4,22 @@ import "../App.css";
 import Navigation from "./Navigation";
 import { useDispatch } from "react-redux";
 import { login, updateProduct } from "../redux/actions/actions";
-import { useHistory } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import Form from "react-bootstrap/Form";
 import { useSelector } from "react-redux";
 
-const UpdateProduct = () => {
-  const productToUpdate = useSelector((state) => state.products);
+const UpdateProduct = ({ id }) => {
+  const params = useParams();
 
-  const [name, setName] = useState(productToUpdate.name);
-  const [description, setDescription] = useState(productToUpdate.description);
-  const [image, setImage] = useState(productToUpdate.image);
-  const [price, setPrice] = useState(productToUpdate.price);
-  const [stock, setStock] = useState(productToUpdate.stock);
-  const [slug, setSlug] = useState(productToUpdate.slug);
-  const [featured, setFeatured] = useState(productToUpdate.featured);
-  const [product, setProduct] = useState(null);
+  console.log(params);
+
+  const [name, setName] = useState("");
+  const [description, setDescription] = useState("");
+  const [image, setImage] = useState("");
+  const [price, setPrice] = useState("");
+  const [stock, setStock] = useState("");
+  const [slug, setSlug] = useState("");
+  const [featured, setFeatured] = useState("");
 
   const dispatch = useDispatch();
   const history = useHistory();
@@ -32,10 +33,15 @@ const UpdateProduct = () => {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,
         },
-        url: "http://localhost:8000/api/v1/products/",
+        url: `http://localhost:8000/api/v1/products/${params.id}`,
       });
-      setProduct(response.data);
-      console.log(response.data);
+      setName(response.data.name);
+      setDescription(response.data.description);
+      setImage(response.data.image);
+      setPrice(response.data.price);
+      setStock(response.data.stock);
+      setSlug(response.data.slug);
+      setFeatured(response.data.featured);
     };
     getProduct();
   }, []);
@@ -48,7 +54,7 @@ const UpdateProduct = () => {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
-      url: `http://localhost:8000/api/v1/products/${productToUpdate._id}`,
+      url: `http://localhost:8000/api/v1/products/${params.id}`,
       data: {
         name: name,
         description: description,
@@ -61,7 +67,6 @@ const UpdateProduct = () => {
     })
       .then((res) => {
         history.push("/");
-        dispatch(updateProduct(productToUpdate));
       })
       .catch((err) => {
         console.log(err);
