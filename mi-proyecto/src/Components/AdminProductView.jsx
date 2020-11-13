@@ -28,7 +28,6 @@ const AdminProductView = () => {
         },
         url: "http://localhost:8000/api/v1/products/",
       });
-      console.log(response.data);
       dispatch(saveProducts(response.data));
     };
     getProducts();
@@ -89,14 +88,13 @@ const AdminProductView = () => {
                       <td>{product.name}</td>
                       <td>{product.category.name}</td>
                       <td>
-                        <Link to={"/update-product"}>
+                        <Link to={`/update-product/${product._id}`}>
                           <button
                             className="btn btn-warning btn-sm"
-                            onClick={(e) => {
-                              /*  setToUpdateProduct(product.id);
-                              handleUpdateProduct();
-                              dispatch(updateProduct(product)); */
-                            }}
+                            /*                 onClick={(e) => {
+                              setToUpdateProduct(product.id);
+                              dispatch(updateProduct(product));
+                            }} */
                           >
                             Modificar
                           </button>{" "}
