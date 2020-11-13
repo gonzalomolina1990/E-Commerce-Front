@@ -3,7 +3,7 @@ import axios from "axios";
 import "../App.css";
 import Navigation from "./Navigation";
 import { useDispatch } from "react-redux";
-import { updateProduct } from "../redux/actions/actions";
+import { listCategories, deleteCategory } from "../redux/actions/actions";
 import { useHistory, Link } from "react-router-dom";
 import Form from "react-bootstrap/Form";
 import { useSelector } from "react-redux";
@@ -17,6 +17,7 @@ const AdminCategoryView = () => {
   const dispatch = useDispatch();
   const history = useHistory();
   const token = useSelector((state) => state.users.usertoken);
+  const categories = useSelector((state) => state.categories);
 
   React.useEffect(() => {
     const getCategories = async () => {
@@ -28,21 +29,26 @@ const AdminCategoryView = () => {
         },
         url: "http://localhost:8000/api/v1/categories/",
       });
-      setCategoriesList(response.data);
+      dispatch(listCategories(response.data));
       console.log(response.data);
     };
     getCategories();
   }, []);
 
   const handleDeleteCategoryEvent = (e) => {
-    axios({
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-      url: `http://localhost:8000/api/v1/category/${toDeleteCategory}`,
-    });
+    console.log("borro");
+    const deleteCategories = async () => {
+      const response = await axios({
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        url: `http://localhost:8000/api/v1/category/${toDeleteCategory}`,
+      });
+      dispatch(deleteCategory(response.data));
+      deleteCategories();
+    };
   };
 
   return (
@@ -67,25 +73,25 @@ const AdminCategoryView = () => {
                 </tr>
               </thead>
 
-              {categoriesList &&
-                categoriesList.map((category) => {
+              {categories &&
+                categories.map((category) => {
                   return (
                     <tbody>
                       <td>{category.name}</td>
                       <td>
                         <button
                           className="btn btn-warning btn-sm"
-                          onClick={console.log("modificar category")}
+                          onClick={() => console.log("modificar category")}
                         >
                           Modificar
                         </button>
                         <button
                           className="btn btn-danger btn-sm"
                           onClick={() => {
+                            console.log("todelete", toDeleteCategory);
+
                             setToDeleteCategory(category._id);
                             handleDeleteCategoryEvent();
-
-                            console.log(toDeleteCategory);
                           }}
                         >
                           Eliminar

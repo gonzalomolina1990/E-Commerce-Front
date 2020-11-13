@@ -26,9 +26,16 @@ const updateProduct = (product) => {
   };
 };
 
-const listCategory = (category) => {
+const listCategories = (categories) => {
   return {
-    type: "LIST_CATEGORY",
+    type: "LIST_CATEGORIES",
+    payload: categories,
+  };
+};
+
+const deleteCategory = (category) => {
+  return {
+    type: "DELETE_CATEGORY",
     payload: category,
   };
 };
@@ -45,6 +52,7 @@ export {
   createUser,
   logout,
   updateProduct,
-  listCategory,
+  listCategories,
+  deleteCategory,
   eachCategoryList,
 };
