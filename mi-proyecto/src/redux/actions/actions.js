@@ -25,6 +25,14 @@ const updateProduct = (product) => {
     payload: product,
   };
 };
+
+const listCategory = (category) => {
+  return {
+    type: "LIST_CATEGORY",
+    payload: category,
+  };
+};
+
 const eachCategoryList = (category) => {
   return {
     type: "EACH_CATEGORY",
@@ -32,4 +40,11 @@ const eachCategoryList = (category) => {
   };
 };
 
-export { login, createUser, logout, updateProduct, eachCategoryList };
+export {
+  login,
+  createUser,
+  logout,
+  updateProduct,
+  listCategory,
+  eachCategoryList,
+};
