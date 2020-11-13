@@ -3,7 +3,7 @@ import axios from "axios";
 import "../App.css";
 import Navigation from "./Navigation";
 import { useDispatch } from "react-redux";
-import { updateProduct } from "../redux/actions/actions";
+import { listCategories, deleteCategory } from "../redux/actions/actions";
 import { useHistory, Link } from "react-router-dom";
 import Form from "react-bootstrap/Form";
 import { useSelector } from "react-redux";
@@ -29,10 +29,25 @@ const AdminCategoryView = () => {
         url: "http://localhost:8000/api/v1/categories/",
       });
       setCategoriesList(response.data);
+      dispatch(listCategories(response.data));
       console.log(response.data);
     };
     getCategories();
   }, []);
+
+  React.useEffect(() => {
+    const deleteCategories = async () => {
+      const response = await axios({
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        url: `http://localhost:8000/api/v1/category/${toDeleteCategory}`,
+      });
+      dispatch(deleteCategory(response.data));
+    };
+  });
 
   const handleDeleteCategoryEvent = (e) => {
     axios({
