@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../App.css";
 import Navigation from "./Navigation";
 import { useDispatch } from "react-redux";
 import { updateProduct } from "../redux/actions/actions";
+import { saveProducts } from "../redux/actions/productsActions";
 import { useHistory, Link } from "react-router-dom";
 import Form from "react-bootstrap/Form";
 import { useSelector } from "react-redux";
@@ -17,35 +18,40 @@ const AdminProductView = () => {
   const dispatch = useDispatch();
   const history = useHistory();
   const token = useSelector((state) => state.users.usertoken);
+  const products = useSelector((state) => state.products);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const getProducts = async () => {
       const response = await axios({
         method: "GET",
         headers: {
-          "Content-Type": "application/json",
+          "Content-type": "aplication/json",
           Authorization: `Bearer ${token}`,
         },
         url: "http://localhost:8000/api/v1/products/",
       });
-      setProductsList(response.data);
       console.log(response.data);
+      dispatch(saveProducts(response.data));
     };
     getProducts();
   }, []);
 
-  const handleDeleteProductEvent = (e) => {
-    axios({
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-      url: `http://localhost:8000/api/v1/products/${toDeleteProduct}`,
-    });
+  const handleDeleteProduct = () => {
+    const getDelete = async () => {
+      const response = await axios({
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        url: `http://localhost:8000/api/v1/products/${toDeleteProduct}`,
+      });
+      console.log(response.data);
+    };
+    getDelete();
   };
 
-  const handleUpdateProductEvent = (e) => {
+  /*   const handleUpdateProductEvent = (e) => {
     axios({
       method: "PUT",
       headers: {
@@ -54,7 +60,7 @@ const AdminProductView = () => {
       },
       url: `http://localhost:8000/api/v1/products/${toUpdateProduct}`,
     });
-  };
+  }; */
 
   return (
     <>
@@ -80,8 +86,8 @@ const AdminProductView = () => {
                 </tr>
               </thead>
 
-              {productsList &&
-                productsList.map((product) => {
+              {products &&
+                products.map((product) => {
                   return (
                     <tbody>
                       <td>{product.name}</td>
@@ -90,10 +96,10 @@ const AdminProductView = () => {
                         <Link to={"/update-product"}>
                           <button
                             className="btn btn-warning btn-sm"
-                            onClick={() => {
-                              setToUpdateProduct(product.id);
-                              handleUpdateProductEvent();
-                              dispatch(updateProduct(product));
+                            onClick={(e) => {
+                              /*  setToUpdateProduct(product.id);
+                              handleUpdateProduct();
+                              dispatch(updateProduct(product)); */
                             }}
                           >
                             Modificar
@@ -103,9 +109,11 @@ const AdminProductView = () => {
                         <button
                           className="btn btn-danger btn-sm"
                           onClick={() => {
+                            handleDeleteProduct();
                             setToDeleteProduct(product._id);
-                            handleDeleteProductEvent();
-                            console.log(toDeleteProduct);
+
+                            /*    handleDeleteProductEvent();
+                            console.log(toDeleteProduct);  */
                           }}
                         >
                           Eliminar
