@@ -2,7 +2,7 @@ import React from "react";
 import Card from "react-bootstrap/Card";
 import CardGroup from "react-bootstrap/CardGroup";
 
-export default function ImgMediaCard({ product }) {
+export default function ProductCard({ product }) {
   return (
     <>
       <CardGroup>

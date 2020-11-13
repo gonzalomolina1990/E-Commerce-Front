@@ -2,7 +2,7 @@ import React from "react";
 import "../App.css";
 import Navigation from "./Navigation";
 import axios from "axios";
-import ImgMediaCard from "./ProductCard";
+import ProductCard from "./ProductCard";
 
 const Home = () => {
   const [productsList, setProductsList] = React.useState(null);
@@ -30,7 +30,7 @@ const Home = () => {
               return (
                 <>
                   <div className="col-md-3">
-                    <ImgMediaCard product={product}></ImgMediaCard>
+                    <ProductCard product={product}></ProductCard>
                   </div>
                 </>
               );
