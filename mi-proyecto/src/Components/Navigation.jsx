@@ -25,7 +25,12 @@ function Navigation() {
         <Nav className="mr-auto">
           <Nav.Link href="/">Home</Nav.Link>
           <Nav.Link href="/categories">Categorias</Nav.Link>
-          {user.admin && <Nav.Link href="/adminview">Administrar</Nav.Link>}
+          {user.admin && (
+            <Nav.Link href="/admin-product">AdminProduct</Nav.Link>
+          )}
+          {user.admin && (
+            <Nav.Link href="/admin-category">AdminCategory</Nav.Link>
+          )}
         </Nav>
       </Navbar.Collapse>
       {user && user.usertoken ? (
