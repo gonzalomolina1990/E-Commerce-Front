@@ -8,16 +8,16 @@ import { useHistory } from "react-router-dom";
 import Form from "react-bootstrap/Form";
 import { useSelector } from "react-redux";
 
-const UpdateProduct = () => {
-  const productToUpdate = useSelector((state) => state.products);
+const UpdateCategory = () => {
+  const categoryToUpdate = useSelector((state) => state.products);
 
-  const [name, setName] = useState(productToUpdate.name);
-  const [description, setDescription] = useState(productToUpdate.description);
-  const [image, setImage] = useState(productToUpdate.image);
-  const [price, setPrice] = useState(productToUpdate.price);
-  const [stock, setStock] = useState(productToUpdate.stock);
-  const [slug, setSlug] = useState(productToUpdate.slug);
-  const [featured, setFeatured] = useState(productToUpdate.featured);
+  const [name, setName] = useState(categoryToUpdate.name);
+  const [description, setDescription] = useState(categoryToUpdate.description);
+  const [image, setImage] = useState(categoryToUpdate.image);
+  const [price, setPrice] = useState(categoryToUpdate.price);
+  const [stock, setStock] = useState(categoryToUpdate.stock);
+  const [slug, setSlug] = useState(categoryToUpdate.slug);
+  const [featured, setFeatured] = useState(categoryToUpdate.featured);
   const [product, setProduct] = useState(null);
 
   const dispatch = useDispatch();
@@ -48,7 +48,7 @@ const UpdateProduct = () => {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
-      url: `http://localhost:8000/api/v1/products/${productToUpdate._id}`,
+      url: `http://localhost:8000/api/v1/products/${categoryToUpdate._id}`,
       data: {
         name: name,
         description: description,
@@ -56,12 +56,11 @@ const UpdateProduct = () => {
         price: price,
         stock: stock,
         slug: slug,
-        featured: featured,
       },
     })
       .then((res) => {
         history.push("/");
-        dispatch(updateProduct(productToUpdate));
+        dispatch(updateProduct(categoryToUpdate));
       })
       .catch((err) => {
         console.log(err);
@@ -198,4 +197,4 @@ const UpdateProduct = () => {
   );
 };
 
-export default UpdateProduct;
+export default UpdateCategory;

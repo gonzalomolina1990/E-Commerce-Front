@@ -2,6 +2,9 @@ import "./App.css";
 import Login from "./Components/Login";
 import Home from "./Components/Home";
 import AdminView from "./Components/AdminView";
+import AdminProductView from "./Components/AdminProductView";
+import AdminCategoryView from "./Components/AdminCategoryView";
+
 import CreateProduct from "./Components/CreateProduct";
 import UpdateProduct from "./Components/UpdateProduct";
 
@@ -30,6 +33,17 @@ function App() {
           path="/categories"
         />
         <PrivateRoute component={AdminView} path="/adminview" exact />
+        <PrivateRoute
+          component={AdminProductView}
+          path="/admin-product"
+          exact
+        />
+        <PrivateRoute
+          component={AdminCategoryView}
+          path="/admin-category"
+          exact
+        />
+
         <PrivateRoute component={CreateProduct} path="/create-product" exact />
         <PrivateRoute component={UpdateProduct} path="/update-product" exact />
 
