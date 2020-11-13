@@ -11,8 +11,6 @@ import { useSelector } from "react-redux";
 import Table from "react-bootstrap/Table";
 
 const AdminProductView = () => {
-  const [toDeleteProduct, setToDeleteProduct] = useState("");
-  const [toUpdateProduct, setToUpdateProduct] = useState();
   const dispatch = useDispatch();
   const history = useHistory();
   const token = useSelector((state) => state.users.usertoken);
