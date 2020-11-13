@@ -17,6 +17,7 @@ const AdminCategoryView = () => {
   const dispatch = useDispatch();
   const history = useHistory();
   const token = useSelector((state) => state.users.usertoken);
+  const categories = useSelector((state) => state.categories);
 
   React.useEffect(() => {
     const getCategories = async () => {
@@ -28,7 +29,6 @@ const AdminCategoryView = () => {
         },
         url: "http://localhost:8000/api/v1/categories/",
       });
-      setCategoriesList(response.data);
       dispatch(listCategories(response.data));
       console.log(response.data);
     };
@@ -46,8 +46,9 @@ const AdminCategoryView = () => {
         url: `http://localhost:8000/api/v1/category/${toDeleteCategory}`,
       });
       dispatch(deleteCategory(response.data));
+      deleteCategories();
     };
-  });
+  }, [toDeleteCategory]);
 
   const handleDeleteCategoryEvent = (e) => {
     axios({
@@ -82,8 +83,8 @@ const AdminCategoryView = () => {
                 </tr>
               </thead>
 
-              {categoriesList &&
-                categoriesList.map((category) => {
+              {categories &&
+                categories.map((category) => {
                   return (
                     <tbody>
                       <td>{category.name}</td>
@@ -98,7 +99,6 @@ const AdminCategoryView = () => {
                           className="btn btn-danger btn-sm"
                           onClick={() => {
                             setToDeleteCategory(category._id);
-                            handleDeleteCategoryEvent();
 
                             console.log(toDeleteCategory);
                           }}
