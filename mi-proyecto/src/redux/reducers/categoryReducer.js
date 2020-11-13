@@ -4,6 +4,8 @@ const categories = (state = [], action) => {
       return action.payload;
     case "EACH_CATEGORY":
       return action.payload;
+    case "DELETE_CATEGORY":
+      return state.filter((category) => category._id !== action.payload);
 
     default:
       return state;

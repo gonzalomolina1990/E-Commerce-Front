@@ -11,9 +11,6 @@ import Table from "react-bootstrap/Table";
 import Categories from "./Categories";
 
 const AdminCategoryView = () => {
-  const [categoriesList, setCategoriesList] = useState(null);
-  const [toDeleteCategory, setToDeleteCategory] = useState();
-
   const dispatch = useDispatch();
   const history = useHistory();
   const token = useSelector((state) => state.users.usertoken);
@@ -35,20 +32,17 @@ const AdminCategoryView = () => {
     getCategories();
   }, []);
 
-  const handleDeleteCategoryEvent = (e) => {
-    console.log("borro");
-    const deleteCategories = async () => {
-      const response = await axios({
-        method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-        url: `http://localhost:8000/api/v1/category/${toDeleteCategory}`,
-      });
-      dispatch(deleteCategory(response.data));
-      deleteCategories();
-    };
+  const handleDeleteCategoryEvent = (id) => {
+    const response = axios({
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      url: `http://localhost:8000/api/v1/categories/${id}`,
+    });
+    console.log(response);
+    dispatch(deleteCategory(id));
   };
 
   return (
@@ -88,10 +82,7 @@ const AdminCategoryView = () => {
                         <button
                           className="btn btn-danger btn-sm"
                           onClick={() => {
-                            console.log("todelete", toDeleteCategory);
-
-                            setToDeleteCategory(category._id);
-                            handleDeleteCategoryEvent();
+                            handleDeleteCategoryEvent(category._id);
                           }}
                         >
                           Eliminar
