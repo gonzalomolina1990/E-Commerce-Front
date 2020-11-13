@@ -1,4 +1,4 @@
-const categories = (state = {}, action) => {
+const categories = (state = [], action) => {
   switch (action.type) {
     case "LIST_CATEGORIES":
       return action.payload;

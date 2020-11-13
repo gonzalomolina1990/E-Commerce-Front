@@ -35,7 +35,8 @@ const AdminCategoryView = () => {
     getCategories();
   }, []);
 
-  React.useEffect(() => {
+  const handleDeleteCategoryEvent = (e) => {
+    console.log("borro");
     const deleteCategories = async () => {
       const response = await axios({
         method: "DELETE",
@@ -48,17 +49,6 @@ const AdminCategoryView = () => {
       dispatch(deleteCategory(response.data));
       deleteCategories();
     };
-  }, [toDeleteCategory]);
-
-  const handleDeleteCategoryEvent = (e) => {
-    axios({
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-      url: `http://localhost:8000/api/v1/category/${toDeleteCategory}`,
-    });
   };
 
   return (
@@ -91,16 +81,17 @@ const AdminCategoryView = () => {
                       <td>
                         <button
                           className="btn btn-warning btn-sm"
-                          onClick={console.log("modificar category")}
+                          onClick={() => console.log("modificar category")}
                         >
                           Modificar
                         </button>
                         <button
                           className="btn btn-danger btn-sm"
                           onClick={() => {
-                            setToDeleteCategory(category._id);
+                            console.log("todelete", toDeleteCategory);
 
-                            console.log(toDeleteCategory);
+                            setToDeleteCategory(category._id);
+                            handleDeleteCategoryEvent();
                           }}
                         >
                           Eliminar
