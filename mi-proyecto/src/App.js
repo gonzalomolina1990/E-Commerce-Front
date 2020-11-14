@@ -15,7 +15,7 @@ import Register from "./Components/Register";
 import Categories from "./Components/Categories";
 import CreateCategory from "./Components/CreateCategory";
 import UpdateCategory from "./Components/UpdateCategory";
-
+import AdminUserView from "./Components/AdminUserView";
 import Category from "./Components/Category";
 
 function App() {
@@ -43,6 +43,8 @@ function App() {
           <PrivateRoute component={AdminView} path="/adminview" exact />
           <PrivateRoute component={AdminProductView} path="/admin-product" />
           <PrivateRoute component={AdminCategoryView} path="/admin-category" />
+
+          <PrivateRoute component={AdminUserView} path="/admin-user" />
 
           <PrivateRoute component={CreateProduct} path="/create-product" />
           <PrivateRoute component={UpdateProduct} path="/update-product/:id" />

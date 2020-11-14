@@ -8,6 +8,7 @@ const products = (state = [], action) => {
 
     case "DELETE_PRODUCT":
       return [...state.filter((product) => product._id !== action.payload)];
+
     default:
       return state;
   }
