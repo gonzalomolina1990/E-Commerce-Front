@@ -4,7 +4,7 @@ import "../App.css";
 import Navigation from "./Navigation";
 import { useDispatch } from "react-redux";
 import { login } from "../redux/actions/actions";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
 
 const Login = () => {
@@ -83,6 +83,11 @@ const Login = () => {
                 Iniciar sesión
               </button>
             </form>
+            <div className="mt-4">
+              <Link to={"/register"}>
+                Si no tenes cuenta, podes crearte una pa gastar la kiki
+              </Link>
+            </div>
           </div>
         </div>
       </div>
