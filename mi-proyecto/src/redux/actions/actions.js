@@ -19,6 +19,13 @@ const createUser = (user) => {
   };
 };
 
+const saveProducts = (products) => {
+  return {
+    type: "SAVE_PRODUCTS",
+    payload: products,
+  };
+};
+
 const updateProduct = (product) => {
   return {
     type: "UPDATE_PRODUCT",
