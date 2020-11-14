@@ -17,6 +17,7 @@ function Navigation() {
       className="navbarColor"
       fixed="top"
       variant="dark"
+      sticky="top"
     >
       <Navbar.Brand href="/">ElectroHack</Navbar.Brand>
 
