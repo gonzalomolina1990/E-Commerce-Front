@@ -31,6 +31,7 @@ function Navigation() {
           {user.admin && (
             <Nav.Link href="/admin-category">AdminCategory</Nav.Link>
           )}
+          {user.admin && <Nav.Link href="/admin-users">AdminUsers</Nav.Link>}
         </Nav>
       </Navbar.Collapse>
       {user && user.usertoken ? (
