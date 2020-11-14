@@ -189,6 +189,16 @@ body {
   font-family: Roboto;
 }
 
+.cardLink {
+  text-decoration: none;
+  color: #585858;
+}
+
+.cardLink:hover {
+  text-decoration: none;
+  color: #7c7c7c;
+}
+
 .links {
   text-decoration: none;
   color: white;

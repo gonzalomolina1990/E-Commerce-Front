@@ -33,7 +33,6 @@ const UpdateCategory = ({ slug }) => {
       setName(response.data.name);
       setNewSlug(response.data.slug);
       setCategoryId(response.data._id);
-      /*     setSlug2(response.data.slug);  */
     };
     getCategory();
   }, []);

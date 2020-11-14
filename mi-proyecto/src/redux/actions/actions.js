@@ -19,20 +19,6 @@ const createUser = (user) => {
   };
 };
 
-const saveProducts = (products) => {
-  return {
-    type: "SAVE_PRODUCTS",
-    payload: products,
-  };
-};
-
-const updateProduct = (product) => {
-  return {
-    type: "UPDATE_PRODUCT",
-    payload: product,
-  };
-};
-
 const listCategories = (categories) => {
   return {
     type: "LIST_CATEGORIES",
@@ -58,7 +44,6 @@ export {
   login,
   createUser,
   logout,
-  updateProduct,
   listCategories,
   deleteCategory,
   eachCategoryList,

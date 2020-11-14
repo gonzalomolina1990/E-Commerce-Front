@@ -1,12 +1,28 @@
 import React from "react";
+import axios from "axios";
 import Card from "react-bootstrap/Card";
+import Navigation from "./Navigation";
 import CardGroup from "react-bootstrap/CardGroup";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
-export default function ProductCard({ product }) {
+export default function Product() {
+  const [product, setProduct] = React.useState(null);
+  const params = useParams();
+
+  React.useEffect(() => {
+    const getProduct = async () => {
+      const response = await axios.get(
+        `http://localhost:8000/api/v1/products/${params.slug}`
+      );
+      setProduct(response.data);
+      console.log(response.data);
+    };
+    getProduct();
+  }, []);
   return (
     <>
-      <CardGroup>
+      <Navigation />
+      <CardGroup className="mt-5">
         <Card className="mb-4 productCard">
           <Card.Header>{product.name} </Card.Header>
           <Link className="cardLink" to={`/products/${product.slug}`}>

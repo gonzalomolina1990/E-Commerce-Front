@@ -3,7 +3,7 @@ import axios from "axios";
 import "../App.css";
 import Navigation from "./Navigation";
 import { useDispatch } from "react-redux";
-import { updateProduct } from "../redux/actions/actions";
+import { updateProduct } from "../redux/actions/productsActions";
 import { saveProducts, deleteProduct } from "../redux/actions/productsActions";
 import { useHistory, Link } from "react-router-dom";
 import Form from "react-bootstrap/Form";
@@ -44,17 +44,6 @@ const AdminProductView = () => {
     console.log(id);
   };
 
-  /*   const handleUpdateProductEvent = (e) => {
-    axios({
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-      url: `http://localhost:8000/api/v1/products/${toUpdateProduct}`,
-    });
-  }; */
-
   return (
     <>
       <Navigation />
@@ -87,13 +76,7 @@ const AdminProductView = () => {
                       <td>{product.category.name}</td>
                       <td>
                         <Link to={`/update-product/${product._id}`}>
-                          <button
-                            className="btn btn-warning btn-sm"
-                            /*                 onClick={(e) => {
-                              setToUpdateProduct(product.id);
-                              dispatch(updateProduct(product));
-                            }} */
-                          >
+                          <button className="btn btn-warning btn-sm">
                             Modificar
                           </button>{" "}
                         </Link>

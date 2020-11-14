@@ -1,12 +1,13 @@
 import "./App.css";
 import Login from "./Components/Login";
 import Home from "./Components/Home";
-import AdminView from "./Components/AdminView";
+
 import AdminProductView from "./Components/AdminProductView";
 import AdminCategoryView from "./Components/AdminCategoryView";
 
 import CreateProduct from "./Components/CreateProduct";
 import UpdateProduct from "./Components/UpdateProduct";
+import Product from "./Components/Product";
 
 import { BrowserRouter as Router, Switch } from "react-router-dom";
 import PublicRoute from "./Components/PublicRoute";
@@ -40,7 +41,12 @@ function App() {
             component={Categories}
             path="/categories"
           />
-          <PrivateRoute component={AdminView} path="/adminview" exact />
+          <PublicRoute
+            restricted={false}
+            component={Product}
+            path="/products/:slug"
+          />
+
           <PrivateRoute component={AdminProductView} path="/admin-product" />
           <PrivateRoute component={AdminCategoryView} path="/admin-category" />
 

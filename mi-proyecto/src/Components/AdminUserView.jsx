@@ -86,7 +86,7 @@ const AdminProductView = () => {
                         <form>
                           <div className="">
                             <input
-                              className=""
+                              className="mr-2"
                               type="radio"
                               name="admin"
                               id="admin"
@@ -99,7 +99,7 @@ const AdminProductView = () => {
                           </div>
                           <div className="">
                             <input
-                              className=""
+                              className="mr-2"
                               type="radio"
                               name="admin"
                               id="user"

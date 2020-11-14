@@ -3,7 +3,7 @@ import axios from "axios";
 import "../App.css";
 import Navigation from "./Navigation";
 import { useDispatch } from "react-redux";
-import { login, updateProduct } from "../redux/actions/actions";
+
 import { useHistory, useParams } from "react-router-dom";
 import Form from "react-bootstrap/Form";
 import { useSelector } from "react-redux";
@@ -35,6 +35,7 @@ const UpdateProduct = ({ id }) => {
         },
         url: `http://localhost:8000/api/v1/products/${params.id}`,
       });
+      console.log(response.data);
       setName(response.data.name);
       setDescription(response.data.description);
       setImage(response.data.image);
