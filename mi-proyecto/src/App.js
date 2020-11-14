@@ -44,7 +44,7 @@ function App() {
           <PrivateRoute component={AdminProductView} path="/admin-product" />
           <PrivateRoute component={AdminCategoryView} path="/admin-category" />
 
-          <PrivateRoute component={AdminUserView} path="/admin-user" />
+          <PrivateRoute component={AdminUserView} path="/admin-users" />
 
           <PrivateRoute component={CreateProduct} path="/create-product" />
           <PrivateRoute component={UpdateProduct} path="/update-product/:id" />

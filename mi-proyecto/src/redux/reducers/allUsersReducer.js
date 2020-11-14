@@ -3,6 +3,9 @@ const allUsers = (state = [], action) => {
     case "SAVE_USERS":
       return action.payload;
 
+    case "DELETE_USER":
+      return [...state.filter((user) => user._id !== action.payload)];
+
     default:
       return state;
   }

@@ -3,7 +3,7 @@ import axios from "axios";
 import "../App.css";
 import Navigation from "./Navigation";
 import { useDispatch } from "react-redux";
-import { saveUsers } from "../redux/actions/allUsers";
+import { saveUsers, deleteUser } from "../redux/actions/allUsers";
 import { useHistory, Link } from "react-router-dom";
 import Form from "react-bootstrap/Form";
 import { useSelector } from "react-redux";
@@ -14,6 +14,7 @@ const AdminProductView = () => {
   const history = useHistory();
   const token = useSelector((state) => state.users.usertoken);
   const users = useSelector((state) => state.allUsers);
+  const [admin, setAdmin] = useState("");
 
   useEffect(() => {
     const getUsers = async () => {
@@ -30,19 +31,33 @@ const AdminProductView = () => {
     getUsers();
   }, []);
 
-  /*   const handleDeleteProduct = (id) => {
+  const handleDeleteUser = (id) => {
     const response = axios({
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
-      url: `http://localhost:8000/api/v1/products/${id}`,
+      url: `http://localhost:8000/api/v1/users/${id}`,
     });
-    dispatch(deleteProduct(id));
+    dispatch(deleteUser(id));
     console.log(id);
   };
- */
+
+  const handleUpdateUser = async (id) => {
+    const response = await axios({
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      url: `http://localhost:8000/api/v1/users/${id}`,
+      data: { admin: admin },
+    });
+    console.log(response.data);
+    /*     setAdmin(response.data.admin); */
+  };
+
   return (
     <>
       <Navigation />
@@ -56,8 +71,8 @@ const AdminProductView = () => {
               <thead>
                 <tr>
                   <th>Usuarios</th>
-
-                  <th>Permiso</th>
+                  <th>Acciones</th>
+                  <th>Eliminar</th>
                 </tr>
               </thead>
 
@@ -68,16 +83,46 @@ const AdminProductView = () => {
                       <td>{user.email}</td>
 
                       <td>
-                        <Link to={"" /* `/update-product/${product._id}` */}>
-                          <button className="btn btn-warning btn-sm">
-                            Modificar
-                          </button>{" "}
-                        </Link>
+                        <form>
+                          <div className="">
+                            <input
+                              className=""
+                              type="radio"
+                              name="admin"
+                              id="admin"
+                              onChange={(e) => setAdmin(e.target.value)}
+                              value={true}
+                            />
+                            <label className="" for="admin">
+                              Administrador
+                            </label>
+                          </div>
+                          <div className="">
+                            <input
+                              className=""
+                              type="radio"
+                              name="admin"
+                              id="user"
+                              onChange={(e) => setAdmin(e.target.value)}
+                              value={false}
+                            />
+                            <label className="" for="user">
+                              Usuario
+                            </label>
+                          </div>
+                          <button
+                            className="btn btn-success btn-sm"
+                            type="button"
+                            onClick={() => handleUpdateUser(user._id)}
+                          >
+                            Guardar
+                          </button>
+                        </form>
+                      </td>
+                      <td>
                         <button
                           className="btn btn-danger btn-sm"
-                          onClick={
-                            "" /* () => handleDeleteProduct(product._id) */
-                          }
+                          onClick={() => handleDeleteUser(user._id)}
                         >
                           Eliminar
                         </button>

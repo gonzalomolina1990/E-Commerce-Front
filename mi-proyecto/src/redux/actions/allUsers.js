@@ -5,11 +5,11 @@ const saveUsers = (users) => {
   };
 };
 
-/* const deleteUsers = (productId) => {
+const deleteUser = (userId) => {
   return {
-    type: "DELETE_PRODUCT",
-    payload: productId,
+    type: "DELETE_USER",
+    payload: userId,
   };
 };
- */
-export { saveUsers };
+
+export { saveUsers, deleteUser };
