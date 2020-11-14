@@ -5,7 +5,7 @@ import axios from "axios";
 import ProductCard from "./ProductCard";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { eachCategoryList } from "../redux/actions/actions";
+import { eachCategoryList } from "../redux/actions/user";
 
 const Category = ({ slug }) => {
   const dispatch = useDispatch();

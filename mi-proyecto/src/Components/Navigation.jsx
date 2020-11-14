@@ -3,7 +3,7 @@ import "../App.css";
 import { Router, Switch, Route, Link } from "react-router-dom";
 import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
-import { logout } from "../redux/actions/actions";
+import { logout } from "../redux/actions/user";
 
 function Navigation() {
   const user = useSelector((state) => state.users);

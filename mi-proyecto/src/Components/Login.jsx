@@ -3,7 +3,7 @@ import axios from "axios";
 import "../App.css";
 import Navigation from "./Navigation";
 import { useDispatch } from "react-redux";
-import { login } from "../redux/actions/actions";
+import { login } from "../redux/actions/user";
 import { useHistory, Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
 

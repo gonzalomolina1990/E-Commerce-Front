@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import axios from "axios";
-import { createUser } from "../redux/actions/actions";
+import { createUser } from "../redux/actions/user";
 import { useHistory, Link } from "react-router-dom";
 import Navigation from "./Navigation";
 

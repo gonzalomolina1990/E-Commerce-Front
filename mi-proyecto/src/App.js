@@ -44,7 +44,7 @@ function App() {
           <PublicRoute
             restricted={false}
             component={Product}
-            path="/products/:slug"
+            path="/product/:slug"
           />
 
           <PrivateRoute component={AdminProductView} path="/admin-product" />

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../App.css";
 import Navigation from "./Navigation";
-import { eachCategoryList, listCategories } from "../redux/actions/actions";
+import { eachCategoryList, listCategories } from "../redux/actions/category";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory, Link } from "react-router-dom";
 import ProductCard from "./ProductCard";
