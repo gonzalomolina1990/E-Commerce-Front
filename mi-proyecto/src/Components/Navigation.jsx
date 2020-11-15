@@ -6,6 +6,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../redux/actions/user";
 import axios from "axios";
 import { listCategories } from "../redux/actions/category";
+import Cart from "./Cart";
 
 function Navigation() {
   const user = useSelector((state) => state.users);
@@ -40,7 +41,6 @@ function Navigation() {
         <Navbar.Brand as={Link} to={"/"}>
           ElectroHack
         </Navbar.Brand>
-
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
@@ -96,6 +96,7 @@ function Navigation() {
             </Link>
           )}
         </Navbar.Collapse>
+        <Cart />
         {user && user.usertoken ? (
           <div className="mediaLogout">
             <span className="userIcon">
