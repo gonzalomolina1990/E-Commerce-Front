@@ -84,32 +84,68 @@ const AdminProductView = () => {
 
                       <td>
                         <form>
-                          <div className="">
-                            <input
-                              className="mr-2"
-                              type="radio"
-                              name="admin"
-                              id="admin"
-                              onChange={(e) => setAdmin(e.target.value)}
-                              value={true}
-                            />
-                            <label className="" for="admin">
-                              Administrador
-                            </label>
-                          </div>
-                          <div className="">
-                            <input
-                              className="mr-2"
-                              type="radio"
-                              name="admin"
-                              id="user"
-                              onChange={(e) => setAdmin(e.target.value)}
-                              value={false}
-                            />
-                            <label className="" for="user">
-                              Usuario
-                            </label>
-                          </div>
+                          {user.admin ? (
+                            <>
+                              <div className="">
+                                <input
+                                  className="mr-2"
+                                  type="radio"
+                                  name="admin"
+                                  checked="true"
+                                  id="admin"
+                                  onChange={(e) => setAdmin(e.target.value)}
+                                  value={true}
+                                />
+                                <label className="" for="admin">
+                                  Administrador
+                                </label>
+                              </div>
+                              <div className="">
+                                <input
+                                  className="mr-2"
+                                  type="radio"
+                                  name="admin"
+                                  id="user"
+                                  onChange={(e) => setAdmin(e.target.value)}
+                                  value={false}
+                                />
+                                <label className="" for="user">
+                                  Usuario
+                                </label>
+                              </div>
+                            </>
+                          ) : (
+                            <>
+                              <div className="">
+                                <input
+                                  className="mr-2"
+                                  type="radio"
+                                  name="admin"
+                                  id="admin"
+                                  onChange={(e) => setAdmin(e.target.value)}
+                                  value={true}
+                                />
+                                <label className="" for="admin">
+                                  Administrador
+                                </label>
+                              </div>
+                              <div className="">
+                                <input
+                                  className="mr-2"
+                                  type="radio"
+                                  name="admin"
+                                  checked="true"
+                                  id="user"
+                                  onChange={(e) => setAdmin(e.target.value)}
+                                  value={false}
+                                />
+                                <label className="" for="user">
+                                  Usuario
+                                </label>
+                              </div>
+                            </>
+                          )}
+
                           <button
                             className="btn btn-success btn-sm"
                             type="button"
