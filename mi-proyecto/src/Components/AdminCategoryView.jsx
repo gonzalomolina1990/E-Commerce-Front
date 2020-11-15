@@ -8,7 +8,6 @@ import { useHistory, Link } from "react-router-dom";
 import Form from "react-bootstrap/Form";
 import { useSelector } from "react-redux";
 import Table from "react-bootstrap/Table";
-import Categories from "./Categories";
 
 const AdminCategoryView = () => {
   const dispatch = useDispatch();

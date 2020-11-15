@@ -13,7 +13,7 @@ import { BrowserRouter as Router, Switch } from "react-router-dom";
 import PublicRoute from "./Components/PublicRoute";
 import PrivateRoute from "./Components/PrivateRoute";
 import Register from "./Components/Register";
-import Categories from "./Components/Categories";
+
 import CreateCategory from "./Components/CreateCategory";
 import UpdateCategory from "./Components/UpdateCategory";
 import AdminUserView from "./Components/AdminUserView";
@@ -35,11 +35,6 @@ function App() {
             restricted={true}
             component={Register}
             path="/register"
-          />
-          <PublicRoute
-            restricted={false}
-            component={Categories}
-            path="/categories"
           />
           <PublicRoute
             restricted={false}

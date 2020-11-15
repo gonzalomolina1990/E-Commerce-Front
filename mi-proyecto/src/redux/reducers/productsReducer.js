@@ -2,8 +2,7 @@ const products = (state = [], action) => {
   switch (action.type) {
     case "SAVE_PRODUCTS":
       return action.payload;
-    case "UPDATE_PRODUCT":
-      return action.payload;
+
 
     case "SAVE_PRODUCTS":
       return action.payload;

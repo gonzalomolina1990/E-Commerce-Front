@@ -1,14 +1,31 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../App.css";
-import { Router, Switch, Route, Link } from "react-router-dom";
-import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import { Navbar, Nav, NavDropdown, MenuItem } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../redux/actions/user";
+import axios from "axios";
+import { listCategories } from "../redux/actions/category";
 
 function Navigation() {
   const user = useSelector((state) => state.users);
-
+  const categories = useSelector((state) => state.categories);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    const getCategories = async () => {
+      const response = await axios({
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        url: "http://localhost:8000/api/v1/categories/",
+      });
+      dispatch(listCategories(response.data));
+      console.log(response.data);
+    };
+    getCategories(); //sacar populate
+  }, []);
 
   return (
     <Navbar
@@ -19,39 +36,84 @@ function Navigation() {
       variant="dark"
       sticky="top"
     >
-      <Navbar.Brand href="/">ElectroHack</Navbar.Brand>
+      <div className="container">
+        <Navbar.Brand as={Link} to={"/"}>
+          ElectroHack
+        </Navbar.Brand>
 
-      <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-      <Navbar.Collapse id="responsive-navbar-nav">
-        <Nav className="mr-auto">
-          <Nav.Link href="/">Home</Nav.Link>
-          <Nav.Link href="/categories">Categorias</Nav.Link>
-          {user.admin && (
-            <Nav.Link href="/admin-product">AdminProduct</Nav.Link>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="mr-auto">
+            <NavDropdown
+              title="Buscar por categorías"
+              id="collasible-nav-dropdown"
+            >
+              {categories &&
+                categories.map((category) => {
+                  return (
+                    <NavDropdown.Item
+                      as={Link}
+                      to={`/categories/${category.slug}`}
+                    >
+                      {category.name}
+                    </NavDropdown.Item>
+                  );
+                })}
+            </NavDropdown>
+            <NavDropdown title="Administrador" id="collasible-nav-dropdown">
+              {user.admin && (
+                <NavDropdown.Item as={Link} to={"/admin-product"}>
+                  Productos
+                </NavDropdown.Item>
+              )}
+              {user.admin && (
+                <NavDropdown.Item as={Link} to={"/admin-category"}>
+                  Categorías
+                </NavDropdown.Item>
+              )}
+              {user.admin && (
+                <NavDropdown.Item as={Link} to={"/admin-users"}>
+                  Usuarios
+                </NavDropdown.Item>
+              )}
+            </NavDropdown>
+          </Nav>
+          {user && user.usertoken ? (
+            <div className="mediaLogoutSmall">
+              <span className="userIcon">
+                <i class="fas fa-user-circle"></i> {user.name} {user.lastname}
+              </span>
+              <button
+                className="btn btn-light"
+                onClick={() => dispatch(logout({}))}
+              >
+                Logout
+              </button>
+            </div>
+          ) : (
+            <Link to={"/login"}>
+              <button className="btn btn-light">Login</button>
+            </Link>
           )}
-          {user.admin && (
-            <Nav.Link href="/admin-category">AdminCategory</Nav.Link>
-          )}
-          {user.admin && <Nav.Link href="/admin-users">AdminUsers</Nav.Link>}
-        </Nav>
-      </Navbar.Collapse>
-      {user && user.usertoken ? (
-        <div>
-          <span className="userIcon">
-            <i class="fas fa-user-circle"></i> {user.name} {user.lastname}
-          </span>
-          <button
-            className="btn btn-light"
-            onClick={() => dispatch(logout({}))}
-          >
-            Logout
-          </button>
-        </div>
-      ) : (
-        <Link to={"/login"}>
-          <button className="btn btn-light">Login</button>
-        </Link>
-      )}
+        </Navbar.Collapse>
+        {user && user.usertoken ? (
+          <div className="mediaLogout">
+            <span className="userIcon">
+              <i class="fas fa-user-circle"></i> {user.name} {user.lastname}
+            </span>
+            <button
+              className="btn btn-light"
+              onClick={() => dispatch(logout({}))}
+            >
+              Logout
+            </button>
+          </div>
+        ) : (
+          <Link to={"/login"}>
+            <button className="btn btn-light">Login</button>
+          </Link>
+        )}
+      </div>
     </Navbar>
   );
 }
