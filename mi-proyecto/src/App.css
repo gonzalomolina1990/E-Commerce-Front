@@ -322,3 +322,22 @@ body {
     -webkit-box-orient: vertical;
   }
 }
+
+.imageModal {
+  width: 40rem;
+  margin: 0;
+  transition: 0.25s ease-in-out;
+}
+
+.imageModal:hover {
+  width: 45rem;
+  margin: 0;
+}
+
+.modal-body {
+  padding: 0;
+}
+
+.fa-cart-plus {
+  color: black;
+}

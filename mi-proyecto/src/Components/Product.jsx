@@ -6,6 +6,7 @@ import CardGroup from "react-bootstrap/CardGroup";
 import { useParams } from "react-router-dom";
 import Modal from "react-bootstrap/Modal";
 import { Button } from "react-bootstrap";
+import Alert from "react-bootstrap/Alert";
 
 export default function Product() {
   const [product, setProduct] = React.useState("");
@@ -74,11 +75,24 @@ export default function Product() {
               </div>
               <div className="col-8">
                 {" "}
-                <button className="btn btn-success">
-                  <i class="fas fa-cart-plus"></i> Agregar al carrito
-                </button>
+                {product.stock > 0 ? (
+                  <Alert variant="danger" className="mt-3">
+                    Últimas {product.stock} unidades!!
+                  </Alert>
+                ) : (
+                  <Alert variant="warning" className="mt-3">
+                    Actualmente no tenemos este producto en stock
+                  </Alert>
+                )}
               </div>
+              <p className="p-4">
+                Disponible a un precio menor de otros vendedores que podrían no
+                ofrecer envío. Comprá seguro con la garantía de ElectroHack
+              </p>
             </div>
+            <Button className="btn btn-warning" block>
+              <i class="fas fa-cart-plus"></i> Agregar al carrito
+            </Button>
           </div>
         </div>
       </div>
