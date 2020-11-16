@@ -5,6 +5,7 @@ import Table from "react-bootstrap/Table";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import axios from "axios";
+import { listOrders } from "../redux/actions/orders";
 
 const AdminOrdersView = () => {
   const dispatch = useDispatch();
@@ -19,7 +20,7 @@ const AdminOrdersView = () => {
           "Content-type": "aplication/json",
           Authorization: `Bearer ${token}`,
         },
-        url: "http://localhost:8000/api/v1/products/",
+        url: "http://localhost:8000/api/v1/orders",
       });
       dispatch(listOrders(response.data));
     };
