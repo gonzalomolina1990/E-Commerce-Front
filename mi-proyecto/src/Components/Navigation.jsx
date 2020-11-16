@@ -76,6 +76,12 @@ function Navigation() {
                   Usuarios
                 </NavDropdown.Item>
               )}
+
+              {user.admin && (
+                <NavDropdown.Item as={Link} to={"/admin-orders"}>
+                  Pedidos
+                </NavDropdown.Item>
+              )}
             </NavDropdown>
           </Nav>
           {user && user.usertoken ? (
