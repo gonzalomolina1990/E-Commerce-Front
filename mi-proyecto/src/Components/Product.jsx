@@ -65,14 +65,22 @@ export default function Product() {
             <small className="text-muted">
               {product.category && product.category.name}
             </small>
+
             <p>{product.description}</p>
+            <span className="badge badge-pill badge-light addingPill">
+              <span className="mr-3 addingButton">-</span> 1
+              <span className="ml-3 addingButton">+</span>
+            </span>
             <hr />
+
             <div className="row">
               <div className="col-4">
                 <h1>
                   <sup>U$S</sup> {product.price}
                 </h1>
               </div>
+
+              <div></div>
               <div className="col-8">
                 {" "}
                 {product.stock > 0 ? (
@@ -85,6 +93,7 @@ export default function Product() {
                   </Alert>
                 )}
               </div>
+
               <p className="p-4">
                 Disponible a un precio menor de otros vendedores que podrían no
                 ofrecer envío. Comprá seguro con la garantía de ElectroHack

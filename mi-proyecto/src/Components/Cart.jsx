@@ -1,12 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
-import Card from "react-bootstrap/Card";
 import Navigation from "./Navigation";
-import CardGroup from "react-bootstrap/CardGroup";
 import { useParams } from "react-router-dom";
-import Modal from "react-bootstrap/Modal";
 import { Button } from "react-bootstrap";
-import Alert from "react-bootstrap/Alert";
 
 export default function Cart() {
   const [product, setProduct] = React.useState("");
