@@ -92,7 +92,7 @@ function Navigation() {
             </div>
           ) : (
             <Link to={"/login"}>
-              <button className="btn btn-light">Login</button>
+              <button className="btn btn-light mediaLogoutSmall">Login</button>
             </Link>
           )}
         </Navbar.Collapse>
@@ -111,7 +111,7 @@ function Navigation() {
           </div>
         ) : (
           <Link to={"/login"}>
-            <button className="btn btn-light">Login</button>
+            <button className="btn btn-light mediaLogout ml-5">Login</button>
           </Link>
         )}
       </div>
