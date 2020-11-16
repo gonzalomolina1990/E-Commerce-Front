@@ -6,7 +6,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../redux/actions/user";
 import axios from "axios";
 import { listCategories } from "../redux/actions/category";
-import Cart from "./Cart";
+import NavCart from "./NavCart";
 
 function Navigation() {
   const user = useSelector((state) => state.users);

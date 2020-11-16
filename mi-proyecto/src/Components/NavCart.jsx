@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../App.css";
 
-const Cart = () => {
+const NavCart = () => {
   return (
     <>
       <div className="cartStyle">
@@ -14,4 +14,4 @@ const Cart = () => {
   );
 };
 
-export default Cart;
+export default NavCart;
