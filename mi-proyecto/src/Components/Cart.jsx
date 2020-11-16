@@ -61,7 +61,7 @@ export default function Cart() {
                   <span className="ml-4 trashButton">
                     <i class="far fa-trash-alt"></i>
                   </span>
-                  <span className="priceCart ml-4">
+                  <span className="priceCartResponsive ml-4">
                     <sup>U$S</sup> 10
                   </span>
                 </div>
