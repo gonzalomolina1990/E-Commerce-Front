@@ -96,7 +96,7 @@ function Navigation() {
             </Link>
           )}
         </Navbar.Collapse>
-        <Cart />
+        <NavCart />
         {user && user.usertoken ? (
           <div className="mediaLogout">
             <span className="userIcon">

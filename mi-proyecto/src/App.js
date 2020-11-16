@@ -8,6 +8,7 @@ import AdminCategoryView from "./Components/AdminCategoryView";
 import CreateProduct from "./Components/CreateProduct";
 import UpdateProduct from "./Components/UpdateProduct";
 import Product from "./Components/Product";
+import Cart from "./Components/Cart";
 
 import { BrowserRouter as Router, Switch } from "react-router-dom";
 import PublicRoute from "./Components/PublicRoute";
@@ -41,7 +42,7 @@ function App() {
             component={Product}
             path="/product/:slug"
           />
-
+          <PublicRoute restricted={false} component={Cart} path="/cart" />
           <PrivateRoute component={AdminProductView} path="/admin-product" />
           <PrivateRoute component={AdminCategoryView} path="/admin-category" />
 
