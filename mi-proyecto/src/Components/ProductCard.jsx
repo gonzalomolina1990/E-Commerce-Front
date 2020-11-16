@@ -12,11 +12,16 @@ export default function ProductCard({ product }) {
           <Link className="cardLink" to={`/product/${product.slug}`}>
             <Card.Img variant="top" src={product.image} width="100" />
             <Card.Body>
-              <Card.Text>{product.description}</Card.Text>
+              <Card.Text className="module">{product.description}</Card.Text>
             </Card.Body>
           </Link>
           <Card.Footer>
             <small className="text-muted">{product.category.name}</small>
+          </Card.Footer>
+          <Card.Footer className="bg-warning">
+            <small className="text-dark">
+              <i class="fas fa-shopping-cart text-dark"></i> AGREGAR AL CARRITO
+            </small>
           </Card.Footer>
         </Card>
       </CardGroup>
