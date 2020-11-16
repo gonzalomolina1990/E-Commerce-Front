@@ -70,7 +70,7 @@ export default function Product() {
             <div className="row">
               <div className="col-4">
                 <h1>
-                  <sup>US$</sup> {product.price}
+                  <sup>U$S</sup> {product.price}
                 </h1>
               </div>
               <div className="col-8">
