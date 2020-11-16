@@ -11,12 +11,13 @@
 }
 
 /*
- Carrito
+ Carrito Nav
  */
 .cartStyle {
   width: 1rem;
   height: 100%;
   position: relative;
+  cursor: pointer;
 }
 
 .fas {
@@ -40,6 +41,60 @@
   right: -13px;
   font-weight: 700;
   color: rgba(0, 0, 0, 0.75);
+}
+
+/*
+ Carrito 
+ */
+
+@media (max-width: 767px) {
+  .priceCart {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .priceCartResponsive {
+    font-weight: 500;
+    line-height: 1.2;
+    display: none;
+  }
+}
+
+.addingPill {
+  padding: 0.5rem;
+  box-shadow: rgb(177, 177, 177, 100);
+  box-shadow: 0 0 1rem rgba(197, 197, 197, 0.699);
+}
+
+.addingButton {
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.addingButton:hover {
+  color: rgb(177, 177, 177);
+}
+
+.cartButtons {
+  float: left;
+}
+.cartTextBox {
+  font-size: 0.8rem;
+}
+
+.priceCart {
+  font-size: 1.5rem;
+}
+
+.trashButton:hover {
+  color: rgba(128, 128, 128, 0.699);
+  cursor: pointer;
+}
+
+.totalPriceCart {
+  color: rgb(255, 94, 94);
+  font-weight: 700;
 }
 .limiter {
   width: 100%;

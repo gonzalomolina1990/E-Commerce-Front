@@ -102,7 +102,9 @@ function Navigation() {
             </Link>
           )}
         </Navbar.Collapse>
-        <NavCart />
+        <Link to={"/cart"}>
+          <NavCart />{" "}
+        </Link>
         {user && user.usertoken ? (
           <div className="mediaLogout">
             <span className="userIcon">
