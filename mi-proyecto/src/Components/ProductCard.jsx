@@ -18,11 +18,6 @@ export default function ProductCard({ product }) {
           <Card.Footer>
             <small className="text-muted">{product.category.name}</small>
           </Card.Footer>
-          <Card.Footer className="bg-warning">
-            <small className="text-dark">
-              <i class="fas fa-shopping-cart text-dark"></i> AGREGAR AL CARRITO
-            </small>
-          </Card.Footer>
         </Card>
       </CardGroup>
     </>
