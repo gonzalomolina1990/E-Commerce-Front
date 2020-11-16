@@ -32,66 +32,62 @@ export default function Cart() {
     <>
       <Navigation />
 
-      <Modal
-        aria-labelledby="contained-modal-title-vcenter"
-        centered
-        className="productModal"
-        show={show}
-        onHide={handleClose}
-      >
-        <Modal.Body>
-          <img
-            centered
-            src={product.image}
-            alt={product.name}
-            className="imageModal"
-          />
-        </Modal.Body>
-      </Modal>
-
-      <div className="container mt-5">
+      <div className="container mt-8">
+        <h2 className="text-left mt-5 mb-2">Carrito</h2>
+        <hr className="mb-5" />
         <div className="row">
-          <div className="col-md-5">
-            {" "}
-            <img
-              src={product.image}
-              className="img-fluid"
-              alt={product.name}
-              onClick={handleShow}
-            />
-          </div>
-          <div className="col-md-7">
-            <h3>{product.name}</h3>
-            <small className="text-muted">
-              {product.category && product.category.name}
-            </small>
-            <p>{product.description}</p>
-            <hr />
+          <div className="col-md-9">
             <div className="row">
-              <div className="col-4">
-                <h1>
-                  <sup>U$S</sup> {product.price}
-                </h1>
+              <div className="col-md-4">
+                <img
+                  src="https://api.carlosgutierrez.com.uy/fotos/fotos/80444/principal-lg-2x.jpg"
+                  className="img-fluid"
+                  alt={""}
+                  onClick={handleShow}
+                />
               </div>
-              <div className="col-8">
-                {" "}
-                {product.stock > 0 ? (
-                  <Alert variant="danger" className="mt-3">
-                    Últimas {product.stock} unidades!!
-                  </Alert>
-                ) : (
-                  <Alert variant="warning" className="mt-3">
-                    Actualmente no tenemos este producto en stock
-                  </Alert>
-                )}
+              <div className="col-md-6">
+                <h4 className=" text-left">Nombre del producto</h4>
+                <p className="text-left mt-3">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Itaque unde adipisci, veniam harum qui tempore quis, rerum rem
+                  blanditiis et quam.
+                </p>
+                <div className="cartButtons">
+                  <span className="badge badge-pill badge-light addingPill">
+                    <span className="mr-3 addingButton">+</span> 12
+                    <span className="ml-3 addingButton">-</span>
+                  </span>
+                  <span className="ml-4 trashButton">
+                    <i class="far fa-trash-alt"></i>
+                  </span>
+                  <span className="priceCart ml-4">
+                    <sup>U$S</sup> 10
+                  </span>
+                </div>
               </div>
-              <p className="p-4">
-                Disponible a un precio menor de otros vendedores que podrían no
-                ofrecer envío. Comprá seguro con la garantía de ElectroHack
-              </p>
+              <div className="col-2">
+                <h3 className="priceCart">
+                  <sup>U$S</sup> 10
+                </h3>
+              </div>
             </div>
-            <Button className="btn btn-warning" block>
-              <i class="fas fa-cart-plus"></i> Agregar al carrito
+          </div>
+          <div className="col-md-3">
+            <div className="card text-center">
+              <div className="card-body">
+                <h5 className="card-title">Resumen del pedido</h5>
+                <div className="d-flex justify-content-between cartTextBox">
+                  <span className="card-text ">Nombre del producto</span>{" "}
+                  <span className="card-text">U$S 10</span>
+                </div>
+              </div>
+              <div className="card-footer text-muted">
+                <span className="totalPriceCart">Total del pedido: U$S 15</span>
+              </div>
+            </div>
+            <Button className="btn btn-warning mt-2" block>
+              <i class="fas fa-cart-plus"></i> Proceder al pago
             </Button>
           </div>
         </div>
