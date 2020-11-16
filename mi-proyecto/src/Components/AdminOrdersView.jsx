@@ -48,9 +48,20 @@ const AdminOrdersView = () => {
                 orders.map((order) => {
                   return (
                     <tbody>
-                      <td>{order.id}</td>
+                      <td>{order._id}</td>
                       <td>{order.buyer.name}</td>
-                      <td>{order.id}</td>
+                      <td>
+                        <ul>
+                          {order &&
+                            order.products.map((product) => {
+                              return (
+                                <>
+                                  <li>{product.name}</li>
+                                </>
+                              );
+                            })}
+                        </ul>
+                      </td>
                       <td>{order.orderState}</td>
                       <td>{order.createdAt}</td>
                     </tbody>
