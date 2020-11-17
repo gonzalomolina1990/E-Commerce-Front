@@ -1,7 +1,9 @@
+import Product from "../../Components/Product";
+
 const cart = (state = [], action) => {
   switch (action.type) {
     case "ADD_PRODUCT":
-      if (state.length === 0) {
+      if (!state.some((item) => item.product._id === action.payload._id)) {
         return [
           ...state,
           {
@@ -11,24 +13,12 @@ const cart = (state = [], action) => {
         ];
       } else {
         return state.map((item) => {
-          if (item.product.id === action.payload.id) {
-            return {
-              ...item,
-
-              quantity: item.quantity + 1,
-            };
-          } else {
-            return [
-              ...state,
-              {
-                product: action.payload,
-                quantity: 1,
-              },
-            ];
+          if (item.product._id === action.payload._id) {
+            return { ...item, quantity: item.quantity + 1 };
           }
+          return item;
         });
       }
-
     default:
       return state;
   }
