@@ -26,6 +26,13 @@ export default function Cart() {
     getProduct();
   }, []);
 
+  const totalProduct = cart.map((item) => {
+    const totalUnit = item.product.price * item.quantity;
+    return totalUnit;
+  });
+
+  const total = totalProduct.reduce((a, b) => a + b, 0);
+
   return (
     <>
       <Navigation />
@@ -41,31 +48,34 @@ export default function Cart() {
                   <div className="row">
                     <div className="col-md-4">
                       <img
-                        src={item.image}
+                        src={item.product.image}
                         className="img-fluid"
                         alt={""}
                         onClick={handleShow}
                       />
                     </div>
                     <div className="col-md-6">
-                      <h4 className=" text-left">{item.name}</h4>
-                      <p className="text-left mt-3">{item.description}</p>
+                      <h4 className=" text-left">{item.product.name}</h4>
+                      <p className="text-left mt-3">
+                        {item.product.description}
+                      </p>
                       <div className="cartButtons">
                         <span className="badge badge-pill badge-light addingPill">
-                          <span className="mr-3 addingButton">+</span> 1
+                          <span className="mr-3 addingButton">+</span>{" "}
+                          {item.quantity}
                           <span className="ml-3 addingButton">-</span>
                         </span>
                         <span className="ml-4 trashButton">
                           <i class="far fa-trash-alt"></i>
                         </span>
                         <span className="priceCartResponsive ml-4">
-                          <sup>U$S</sup> {item.price}
+                          <sup>U$S</sup> {item.product.price * item.quantity}
                         </span>
                       </div>
                     </div>
                     <div className="col-2">
                       <h3 className="priceCart">
-                        <sup>U$S</sup> {item.price}
+                        <sup>U$S</sup> {item.product.price * item.quantity}
                       </h3>
                     </div>
                   </div>
@@ -76,13 +86,27 @@ export default function Cart() {
             <div className="card text-center">
               <div className="card-body">
                 <h5 className="card-title">Resumen del pedido</h5>
-                <div className="d-flex justify-content-between cartTextBox">
-                  <span className="card-text ">Nombre del producto</span>{" "}
-                  <span className="card-text">U$S 10</span>
-                </div>
+                {cart &&
+                  cart.map((item) => {
+                    return (
+                      <>
+                        <div className="d-flex justify-content-between cartTextBox">
+                          <span className="card-text ">
+                            {item.product.name} ({item.quantity})
+                          </span>
+                          <span className="card-text">
+                            U$S {item.product.price * item.quantity}
+                          </span>
+                        </div>
+                        <hr />
+                      </>
+                    );
+                  })}
               </div>
               <div className="card-footer text-muted">
-                <span className="totalPriceCart">Total del pedido: U$S 15</span>
+                <span className="totalPriceCart">
+                  Total del pedido: U$S {total}
+                </span>
               </div>
             </div>
             <Button className="btn btn-warning mt-2" block>

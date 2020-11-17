@@ -31,7 +31,7 @@
 }
 
 .cartNumber {
-  background-color: #f5f5f5;
+  background-color: #c90909;
   width: 1rem;
   height: 1rem;
   font-size: 12px;
@@ -40,7 +40,8 @@
   top: -6px;
   right: -13px;
   font-weight: 700;
-  color: rgba(0, 0, 0, 0.75);
+  color: white;
+  z-index: 1;
 }
 
 /*
