@@ -60,29 +60,25 @@ function Navigation() {
                   );
                 })}
             </NavDropdown>
-            <NavDropdown title="Administrador" id="collasible-nav-dropdown">
-              {user.admin && (
+            {user.admin && (
+              <NavDropdown title="Administrador" id="collasible-nav-dropdown">
                 <NavDropdown.Item as={Link} to={"/admin-product"}>
                   Productos
                 </NavDropdown.Item>
-              )}
-              {user.admin && (
+
                 <NavDropdown.Item as={Link} to={"/admin-category"}>
                   Categorías
                 </NavDropdown.Item>
-              )}
-              {user.admin && (
+
                 <NavDropdown.Item as={Link} to={"/admin-users"}>
                   Usuarios
                 </NavDropdown.Item>
-              )}
 
-              {user.admin && (
                 <NavDropdown.Item as={Link} to={"/admin-orders"}>
                   Pedidos
                 </NavDropdown.Item>
-              )}
-            </NavDropdown>
+              </NavDropdown>
+            )}
           </Nav>
           {user && user.usertoken ? (
             <div className="mediaLogoutSmall">

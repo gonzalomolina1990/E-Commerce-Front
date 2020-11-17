@@ -3,9 +3,11 @@ import axios from "axios";
 import Navigation from "./Navigation";
 import { useParams } from "react-router-dom";
 import { Button } from "react-bootstrap";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { addProduct, clearProduct, removeProduct } from "../redux/actions/cart";
 
 export default function Cart() {
+  const dispatch = useDispatch();
   const [product, setProduct] = React.useState("");
   const params = useParams();
   const [show, setShow] = useState(false);
@@ -61,12 +63,31 @@ export default function Cart() {
                       </p>
                       <div className="cartButtons">
                         <span className="badge badge-pill badge-light addingPill">
-                          <span className="mr-3 addingButton">+</span>{" "}
+                          <span
+                            className="mr-3 addingButton"
+                            onClick={() => {
+                              dispatch(addProduct(item.product));
+                            }}
+                          >
+                            +
+                          </span>{" "}
                           {item.quantity}
-                          <span className="ml-3 addingButton">-</span>
+                          <span
+                            className="ml-3 addingButton"
+                            onClick={() => {
+                              dispatch(removeProduct(item.product._id));
+                            }}
+                          >
+                            -
+                          </span>
                         </span>
                         <span className="ml-4 trashButton">
-                          <i class="far fa-trash-alt"></i>
+                          <i
+                            class="far fa-trash-alt"
+                            onClick={() =>
+                              dispatch(clearProduct(item.product._id))
+                            }
+                          ></i>
                         </span>
                         <span className="priceCartResponsive ml-4">
                           <sup>U$S</sup> {item.product.price * item.quantity}

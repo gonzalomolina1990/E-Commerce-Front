@@ -19,6 +19,18 @@ const cart = (state = [], action) => {
           return item;
         });
       }
+
+    case "REMOVE_PRODUCT":
+      return state.map((item) => {
+        if (item.product._id === action.payload && item.quantity > 1) {
+          return { ...item, quantity: item.quantity - 1 };
+        }
+        return item;
+      });
+
+    case "CLEAR_PRODUCT":
+      return state.filter((cart) => cart.product._id !== action.payload);
+
     default:
       return state;
   }
