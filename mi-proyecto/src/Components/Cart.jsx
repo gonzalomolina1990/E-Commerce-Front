@@ -44,69 +44,68 @@ export default function Cart() {
         <hr className="mb-5" />
         <div className="row">
           <div className="col-md-9">
+            {" "}
             {cart &&
               cart.map((item) => {
                 return (
-                  <div className="row">
-                    <div className="col-md-4">
-                      <img
-                        src={item.product.image}
-                        className="img-fluid"
-                        alt={""}
-                        onClick={handleShow}
-                      />
-                    </div>
-                    <div className="col-md-6">
-                      <h4 className=" text-left">{item.product.name}</h4>
-                      <p className="text-left mt-3">
-                        {item.product.description}
-                      </p>
-                      <div className="cartButtons">
-                        <span className="badge badge-pill badge-light addingPill">
-                          <span
-                            className="mr-3 addingButton"
-                            onClick={() => {
-                              dispatch(addProduct(item.product));
-                            }}
-                          >
-                            +
-                          </span>{" "}
-                          {item.quantity}
-                          <span
-                            className="ml-3 addingButton"
-                            onClick={() => {
-                              dispatch(removeProduct(item.product._id));
-                            }}
-                          >
-                            -
-                          </span>
-                        </span>
-                        <span className="ml-4 trashButton">
-                          <i
-                            class="far fa-trash-alt"
-                            onClick={() =>
-                              dispatch(clearProduct(item.product._id))
-                            }
-                          ></i>
-                        </span>
-                        <span className="priceCartResponsive ml-4">
-                          <sup>U$S</sup> {item.product.price * item.quantity}
-                        </span>
+                  <div className="mt-5">
+                    <div className="row">
+                      <div className="col-md-4">
+                        <img
+                          src={item.product.image}
+                          className="img-fluid"
+                          alt={""}
+                          onClick={handleShow}
+                        />
                       </div>
-                    </div>
-                    <div className="col-2">
-                      <h3 className="priceCart">
-                        <sup>U$S</sup> {item.product.price * item.quantity}
-                      </h3>
+                      <div className="col-md-6">
+                        <h4 className=" text-left">{item.product.name}</h4>
+                        <p className="text-left mt-3">
+                          {item.product.description}
+                        </p>
+                        <div className="cartButtons">
+                          <span className="badge badge-pill badge-light addingPill">
+                            <span
+                              className="mr-3 addingButton"
+                              onClick={() => {
+                                dispatch(addProduct(item.product));
+                              }}
+                            >
+                              +
+                            </span>{" "}
+                            {item.quantity}
+                            <span
+                              className="ml-3 addingButton"
+                              onClick={() => {
+                                dispatch(removeProduct(item.product._id));
+                              }}
+                            >
+                              -
+                            </span>
+                          </span>
+                          <span className="ml-4 trashButton">
+                            <i
+                              class="far fa-trash-alt"
+                              onClick={() =>
+                                dispatch(clearProduct(item.product._id))
+                              }
+                            ></i>
+                          </span>
+                          <span className="priceCartResponsive ml-4">
+                            <sup>U$S</sup> {item.product.price * item.quantity}
+                          </span>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 );
               })}
           </div>
+
           <div className="col-md-3">
-            <div className="card text-center">
+            <div className="card text-center mt-5">
               <div className="card-body">
-                <h5 className="card-title">Resumen del pedido</h5>
+                <h5 className="card-title mb-4">Resumen del pedido</h5>
                 {cart &&
                   cart.map((item) => {
                     return (

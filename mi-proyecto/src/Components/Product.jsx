@@ -71,10 +71,7 @@ export default function Product() {
             </small>
 
             <p>{product.description}</p>
-            <span className="badge badge-pill badge-light addingPill">
-              <span className="mr-3 addingButton">-</span> 1
-              <span className="ml-3 addingButton">+</span>
-            </span>
+
             <hr />
 
             <div className="row">
