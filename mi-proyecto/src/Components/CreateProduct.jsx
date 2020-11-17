@@ -178,7 +178,7 @@ const AdminView = () => {
               </div>
 
               <div className="form-group mt-5">
-                <label for="description">Feautered</label>
+                <label for="description">Featured</label>
 
                 <Form.Group controlId="exampleForm.SelectCustomSizeSm">
                   <Form.Control

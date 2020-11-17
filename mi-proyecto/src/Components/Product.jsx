@@ -7,11 +7,15 @@ import { useParams } from "react-router-dom";
 import Modal from "react-bootstrap/Modal";
 import { Button } from "react-bootstrap";
 import Alert from "react-bootstrap/Alert";
+import { addProduct } from "../redux/actions/cart";
+import { useSelector, useDispatch } from "react-redux";
 
 export default function Product() {
+  const dispatch = useDispatch();
   const [product, setProduct] = React.useState("");
   const params = useParams();
   const [show, setShow] = useState(false);
+  const cart = useSelector((state) => state.cart);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -99,7 +103,13 @@ export default function Product() {
                 ofrecer envío. Comprá seguro con la garantía de ElectroHack
               </p>
             </div>
-            <Button className="btn btn-warning" block>
+            <Button
+              className="btn btn-warning"
+              block
+              onClick={() => {
+                dispatch(addProduct(product));
+              }}
+            >
               <i class="fas fa-cart-plus"></i> Agregar al carrito
             </Button>
           </div>
