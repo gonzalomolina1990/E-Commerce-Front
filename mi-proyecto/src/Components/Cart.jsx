@@ -60,7 +60,7 @@ export default function Cart() {
                       </div>
                       <div className="col-md-6">
                         <h4 className=" text-left">{item.product.name}</h4>
-                        <p className="text-left mt-3">
+                        <p className="text-left mt-3 mb-5">
                           {item.product.description}
                         </p>
                         <div className="cartButtons">
