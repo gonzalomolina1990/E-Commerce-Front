@@ -18,5 +18,11 @@ const clearProduct = (product) => {
     payload: product,
   };
 };
+const clearCart = (obj) => {
+  return {
+    type: "CLEAR_CART",
+    payload: obj,
+  };
+};
 
-export { addProduct, removeProduct, clearProduct };
+export { addProduct, removeProduct, clearProduct, clearCart };

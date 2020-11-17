@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { Navbar, Nav, NavDropdown, MenuItem } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../redux/actions/user";
+import { clearCart } from "../redux/actions/cart";
 import axios from "axios";
 import { listCategories } from "../redux/actions/category";
 import NavCart from "./NavCart";
@@ -108,7 +109,9 @@ function Navigation() {
             </span>
             <button
               className="btn btn-light"
-              onClick={() => dispatch(logout({}))}
+              onClick={() => {
+                return dispatch(logout({})), dispatch(clearCart([]));
+              }}
             >
               Logout
             </button>

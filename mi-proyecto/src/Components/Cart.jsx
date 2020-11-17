@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Navigation from "./Navigation";
-import { useParams } from "react-router-dom";
+import { useParams, Link, useHistory } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
 import { addProduct, clearProduct, removeProduct } from "../redux/actions/cart";
@@ -10,8 +10,11 @@ export default function Cart() {
   const dispatch = useDispatch();
   const [product, setProduct] = React.useState("");
   const params = useParams();
+  const history = useHistory();
   const [show, setShow] = useState(false);
   const cart = useSelector((state) => state.cart);
+  const token = useSelector((state) => state.users.usertoken);
+  const user = useSelector((state) => state.users);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -34,6 +37,29 @@ export default function Cart() {
   });
 
   const total = totalProduct.reduce((a, b) => a + b, 0);
+
+  const handlePurchase = (e) => {
+    e.preventDefault();
+    axios({
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      url: "http://localhost:8000/api/v1/order/",
+      data: {
+        cart: cart,
+        totalPrice: total,
+        user: user._id,
+      },
+    })
+      .then((res) => {
+        history.push("/");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   return (
     <>
@@ -130,9 +156,23 @@ export default function Cart() {
                 </span>
               </div>
             </div>
-            <Button className="btn btn-warning mt-2" block>
-              <i class="fas fa-cart-plus"></i> Proceder al pago
-            </Button>
+            {user && user.usertoken ? (
+              <Button
+                className="btn btn-warning mt-2"
+                onClick={(e) => {
+                  handlePurchase(e);
+                }}
+                block
+              >
+                <i class="fas fa-cart-plus"></i> Proceder al pago
+              </Button>
+            ) : (
+              <Link to={"/login"}>
+                <Button className="btn btn-warning mt-2" block>
+                  <i class="fas fa-cart-plus"></i> Proceder al pago
+                </Button>
+              </Link>
+            )}
           </div>
         </div>
       </div>
