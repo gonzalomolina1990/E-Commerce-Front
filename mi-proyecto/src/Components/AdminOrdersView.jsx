@@ -18,10 +18,14 @@ const AdminOrdersView = () => {
   const dispatch = useDispatch();
   const token = useSelector((state) => state.users.usertoken);
   const orders = useSelector((state) => state.orders);
+<<<<<<< Updated upstream
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+=======
+  console.log(orders);
+>>>>>>> Stashed changes
   useEffect(() => {
     const getOrders = async () => {
       const response = await axios({
@@ -32,6 +36,7 @@ const AdminOrdersView = () => {
         },
         url: "http://localhost:8000/api/v1/orders",
       });
+      console.log(response.data);
       dispatch(listOrders(response.data));
     };
     getOrders();
