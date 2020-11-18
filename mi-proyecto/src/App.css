@@ -397,3 +397,7 @@ body {
 .fa-cart-plus {
   color: black;
 }
+
+li {
+  list-style: none;
+}

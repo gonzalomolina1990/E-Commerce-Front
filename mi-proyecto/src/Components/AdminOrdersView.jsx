@@ -53,10 +53,13 @@ const AdminOrdersView = () => {
                       <td>
                         <ul>
                           {order &&
-                            order.products.map((product) => {
+                            order.cart.map((c) => {
                               return (
                                 <>
-                                  <li>{product.name}</li>
+                                  <li>
+                                    {c.product.name} / U$S {c.product.price} /{" "}
+                                    {c.quantity} un.
+                                  </li>
                                 </>
                               );
                             })}
