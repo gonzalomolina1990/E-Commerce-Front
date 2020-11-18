@@ -5,4 +5,11 @@ const listOrders = (orders) => {
   };
 };
 
-export { listOrders };
+const updateState = (id, orderState) => {
+  return {
+    type: "UPDATE_ORDER",
+    payload: { id, orderState },
+  };
+};
+
+export { listOrders, updateState };

@@ -160,7 +160,6 @@ const AdminView = () => {
                 <Form.Group controlId="exampleForm.SelectCustomSizeSm">
                   <Form.Control
                     as="select"
-                    multiple
                     onChange={(e) => {
                       setCategory(e.target.value);
                     }}
@@ -174,19 +173,18 @@ const AdminView = () => {
               </div>
 
               <div className="form-group mt-5">
-                <label for="description">Featured</label>
+                <label for="description">Destacado</label>
 
                 <Form.Group controlId="exampleForm.SelectCustomSizeSm">
                   <Form.Control
                     as="select"
-                    multiple
                     id="inlineFormCustomSelect"
                     onChange={(e) => {
                       setFeatured(e.target.value);
                     }}
                   >
-                    <option value={true}>true</option>;
-                    <option value={false}>false</option>;
+                    <option value={true}>Sí</option>;
+                    <option value={false}>No</option>;
                   </Form.Control>
                 </Form.Group>
               </div>

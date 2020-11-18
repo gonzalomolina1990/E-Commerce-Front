@@ -5,7 +5,7 @@ import Table from "react-bootstrap/Table";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import axios from "axios";
-import { listOrders } from "../redux/actions/orders";
+import { listOrders, updateState } from "../redux/actions/orders";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 import { Button } from "react-bootstrap";
@@ -37,8 +37,11 @@ const AdminOrdersView = () => {
     getOrders();
   }, []);
 
-  const handleOrderStateChange = async (id, e) => {
+  const handleOrderState = async (e) => {
     setOrderState(e);
+  };
+  const handleOrderStateChange = async (id) => {
+    handleClose();
     const response = await axios({
       method: "PUT",
       headers: {
@@ -48,7 +51,8 @@ const AdminOrdersView = () => {
       url: `http://localhost:8000/api/v1/order/${id}`,
       data: { orderState: orderState },
     });
-    console.log(response.data);
+    dispatch(updateState(id, orderState));
+    console.log();
   };
 
   return (
@@ -72,7 +76,7 @@ const AdminOrdersView = () => {
               multiple
               id="inlineFormCustomSelect"
               onChange={(e) => {
-                handleOrderStateChange(order, e.target.value);
+                handleOrderState(e.target.value);
               }}
             >
               <option value={11}>No pago</option>;
@@ -83,7 +87,11 @@ const AdminOrdersView = () => {
           </Form.Group>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="primary" onClick={handleClose} to="#">
+          <Button
+            variant="primary"
+            onClick={() => handleOrderStateChange(order)}
+            to="#"
+          >
             Guardar Cambios
           </Button>
         </Modal.Footer>
@@ -125,7 +133,7 @@ const AdminOrdersView = () => {
                         </ul>
                       </td>
                       <td>
-                        {order.orderState}{" "}
+                        {order.orderState}
                         <Button
                           onClick={() => (handleShow(), setOrder(order._id))}
                         >

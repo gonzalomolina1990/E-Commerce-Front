@@ -37,26 +37,6 @@ const AdminView = () => {
         console.log(err);
       });
   };
-  /* 
-  React.useEffect(() => {
-    const getCategories = async () => {
-      const response = await axios({
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-        url: "http://localhost:8000/api/v1/categories/",
-      });
-      setCategoriesList(response.data);
-      console.log(response.data);
-    };
-    getCategories();
-  }, []);
-
-  const handleCategoryChange = (event) => {
-    setCategory(event.target.value);
-  }; */
 
   return (
     <>

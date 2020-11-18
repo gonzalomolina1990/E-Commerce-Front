@@ -121,6 +121,12 @@ export default function Cart() {
                           </span>
                         </div>
                       </div>
+                      <div className="col-2">
+                        {" "}
+                        <span className="priceCart ml-4">
+                          <sup>U$S</sup> {item.product.price * item.quantity}
+                        </span>
+                      </div>
                     </div>
                   </div>
                 );
