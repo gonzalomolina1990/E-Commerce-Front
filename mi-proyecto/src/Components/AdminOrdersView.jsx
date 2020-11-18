@@ -80,10 +80,10 @@ const AdminOrdersView = () => {
                 handleOrderState(e.target.value);
               }}
             >
-              <option value={11}>No pago</option>;
-              <option value={21}>Pago</option>;
-              <option value={31}>Enviado</option>;
-              <option value={41}>Entregado</option>;
+              <option value={"No pago"}>No pago</option>;
+              <option value={"Pago"}>Pago</option>;
+              <option value={"Enviado"}>Enviado</option>;
+              <option value={"Entregado"}>Entregado</option>;
             </Form.Control>
           </Form.Group>
         </Modal.Body>
