@@ -67,10 +67,6 @@ const AdminView = () => {
     getCategories();
   }, []);
 
-  const handleCategoryChange = (event) => {
-    setCategory(event.target.value);
-  };
-
   return (
     <>
       <Navigation />
