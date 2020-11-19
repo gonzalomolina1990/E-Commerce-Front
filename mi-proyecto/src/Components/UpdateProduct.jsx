@@ -33,7 +33,7 @@ const UpdateProduct = ({ id }) => {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,
         },
-        url: `http://localhost:8000/api/v1/products/${params.id}`,
+        url: `${process.env.REACT_APP_URL}/api/v1/products/${params.id}`,
       });
       console.log(response.data);
       setName(response.data.name);
@@ -55,7 +55,7 @@ const UpdateProduct = ({ id }) => {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
-      url: `http://localhost:8000/api/v1/products/${params.id}`,
+      url: `${process.env.REACT_APP_URL}/api/v1/products/${params.id}`,
       data: {
         name: name,
         description: description,

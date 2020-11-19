@@ -21,7 +21,7 @@ function Navigation() {
         headers: {
           "Content-Type": "application/json",
         },
-        url: "http://localhost:8000/api/v1/categories/",
+        url: `${process.env.REACT_APP_URL}/api/v1/categories/`,
       });
       dispatch(listCategories(response.data));
       console.log(response.data);

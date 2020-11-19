@@ -26,7 +26,7 @@ const Login = () => {
     axios({
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      url: "http://localhost:8000/api/v1/users/find",
+      url: `${process.env.REACT_APP_URL}/api/v1/users/find`,
       data: {
         password: password,
         email: email,

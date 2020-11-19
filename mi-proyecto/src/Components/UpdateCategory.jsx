@@ -27,7 +27,7 @@ const UpdateCategory = ({ slug }) => {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,
         },
-        url: `http://localhost:8000/api/v1/categories/${params.slug}`,
+        url: `${process.env.REACT_APP_URL}/api/v1/categories/${params.slug}`,
       });
       console.log(response.data);
       setName(response.data.name);
@@ -45,7 +45,7 @@ const UpdateCategory = ({ slug }) => {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
-      url: `http://localhost:8000/api/v1/categories/${categoryId}`,
+      url: `${process.env.REACT_APP_URL}/api/v1/categories/${categoryId}`,
       data: {
         name: name,
         slug: slug,

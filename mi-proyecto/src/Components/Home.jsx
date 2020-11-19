@@ -11,7 +11,7 @@ const Home = () => {
   React.useEffect(() => {
     const getProducts = async () => {
       const response = await axios.get(
-        "http://localhost:8000/api/v1/products?featured=true"
+        `${process.env.REACT_APP_URL}/api/v1/products?featured=true`
       );
       setProductsList(response.data);
       console.log(response.data);

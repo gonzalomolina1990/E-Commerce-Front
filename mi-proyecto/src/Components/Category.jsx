@@ -19,7 +19,7 @@ const Category = ({ slug }) => {
         headers: {
           "Content-Type": "application/json",
         },
-        url: `http://localhost:8000/api/v1/categories/${params.slug}`,
+        url: `${process.env.REACT_APP_URL}/api/v1/categories/${params.slug}`,
       });
       console.log(response.data);
       setCategory(response.data);

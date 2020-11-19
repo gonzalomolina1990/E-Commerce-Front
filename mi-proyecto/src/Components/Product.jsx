@@ -23,7 +23,7 @@ export default function Product() {
   React.useEffect(() => {
     const getProduct = async () => {
       const response = await axios.get(
-        `http://localhost:8000/api/v1/product/${params.slug}`
+        `${process.env.REACT_APP_URL}/api/v1/product/${params.slug}`
       );
 
       setProduct(response.data);

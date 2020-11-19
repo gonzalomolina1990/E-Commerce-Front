@@ -23,7 +23,7 @@ const AdminCategoryView = () => {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,
         },
-        url: "http://localhost:8000/api/v1/categories/",
+        url: `${process.env.REACT_APP_URL}/api/v1/categories/`,
       });
       dispatch(listCategories(response.data));
       console.log(response.data);
@@ -38,7 +38,7 @@ const AdminCategoryView = () => {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
-      url: `http://localhost:8000/api/v1/categories/${id}`,
+      url: `${process.env.REACT_APP_URL}/api/v1/categories/${id}`,
     });
     console.log(response);
     dispatch(deleteCategory(id));

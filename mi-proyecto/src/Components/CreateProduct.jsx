@@ -31,7 +31,7 @@ const AdminView = () => {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
-      url: "http://localhost:8000/api/v1/products/",
+      url: `${process.env.REACT_APP_URL}/api/v1/products/`,
       data: {
         name: name,
         description: description,
@@ -59,7 +59,7 @@ const AdminView = () => {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,
         },
-        url: "http://localhost:8000/api/v1/categories/",
+        url: `${process.env.REACT_APP_URL}/api/v1/categories/`,
       });
       setCategoriesList(response.data);
       console.log(response.data);

@@ -22,7 +22,7 @@ const Register = () => {
     axios({
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      url: "http://localhost:8000/api/v1/users/create",
+      url: `${process.env.REACT_APP_URL}/api/v1/users/create`,
       data: {
         name: name,
         lastname: lastname,

@@ -24,7 +24,7 @@ const AdminProductView = () => {
           "Content-type": "aplication/json",
           Authorization: `Bearer ${token}`,
         },
-        url: "http://localhost:8000/api/v1/users",
+        url: `${process.env.REACT_APP_URL}/api/v1/users`,
       });
       dispatch(saveUsers(response.data));
     };
@@ -38,7 +38,7 @@ const AdminProductView = () => {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
-      url: `http://localhost:8000/api/v1/users/${id}`,
+      url: `${process.env.REACT_APP_URL}/api/v1/users/${id}`,
     });
     dispatch(deleteUser(id));
     console.log(id);
@@ -51,7 +51,7 @@ const AdminProductView = () => {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
-      url: `http://localhost:8000/api/v1/users/${id}`,
+      url: `${process.env.REACT_APP_URL}/api/v1/users/${id}`,
       data: { admin: admin },
     });
     console.log(response.data);

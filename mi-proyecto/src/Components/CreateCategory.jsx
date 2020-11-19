@@ -24,7 +24,7 @@ const AdminView = () => {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
-      url: "http://localhost:8000/api/v1/categories",
+      url: `${process.env.REACT_APP_URL}/api/v1/categories`,
       data: {
         name: name,
         slug: slug,

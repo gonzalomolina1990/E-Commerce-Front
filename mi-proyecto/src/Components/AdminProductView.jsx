@@ -24,7 +24,7 @@ const AdminProductView = () => {
           "Content-type": "aplication/json",
           Authorization: `Bearer ${token}`,
         },
-        url: "http://localhost:8000/api/v1/products/",
+        url: `${process.env.REACT_APP_URL}/api/v1/products/`,
       });
       dispatch(saveProducts(response.data));
     };
@@ -38,7 +38,7 @@ const AdminProductView = () => {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
-      url: `http://localhost:8000/api/v1/products/${id}`,
+      url: `${process.env.REACT_APP_URL}/api/v1/products/${id}`,
     });
     dispatch(deleteProduct(id));
     console.log(id);

@@ -30,7 +30,7 @@ const AdminOrdersView = () => {
           "Content-type": "aplication/json",
           Authorization: `Bearer ${token}`,
         },
-        url: "http://localhost:8000/api/v1/orders",
+        url: `${process.env.REACT_APP_URL}/api/v1/orders`,
       });
       console.log(response.data);
       dispatch(listOrders(response.data));
@@ -49,7 +49,7 @@ const AdminOrdersView = () => {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
-      url: `http://localhost:8000/api/v1/order/${id}`,
+      url: `${process.env.REACT_APP_URL}/api/v1/order/${id}`,
       data: { orderState: orderState },
     });
     dispatch(updateState(id, orderState));
