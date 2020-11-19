@@ -69,9 +69,9 @@ export default function Cart() {
     <>
       <Navigation />
 
-      <div className="container mt-8">
+      <div className="container topDiv">
         <h2 className="text-left mt-5 mb-2">Carrito</h2>
-        <hr className="mb-5" />
+        <hr className="mb-3" />
         <div className="row">
           <div className="col-md-9">
             {" "}
