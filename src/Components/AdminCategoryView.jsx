@@ -43,7 +43,7 @@ const AdminCategoryView = () => {
     console.log(response);
     dispatch(deleteCategory(id));
   };
-
+  //
   return (
     <>
       <Navigation />
