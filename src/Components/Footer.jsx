@@ -23,7 +23,9 @@ export default function Footer() {
                 <li>Quiénes somos</li>
 
                 <li>
-                  <Link to={}>Agustín Rivero</Link>
+                  <Link to={"https://www.linkedin.com/in/agustinrivero/"}>
+                    Agustín Rivero
+                  </Link>
                 </li>
                 <li>
                   <Link>Gonzalo Molina</Link>
