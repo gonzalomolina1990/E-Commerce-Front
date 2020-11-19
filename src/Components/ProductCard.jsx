@@ -8,14 +8,12 @@ export default function ProductCard({ product }) {
     <>
       <CardGroup>
         <Card border="light" className="mb-4 productCard">
-          <Card.Header>{product.name} </Card.Header>
           <Link className="cardLink" to={`/product/${product.slug}`}>
             <Card.Img variant="top" src={product.image} width="100" />
-            <Card.Body>
-              <Card.Text className="module">{product.description}</Card.Text>
-            </Card.Body>
           </Link>
+          <Card.Header>{product.name} </Card.Header>
           <Card.Footer>
+            <p>U$S {product.price}</p>
             <small className="text-muted">{product.category.name}</small>
           </Card.Footer>
         </Card>
