@@ -339,27 +339,32 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   height: 30rem;
-  background-position-y: -21rem;
+  background-position-x: center;
+  background-position-y: center;
 }
 .banner2 {
   background-image: url("https://electrohack.vercel.app/img/banner2.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   height: 30rem;
-  background-position-y: -18rem;
+  background-position-x: center;
+  background-position-y: center;
 }
 .banner3 {
   background-image: url("https://electrohack.vercel.app/img/banner3.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   height: 30rem;
-  background-position-y: -30rem;
+  background-position-x: center;
+  background-position-y: center;
 }
 
 .bannerBox {
-  right: 60%;
   bottom: 29%;
   text-align: left;
+  background-color: rgba(0, 0, 0, 0.349);
+  padding: 2rem;
+  border-radius: 0.25rem;
 }
 .module {
   white-space: nowrap;
