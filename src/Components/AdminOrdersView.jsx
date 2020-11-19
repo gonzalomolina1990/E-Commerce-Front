@@ -99,10 +99,12 @@ const AdminOrdersView = () => {
       </Modal>
 
       <div className="container mt-5">
-        <div className="row">
+        <div className="row topDiv">
           <div className="col">
-            <Table striped bordered hover>
-              <thead>
+            <h3 className="mt-4">Órdenes de compra</h3>
+
+            <Table striped bordered hover className="mt-5">
+              <thead className="bg-dark text-light">
                 <tr>
                   <th>ID de Pedido</th>
                   <th>Usuario</th>

@@ -63,11 +63,11 @@ const AdminProductView = () => {
       <Navigation />
 
       <div className="container mt-5">
-        <div className="row">
+        <div className="row topDiv">
           <div className="col">
             <h3 className="mt-4">Usuarios</h3>
 
-            <Table striped bordered hover>
+            <Table striped bordered hover className="mt-4">
               <thead>
                 <tr>
                   <th>Usuarios</th>
