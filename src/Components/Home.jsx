@@ -1,6 +1,7 @@
 import React from "react";
 import "../App.css";
 import Navigation from "./Navigation";
+import Footer from "./Footer";
 import Carousel from "react-bootstrap/Carousel";
 import axios from "axios";
 import ProductCard from "./ProductCard";
@@ -65,6 +66,7 @@ const Home = () => {
             })}
         </div>
       </div>
+      <Footer />
     </>
   );
 };
