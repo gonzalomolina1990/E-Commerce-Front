@@ -21,6 +21,7 @@ import AdminUserView from "./Components/AdminUserView";
 import AdminOrdersView from "./Components/AdminOrdersView";
 
 import Category from "./Components/Category";
+import SuccessfulBought from "./Components/SuccessfulBought";
 
 function App() {
   return (
@@ -45,6 +46,11 @@ function App() {
             path="/product/:slug"
           />
           <PublicRoute restricted={false} component={Cart} path="/cart" />
+          <PublicRoute
+            restricted={false}
+            component={SuccessfulBought}
+            path="/successful-purchase"
+          />
           <PrivateRoute component={AdminProductView} path="/admin-product" />
           <PrivateRoute component={AdminCategoryView} path="/admin-category" />
 
@@ -60,10 +66,6 @@ function App() {
             path="/update-category/:slug"
           />
         </Switch>
-        {/* <PrivateRoute component={Home} path="/home" exact />
-        <PrivateRoute component={User} path="/user" exact />
-        <PrivateRoute component={Profile} path="/profile/:username" exact />
-        <PrivateRoute component={User} path="/username/:username" exact /> */}
       </div>
     </Router>
   );
