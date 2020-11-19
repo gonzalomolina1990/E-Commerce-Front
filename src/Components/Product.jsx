@@ -100,15 +100,17 @@ export default function Product() {
                 ofrecer envío. Comprá seguro con la garantía de ElectroHack
               </p>
             </div>
-            <Button
-              className="btn btn-warning"
-              block
-              onClick={() => {
-                dispatch(addProduct(product));
-              }}
-            >
-              <i class="fas fa-cart-plus"></i> Agregar al carrito
-            </Button>
+            {product.stock > 0 && (
+              <Button
+                className="btn btn-warning"
+                block
+                onClick={() => {
+                  dispatch(addProduct(product));
+                }}
+              >
+                <i class="fas fa-cart-plus"></i> Agregar al carrito
+              </Button>
+            )}
           </div>
         </div>
       </div>
