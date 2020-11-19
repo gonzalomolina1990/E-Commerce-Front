@@ -53,7 +53,7 @@ export default function Cart() {
       },
     })
       .then((res) => {
-        history.push("/");
+        history.push("/successful-purchase");
       })
       .catch((err) => {
         console.log(err);
