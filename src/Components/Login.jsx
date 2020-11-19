@@ -46,12 +46,14 @@ const Login = () => {
       <Navigation />
       <div className="container">
         <div className="row">
-          <div className="col">
+          <div className="col-md-3"></div>
+          <div className="col-md-6">
             <h3 className="mt-5">Iniciar Sesión</h3>
             <form>
               <div className="form-group mt-5">
                 <label for="email">Email</label>
                 <input
+                  className="form-control"
                   type="text"
                   id="email"
                   name="email"
@@ -63,12 +65,14 @@ const Login = () => {
               </div>
 
               <div className="form-group">
-                <label for="password">Password</label>
+                <label for="password">Contraseña</label>
                 <input
+                  className="form-control"
                   type="password"
                   onChange={(e) => {
                     setPassword(e.target.value);
                   }}
+                  placeholder="Ingrese su contraseña..."
                   id="password"
                   name="password"
                 />
@@ -89,6 +93,7 @@ const Login = () => {
               </Link>
             </div>
           </div>
+          <div className="col-md-3"></div>
         </div>
       </div>
     </>

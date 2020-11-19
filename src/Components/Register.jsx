@@ -55,110 +55,82 @@ const Register = () => {
                 data-validate="Password is required"
               >
                 <input
-                  className="input100"
+                  className="form-control"
                   type="text"
                   name="name"
                   onChange={(e) => setName(e.target.value)}
                   id="name"
                   aria-describedby="helpId"
-                  placeholder="Ingrese un nombre..."
+                  placeholder="Ingrese su nombre..."
                 />
-                <span className="focus-input100"></span>
-                <span className="">
-                  <span className=""></span>
-                </span>
               </div>
               <div className="wrap-input100 mt-3 ml-3 mr-3">
                 <input
-                  className="input100 "
+                  className="form-control"
                   type="text"
                   name="lastname"
                   onChange={(e) => setLastname(e.target.value)}
                   id="lastname"
                   aria-describedby="helpId"
-                  placeholder="Ingrese un apellido..."
+                  placeholder="Ingrese su apellido..."
                 />
-                <span className="focus-input100"></span>
-                <span className="">
-                  <span className=""></span>
-                </span>
               </div>
               <div
                 className="wrap-input100  mt-3 ml-3 mr-3"
                 data-validate="Valid email is required: ex@abc.xyz"
               >
                 <input
-                  className="input100"
+                  className="form-control"
                   type="text"
                   name="email"
                   id="email"
                   onChange={(e) => setEmail(e.target.value)}
                   aria-describedby="helpId"
-                  placeholder="Ingrese un email..."
+                  placeholder="Ingrese su email..."
                 />
-                <span className="focus-input100"></span>
-                <span className="">
-                  <span className=""></span>
-                </span>
               </div>
               <div
                 className="wrap-input100  mt-3 ml-3 mr-3"
                 data-validate="Password is required"
               >
                 <input
-                  className="input100 "
+                  className="form-control "
                   type="password"
                   name="password"
                   onChange={(e) => setPassword(e.target.value)}
                   id="password"
                   aria-describedby="helpId"
-                  placeholder="Ingrese un password..."
+                  placeholder="Ingrese su contraseña..."
                 />
-                <span className="focus-input100"></span>
-                <span className="">
-                  <span className=""></span>
-                </span>
               </div>
               <div
                 className="wrap-input100  mt-3 ml-3 mr-3"
                 data-validate="Password is required"
               >
                 <input
-                  className="input100 "
+                  className="form-control "
                   type="text"
                   name="address"
                   onChange={(e) => setAddress(e.target.value)}
                   id="address"
                   aria-describedby="helpId"
-                  placeholder="Ingrese una dirección..."
+                  placeholder="Ingrese su dirección..."
                 />
-                <span className="focus-input100"></span>
-                <span className="">
-                  <span className=""></span>
-                </span>
               </div>
               <div
                 className="wrap-input100  mt-3 ml-3 mr-3"
                 data-validate="Password is required"
               >
                 <input
-                  className="input100 "
+                  className="form-control "
                   type="number"
                   name="phone"
                   onChange={(e) => setPhone(e.target.value)}
                   id="phone"
                   aria-describedby="helpId"
-                  placeholder="Ingrese un telefono..."
+                  placeholder="Ingrese su teléfono..."
                 />
-                <span className="focus-input100  mt-3 ml-3 mr-3"></span>
-                <span className="">
-                  <span className=""></span>
-                </span>
               </div>
-              <span className=""></span>
-              <span className="">
-                <span className=""></span>
-              </span>
 
               <div className="container-login100-form-btn  mt-3 ml-3 mr-3 ">
                 <button type="submit" className="btn btn-primary">
