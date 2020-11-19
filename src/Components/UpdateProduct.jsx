@@ -80,12 +80,15 @@ const UpdateProduct = ({ id }) => {
 
       <div className="container mt-5">
         <div className="row">
-          <div className="col">
+          <div className="col-md-3"></div>
+
+          <div className="col-md-6">
             <h3 className="mt-4">Actualizar producto</h3>
             <form noValidate autoComplete="off">
               <div className="form-group mt-5">
                 <label for="name">Nombre</label>
                 <input
+                  className="form-control"
                   type="text"
                   id="name"
                   value={name}
@@ -100,6 +103,7 @@ const UpdateProduct = ({ id }) => {
               <div className="form-group mt-5">
                 <label for="description">Descripción</label>
                 <textarea
+                  className="form-control"
                   type="text"
                   id="description"
                   value={description}
@@ -114,6 +118,7 @@ const UpdateProduct = ({ id }) => {
               <div className="form-group mt-5">
                 <label for="image">Imagen</label>
                 <input
+                  className="form-control"
                   type="text"
                   id="image"
                   value={image}
@@ -128,6 +133,7 @@ const UpdateProduct = ({ id }) => {
               <div className="form-group mt-5">
                 <label for="price">Precio</label>
                 <input
+                  className="form-control"
                   type="text"
                   id="price"
                   value={price}
@@ -142,6 +148,7 @@ const UpdateProduct = ({ id }) => {
               <div className="form-group mt-5">
                 <label for="price">Stock</label>
                 <input
+                  className="form-control"
                   type="number"
                   id="stock"
                   value={stock}
@@ -156,6 +163,7 @@ const UpdateProduct = ({ id }) => {
               <div className="form-group mt-5">
                 <label for="price">Slug </label>
                 <input
+                  className="form-control"
                   type="text"
                   id="slug"
                   value={slug}
@@ -173,7 +181,6 @@ const UpdateProduct = ({ id }) => {
                 <Form.Group controlId="exampleForm.SelectCustomSizeSm">
                   <Form.Control
                     as="select"
-                    multiple
                     id="inlineFormCustomSelect"
                     onChange={(e) => {
                       setFeatured(e.target.value);
@@ -187,7 +194,7 @@ const UpdateProduct = ({ id }) => {
 
               <button
                 type="button"
-                className="mt-3"
+                className="mt-3 mb-3 btn btn-primary"
                 variant="contained"
                 color="primary"
                 onClick={(e) => {
@@ -198,6 +205,7 @@ const UpdateProduct = ({ id }) => {
               </button>
             </form>
           </div>
+          <div className="col-md-3"></div>
         </div>
       </div>
     </>

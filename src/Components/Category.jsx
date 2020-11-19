@@ -37,7 +37,7 @@ const Category = ({ slug }) => {
             category.products.map((product) => {
               return (
                 <>
-                  <div className="col-md-3">
+                  <div className="col-md-3 mt-5">
                     <ProductCard product={product}></ProductCard>
                   </div>
                 </>
