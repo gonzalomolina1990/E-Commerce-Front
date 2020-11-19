@@ -8,6 +8,7 @@ import { useHistory, Link } from "react-router-dom";
 import Form from "react-bootstrap/Form";
 import { useSelector } from "react-redux";
 import Table from "react-bootstrap/Table";
+import Footer from "./Footer";
 
 const AdminCategoryView = () => {
   const dispatch = useDispatch();
@@ -93,6 +94,7 @@ const AdminCategoryView = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

@@ -7,6 +7,7 @@ import { login } from "../redux/actions/user";
 import { useHistory } from "react-router-dom";
 import Form from "react-bootstrap/Form";
 import { useSelector } from "react-redux";
+import Footer from "./Footer";
 
 const AdminView = () => {
   const [name, setName] = useState("");
@@ -88,6 +89,7 @@ const AdminView = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

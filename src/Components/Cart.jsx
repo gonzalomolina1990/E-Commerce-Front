@@ -10,6 +10,7 @@ import {
   removeProduct,
   clearCart,
 } from "../redux/actions/cart";
+import Footer from "./Footer";
 
 export default function Cart() {
   const dispatch = useDispatch();
@@ -185,6 +186,7 @@ export default function Cart() {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 }

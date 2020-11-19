@@ -3,7 +3,7 @@ import Navigation from "./Navigation";
 import Alert from "react-bootstrap/Alert";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
-
+import Footer from "./Footer";
 export default function SuccessfulBought() {
   return (
     <>
@@ -36,6 +36,7 @@ export default function SuccessfulBought() {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 }

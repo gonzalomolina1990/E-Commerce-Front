@@ -5,6 +5,7 @@ import axios from "axios";
 import ProductCard from "./ProductCard";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import Footer from "./Footer";
 
 const Category = ({ slug }) => {
   const dispatch = useDispatch();
@@ -49,6 +50,7 @@ const Category = ({ slug }) => {
             })}
         </div>
       </div>
+      <Footer />
     </>
   );
 };

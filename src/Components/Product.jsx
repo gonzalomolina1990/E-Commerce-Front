@@ -9,6 +9,7 @@ import { Button } from "react-bootstrap";
 import Alert from "react-bootstrap/Alert";
 import { addProduct } from "../redux/actions/cart";
 import { useSelector, useDispatch } from "react-redux";
+import Footer from "./Footer";
 
 export default function Product() {
   const dispatch = useDispatch();
@@ -114,6 +115,7 @@ export default function Product() {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 }

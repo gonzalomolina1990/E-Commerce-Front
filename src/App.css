@@ -47,17 +47,22 @@ Footer
   padding-bottom: 5rem;
   width: 100%;
   height: fit-content;
-  background-color: #212529;
   color: white;
   bottom: 0px;
   padding-top: 5rem;
-  margin-top: 5rem;
+  margin-top: 4rem;
+  background: linear-gradient(
+    45deg,
+    rgb(124, 63, 144) 0%,
+    rgb(13, 49, 90) 100%
+  );
 }
 
 .footer a {
   color: #e6e6e6;
 }
 .footer li {
+  font-size: 0.8rem;
   margin-bottom: 0.8rem;
 }
 

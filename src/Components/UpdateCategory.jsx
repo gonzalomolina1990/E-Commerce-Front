@@ -7,6 +7,7 @@ import { login, updateProduct } from "../redux/actions/user";
 import { useHistory, useParams } from "react-router-dom";
 import Form from "react-bootstrap/Form";
 import { useSelector } from "react-redux";
+import Footer from "./Footer";
 
 const UpdateCategory = ({ slug }) => {
   const params = useParams();
@@ -114,6 +115,7 @@ const UpdateCategory = ({ slug }) => {
           <div className="col-md-3"></div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

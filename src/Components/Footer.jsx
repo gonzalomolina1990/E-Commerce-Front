@@ -58,6 +58,8 @@ export default function Footer() {
                 <li>usuario@electrohack.com</li>
                 <li>Ingresar como administrador:</li>
                 <li>admin@electrohack.com</li>
+                <li>Contraseñas:</li>
+                <li>root</li>
               </ul>
             </div>
             <div className="col-md-3">

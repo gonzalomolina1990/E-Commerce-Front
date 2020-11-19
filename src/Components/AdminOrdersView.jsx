@@ -9,6 +9,7 @@ import { listOrders, updateState } from "../redux/actions/orders";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 import { Button } from "react-bootstrap";
+import Footer from "./Footer";
 
 const AdminOrdersView = () => {
   const [orderState, setOrderState] = useState("");
@@ -151,6 +152,7 @@ const AdminOrdersView = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

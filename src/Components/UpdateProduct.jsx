@@ -7,6 +7,7 @@ import { useDispatch } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 import Form from "react-bootstrap/Form";
 import { useSelector } from "react-redux";
+import Footer from "./Footer";
 
 const UpdateProduct = ({ id }) => {
   const params = useParams();
@@ -208,6 +209,7 @@ const UpdateProduct = ({ id }) => {
           <div className="col-md-3"></div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };
