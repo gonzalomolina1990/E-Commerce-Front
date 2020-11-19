@@ -49,17 +49,17 @@ const AdminProductView = () => {
       <Navigation />
 
       <div className="container mt-5">
-        <div className="row">
+        <div className="row topDiv">
           <div className="col">
             <h3 className="mt-4">Productos</h3>
             <Link
               to={"/create-product"}
-              className="btn btn-success btn-lg btn-block"
+              className="btn btn-success btn-lg btn-block mt-3"
             >
               Crear producto nuevo
             </Link>
 
-            <Table striped bordered hover>
+            <Table striped bordered hover className="mt-5">
               <thead>
                 <tr>
                   <th>Producto</th>
