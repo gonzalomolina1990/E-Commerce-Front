@@ -4,7 +4,12 @@ import Navigation from "./Navigation";
 import { useParams, Link, useHistory } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
-import { addProduct, clearProduct, removeProduct } from "../redux/actions/cart";
+import {
+  addProduct,
+  clearProduct,
+  removeProduct,
+  clearCart,
+} from "../redux/actions/cart";
 
 export default function Cart() {
   const dispatch = useDispatch();
@@ -164,7 +169,7 @@ export default function Cart() {
               <Button
                 className="btn btn-warning mt-2"
                 onClick={(e) => {
-                  handlePurchase(e);
+                  return handlePurchase(e), dispatch(clearCart([]));
                 }}
                 block
               >

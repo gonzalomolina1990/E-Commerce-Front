@@ -31,6 +31,10 @@ const Category = ({ slug }) => {
     <>
       <Navigation />
 
+      <div className="categoryBanner">
+        <h1>{category.name}</h1>
+      </div>
+
       <div className="container">
         <div className="row">
           {category.products &&
