@@ -3,7 +3,12 @@ import Product from "../../Components/Product";
 const cart = (state = [], action) => {
   switch (action.type) {
     case "ADD_PRODUCT":
-      if (!state.some((item) => item.product._id === action.payload._id)) {
+      if (
+        !state.some(
+          (item) =>
+            item.product._id === action.payload._id && item.product.stock > 0
+        )
+      ) {
         return [
           ...state,
           {
@@ -13,7 +18,10 @@ const cart = (state = [], action) => {
         ];
       } else {
         return state.map((item) => {
-          if (item.product._id === action.payload._id) {
+          if (
+            item.product._id === action.payload._id &&
+            item.product.stock > item.quantity
+          ) {
             return { ...item, quantity: item.quantity + 1 };
           }
           return item;

@@ -41,7 +41,7 @@ function Navigation() {
         <Navbar.Brand as={Link} to={"/"}>
           ElectroHack
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
             <NavDropdown
@@ -80,46 +80,39 @@ function Navigation() {
               </NavDropdown>
             )}
           </Nav>
+
           {user && user.usertoken ? (
-            <div className="mediaLogoutSmall">
-              <span className="userIcon">
-                <i class="fas fa-user-circle"></i> {user.name} {user.lastname}
-              </span>
-              <button
-                className="btn btn-light"
-                onClick={() => dispatch(logout({}))}
-              >
-                Logout
-              </button>
+            <div className="d-flex ">
+              <Nav>
+                <NavDropdown
+                  title={
+                    <span>
+                      <i className="fas fa-user-circle mr-1"></i> {user.name}{" "}
+                      {user.lastname}
+                    </span>
+                  }
+                  id="collasible-nav-dropdown"
+                >
+                  <NavDropdown.Item
+                    onClick={() => {
+                      return dispatch(logout({})), dispatch(clearCart([]));
+                    }}
+                  >
+                    Logout
+                  </NavDropdown.Item>
+                </NavDropdown>
+              </Nav>{" "}
             </div>
           ) : (
             <Link to={"/login"}>
-              <button className="btn btn-light mediaLogoutSmall">Login</button>
+              <button className="btn btn-light mediaLogout ml-5">Login</button>
             </Link>
           )}
         </Navbar.Collapse>
-        <Link to={"/cart"}>
+        <Link to={"/cart"} className="ml-2">
           <NavCart />{" "}
         </Link>
-        {user && user.usertoken ? (
-          <div className="mediaLogout">
-            <span className="userIcon">
-              <i class="fas fa-user-circle"></i> {user.name} {user.lastname}
-            </span>
-            <button
-              className="btn btn-light"
-              onClick={() => {
-                return dispatch(logout({})), dispatch(clearCart([]));
-              }}
-            >
-              Logout
-            </button>
-          </div>
-        ) : (
-          <Link to={"/login"}>
-            <button className="btn btn-light mediaLogout ml-5">Login</button>
-          </Link>
-        )}
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       </div>
     </Navbar>
   );

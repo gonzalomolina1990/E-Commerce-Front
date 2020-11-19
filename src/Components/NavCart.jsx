@@ -15,9 +15,11 @@ const NavCart = () => {
   return (
     <>
       <div className="cartStyle">
-        <div className="cartNumber">
-          <span>{cart && total}</span>
-        </div>
+        {cart.length !== 0 && (
+          <div className="cartNumber">
+            <span>{cart && total}</span>
+          </div>
+        )}
         <i className="fas fa-shopping-cart"></i>
       </div>
     </>
