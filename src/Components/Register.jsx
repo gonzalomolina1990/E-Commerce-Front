@@ -58,6 +58,7 @@ const Register = () => {
                   className="form-control"
                   type="text"
                   name="name"
+                  required
                   onChange={(e) => setName(e.target.value)}
                   id="name"
                   aria-describedby="helpId"
@@ -66,6 +67,7 @@ const Register = () => {
               </div>
               <div className="wrap-input100 mt-3 ml-3 mr-3">
                 <input
+                  required
                   className="form-control"
                   type="text"
                   name="lastname"
@@ -80,6 +82,7 @@ const Register = () => {
                 data-validate="Valid email is required: ex@abc.xyz"
               >
                 <input
+                  required
                   className="form-control"
                   type="text"
                   name="email"
@@ -94,6 +97,7 @@ const Register = () => {
                 data-validate="Password is required"
               >
                 <input
+                  required
                   className="form-control "
                   type="password"
                   name="password"
@@ -108,6 +112,7 @@ const Register = () => {
                 data-validate="Password is required"
               >
                 <input
+                  required
                   className="form-control "
                   type="text"
                   name="address"
@@ -122,6 +127,7 @@ const Register = () => {
                 data-validate="Password is required"
               >
                 <input
+                  required
                   className="form-control "
                   type="number"
                   name="phone"
