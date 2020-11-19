@@ -81,7 +81,7 @@ function Navigation() {
               </NavDropdown>
             )}
           </Nav>
-          {user && user.usertoken ? (
+          {/*  {user && user.usertoken ? (
             <div className="mediaLogoutSmall">
               <span className="userIcon">
                 <i class="fas fa-user-circle"></i> {user.name} {user.lastname}
@@ -97,24 +97,29 @@ function Navigation() {
             <Link to={"/login"}>
               <button className="btn btn-light mediaLogoutSmall">Login</button>
             </Link>
-          )}
+          )} */}
         </Navbar.Collapse>
-        <Link to={"/cart"}>
+
+        <Link to={"/cart"} className="mr-3">
           <NavCart />{" "}
         </Link>
         {user && user.usertoken ? (
-          <div className="mediaLogout">
-            <span className="userIcon">
-              <i class="fas fa-user-circle"></i> {user.name} {user.lastname}
-            </span>
-            <button
-              className="btn btn-light"
-              onClick={() => {
-                return dispatch(logout({})), dispatch(clearCart([]));
-              }}
-            >
-              Logout
-            </button>
+          <div className="d-flex">
+            <Nav>
+              <i className="fas fa-user-circle d-flex align-self-center mr-1"></i>
+              <NavDropdown
+                title={`${user.name} ${user.lastname}`}
+                id="collasible-nav-dropdown"
+              >
+                <NavDropdown.Item
+                  onClick={() => {
+                    return dispatch(logout({})), dispatch(clearCart([]));
+                  }}
+                >
+                  Logout
+                </NavDropdown.Item>
+              </NavDropdown>
+            </Nav>{" "}
           </div>
         ) : (
           <Link to={"/login"}>

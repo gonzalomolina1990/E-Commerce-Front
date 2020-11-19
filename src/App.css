@@ -1,9 +1,3 @@
-@media (max-width: 505px) {
-  .mediaLogout {
-    display: none;
-  }
-}
-
 @media (min-width: 506px) {
   .mediaLogoutSmall {
     display: none;
