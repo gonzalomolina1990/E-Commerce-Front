@@ -36,7 +36,6 @@ function Navigation() {
       className="navbarColor"
       fixed="top"
       variant="dark"
-      sticky="top"
     >
       <div className="container">
         <Navbar.Brand as={Link} to={"/"}>
