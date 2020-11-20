@@ -512,6 +512,7 @@ li {
   background-color: #41c8e5;
   transition: 0.25s ease-in-out;
   border-style: none;
+  transform: translateY(-0.1rem);
 }
 
 .btn-success:hover {
