@@ -104,8 +104,8 @@ function Navigation() {
               </Nav>{" "}
             </div>
           ) : (
-            <Link to={"/login"}>
-              <button className="btn btn-light mediaLogout ml-5">Login</button>
+            <Link to={"/login"} className="loginLink">
+              Login
             </Link>
           )}
         </Navbar.Collapse>

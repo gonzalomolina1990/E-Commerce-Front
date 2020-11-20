@@ -9,8 +9,7 @@ export default function Footer() {
             <div className="col-md-3">
               <ul className="mt-5">
                 <h4>Casa central</h4>
-
-                <li>Hack academy pegadito a la estación.</li>
+                <li>Hack Academy pegadito a la estación.</li>
                 <li>Lun. a Vie. 09:00 - 18:00hs.</li>
                 <li>Sab. no molestar.</li>
                 <li>Estacionamiento por la paralela que hay lugar.</li>
@@ -58,8 +57,7 @@ export default function Footer() {
                 <li>usuario@electrohack.com</li>
                 <li>Ingresar como administrador:</li>
                 <li>admin@electrohack.com</li>
-                <li>Contraseñas:</li>
-                <li>root</li>
+                <li>Contraseñas: root</li>
               </ul>
             </div>
             <div className="col-md-3">
@@ -67,7 +65,7 @@ export default function Footer() {
                 <h4>
                   Charly Gut <small>©</small>
                 </h4>
-                <li>Todos los derechos reservados</li>
+                <li>Todos los derechos reservados.</li>
               </ul>
             </div>
           </div>
