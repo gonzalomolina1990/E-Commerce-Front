@@ -42,7 +42,6 @@ const AdminProductView = () => {
       url: `${process.env.REACT_APP_URL}/api/v1/products/${id}`,
     });
     dispatch(deleteProduct(id));
-    console.log(id);
   };
 
   return (

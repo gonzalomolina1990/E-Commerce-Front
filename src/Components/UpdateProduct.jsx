@@ -12,8 +12,6 @@ import Footer from "./Footer";
 const UpdateProduct = ({ id }) => {
   const params = useParams();
 
-  console.log(params);
-
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [image, setImage] = useState("");
@@ -36,7 +34,7 @@ const UpdateProduct = ({ id }) => {
         },
         url: `${process.env.REACT_APP_URL}/api/v1/products/${params.id}`,
       });
-      console.log(response.data);
+
       setName(response.data.name);
       setDescription(response.data.description);
       setImage(response.data.image);

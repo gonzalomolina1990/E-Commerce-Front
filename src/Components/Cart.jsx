@@ -32,7 +32,6 @@ export default function Cart() {
       );
 
       setProduct(response.data);
-      console.log(response.data);
     };
     getProduct();
   }, []);

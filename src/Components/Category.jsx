@@ -22,7 +22,7 @@ const Category = ({ slug }) => {
         },
         url: `${process.env.REACT_APP_URL}/api/v1/categories/${params.slug}`,
       });
-      console.log(response.data);
+
       setCategory(response.data);
     };
     getCategory();
