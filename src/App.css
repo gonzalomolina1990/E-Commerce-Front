@@ -4,6 +4,9 @@
   }
 }
 
+.priceStyles {
+  font-size: 2.2rem;
+}
 /* Login Button */
 .loginLink {
   color: rgba(255, 255, 255, 0.5);

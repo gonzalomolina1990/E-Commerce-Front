@@ -74,16 +74,14 @@ export default function Product() {
 
             <hr />
 
-            <div className="row">
+            <div className="row align-items-center">
               <div className="col-4">
-                <h1>
+                <h2 className="priceStyles">
                   <sup>U$S</sup> {product.price}
-                </h1>
+                </h2>
               </div>
 
-              <div></div>
               <div className="col-8">
-                {" "}
                 {product.stock > 0 ? (
                   <Alert variant="danger" className="mt-3">
                     Últimas {product.stock} unidades!!
@@ -96,8 +94,8 @@ export default function Product() {
               </div>
 
               <p className="p-4">
-                Disponible a un precio menor de otros vendedores que podrían no
-                ofrecer envío. Comprá seguro con la garantía de ElectroHack
+                Comprá seguro con la garantía de ElectroHack. Recibe el producto
+                que esperabas o te devolvemos tu dinero.
               </p>
             </div>
             {product.stock > 0 && (
