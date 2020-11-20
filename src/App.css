@@ -470,3 +470,51 @@ li {
 .topDiv {
   margin-top: 5rem;
 }
+
+.btn-primary {
+  background-color: #543884;
+  transition: 0.25s ease-in-out;
+  border-style: none;
+}
+
+.btn-primary:hover {
+  background-color: #9a77cf;
+  box-shadow: 0 0 0.5rem rgba(128, 128, 128, 0.699);
+  transform: translateY(-0.1rem);
+}
+
+.btn-warning {
+  background-color: #ffa45e;
+  transition: 0.25s ease-in-out;
+  border-style: none;
+}
+
+.btn-warning:hover {
+  background-color: #fac196;
+  box-shadow: 0 0 0.5rem rgba(128, 128, 128, 0.699);
+  transform: translateY(-0.1rem);
+}
+
+.btn-danger {
+  background-color: #a13670;
+  transition: 0.25s ease-in-out;
+  border-style: none;
+}
+
+.btn-danger:hover {
+  background-color: #ec4176;
+  box-shadow: 0 0 0.5rem rgba(128, 128, 128, 0.699);
+  transform: translateY(-0.1rem);
+}
+
+.btn-success {
+  background-color: #41c8e5;
+  transition: 0.25s ease-in-out;
+  border-style: none;
+}
+
+.btn-success:hover {
+  background-color: #14f2e0;
+  box-shadow: 0 0 0.5rem rgba(128, 128, 128, 0.699);
+  transform: translateY(-0.1rem);
+}
