@@ -32,7 +32,7 @@ const Category = ({ slug }) => {
     <>
       <Navigation />
 
-      <div className="categoryBanner">
+      <div className="categoriesBanner">
         <h1>{category.name}</h1>
       </div>
 
