@@ -22,6 +22,7 @@ import AdminOrdersView from "./Components/AdminOrdersView";
 
 import Category from "./Components/Category";
 import SuccessfulBought from "./Components/SuccessfulBought";
+import AboutUs from "./Components/AboutUs";
 
 function App() {
   return (
@@ -50,6 +51,11 @@ function App() {
             restricted={false}
             component={SuccessfulBought}
             path="/successful-purchase"
+          />
+          <PublicRoute
+            restricted={false}
+            component={AboutUs}
+            path="/about-us"
           />
           <PrivateRoute component={AdminProductView} path="/admin-product" />
           <PrivateRoute component={AdminCategoryView} path="/admin-category" />
