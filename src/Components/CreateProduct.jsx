@@ -184,8 +184,8 @@ const AdminView = () => {
                       setFeatured(e.target.value);
                     }}
                   >
-                    <option value={true}>Sí</option>;
-                    <option value={false}>No</option>;
+                    <option value="true">Sí</option>;
+                    <option value="false">No</option>;
                   </Form.Control>
                 </Form.Group>
               </div>
