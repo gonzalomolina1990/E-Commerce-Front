@@ -485,6 +485,7 @@ li {
   background-color: #9a77cf;
   box-shadow: 0 0 0.5rem rgba(128, 128, 128, 0.699);
   transform: translateY(-0.1rem);
+  border-style: none;
 }
 
 .btn-warning {
@@ -497,6 +498,7 @@ li {
   background-color: #f2ad73;
   box-shadow: 0 0 0.5rem rgba(128, 128, 128, 0.699);
   transform: translateY(-0.1rem);
+  border-style: none;
 }
 
 .btn-danger {
@@ -509,17 +511,29 @@ li {
   background-color: #ec4176;
   box-shadow: 0 0 0.5rem rgba(128, 128, 128, 0.699);
   transform: translateY(-0.1rem);
+  border-style: none;
 }
 
 .btn-success {
   background-color: #41c8e5;
   transition: 0.25s ease-in-out;
   border-style: none;
-  transform: translateY(-0.1rem);
 }
 
 .btn-success:hover {
   background-color: #14f2e0;
   box-shadow: 0 0 0.5rem rgba(128, 128, 128, 0.699);
   transform: translateY(-0.1rem);
+  border-style: none;
+}
+
+.btn-info {
+  transition: 0.25s ease-in-out;
+  border-style: none;
+}
+
+.btn-info:hover {
+  box-shadow: 0 0 0.5rem rgba(128, 128, 128, 0.699);
+  transform: translateY(-0.1rem);
+  border-style: none;
 }
