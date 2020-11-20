@@ -24,28 +24,34 @@ export default function Footer() {
                 </li>
 
                 <li>
-                  <a
-                    href="https://www.linkedin.com/in/agustinrivero/"
+                  <Link
+                    to={{
+                      pathname: "https://www.linkedin.com/in/agustinrivero",
+                    }}
                     target="_blank"
                   >
-                    Agustín Rivero
-                  </a>
+                    Agustin Rivero
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="https://www.linkedin.com/in/gonzalomolina1990/"
+                  <Link
+                    to={{
+                      pathname: "https://www.linkedin.com/in/gonzalomolina1990",
+                    }}
                     target="_blank"
                   >
                     Gonzalo Molina
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="https://www.linkedin.com/in/soledadsienra/"
+                  <Link
+                    to={{
+                      pathname: "https://www.linkedin.com/in/soledadsienra",
+                    }}
                     target="_blank"
                   >
                     Soledad Sienra
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
