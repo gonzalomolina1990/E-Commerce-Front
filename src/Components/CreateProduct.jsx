@@ -162,6 +162,7 @@ const AdminView = () => {
               <div className="form-group mt-5">
                 <label for="category">Categoría</label>
                 <select
+                  required
                   name="category"
                   class="form-control"
                   id="exampleFormControlSelect1"
@@ -169,25 +170,33 @@ const AdminView = () => {
                     setCategory(e.target.value);
                   }}
                 >
+                  <option disabled selected value>
+                    Seleccione categoria
+                  </option>
                   {categoriesList &&
                     categoriesList.map((category) => {
                       return <option>{category.name}</option>;
-                    })}{" "}
+                    })}
                 </select>
               </div>
               <div class="form-group mt-5">
                 <label for="description">Destacado</label>
 
                 <select
+                  required
                   name="featured"
                   class="form-control"
                   id="exampleFormControlSelect1"
                   onChange={(e) => {
+                    console.log(e.target.value);
                     setFeatured(e.target.value);
                   }}
                 >
-                  <option value={true}>Sí</option>;
-                  <option value={false}>No</option>;
+                  <option disabled selected value>
+                    Producto destacado?
+                  </option>
+                  <option value={true}>Sí</option>
+                  <option value={false}>No</option>
                 </select>
               </div>
 

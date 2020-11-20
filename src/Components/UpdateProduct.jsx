@@ -185,8 +185,8 @@ const UpdateProduct = ({ id }) => {
                       setFeatured(e.target.value);
                     }}
                   >
-                    <option value={true}>true</option>;
-                    <option value={false}>false</option>;
+                    <option value={true}>true</option>
+                    <option value={false}>false</option>
                   </Form.Control>
                 </Form.Group>
               </div>
