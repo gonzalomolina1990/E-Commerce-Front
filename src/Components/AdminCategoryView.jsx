@@ -51,7 +51,7 @@ const AdminCategoryView = () => {
       <div className="container mt-5">
         <div className=" topDiv">
           <h3 className="mt-4">Categorías</h3>
-          <div style={{ overflow: "scroll" }}>
+          <div className="tableStyle">
             <Link
               to={"/create-category"}
               className="btn btn-primary btn-lg btn-block mt-4"
@@ -73,12 +73,12 @@ const AdminCategoryView = () => {
                       <td>{category.name}</td>
                       <td>
                         <Link to={`/update-category/${category.slug}`}>
-                          <button className="btn btn-info btn-sm mr-2">
+                          <button className="btn btn-info btn-sm mr-2 ">
                             Modificar
                           </button>
                         </Link>
                         <button
-                          className="btn btn-danger btn-sm"
+                          className="btn btn-danger btn-sm "
                           onClick={() => {
                             handleDeleteCategoryEvent(category._id);
                           }}
