@@ -29,7 +29,9 @@
   background-repeat: no-repeat;
   border-radius: 0px 5px 5px 0px;
 }
-
+.tableStyle {
+  overflow-y: auto;
+}
 .aboutUsLinks {
   color: #543884;
   font-weight: 700;
@@ -80,6 +82,8 @@ Footer
 .footer {
   padding-bottom: 5rem;
   width: 100%;
+  height: 300px;
+  margin-top: -300px;
   height: fit-content;
   color: white;
   bottom: 0px;

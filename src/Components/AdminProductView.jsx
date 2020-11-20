@@ -49,9 +49,9 @@ const AdminProductView = () => {
       <Navigation />
 
       <div className="container mt-5">
-        <div className="row topDiv">
-          <div className="col">
-            <h3 className="mt-4">Productos</h3>
+        <div className=" topDiv">
+          <h3 className="mt-4">Productos</h3>
+          <div className="tableStyle">
             <Link
               to={"/create-product"}
               className="btn btn-success btn-lg btn-block mt-3"
