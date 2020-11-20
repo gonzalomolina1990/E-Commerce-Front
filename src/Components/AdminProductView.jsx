@@ -76,7 +76,7 @@ const AdminProductView = () => {
                       <td>{product.category.name}</td>
                       <td>
                         <Link to={`/update-product/${product._id}`}>
-                          <button className="btn btn-warning btn-sm">
+                          <button className="btn btn-info btn-sm">
                             Modificar
                           </button>{" "}
                         </Link>
