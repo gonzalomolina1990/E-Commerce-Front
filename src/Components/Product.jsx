@@ -102,13 +102,14 @@ export default function Product() {
             </div>
             {product.stock > 0 && (
               <Button
-                className="btn btn-warning"
+                className="btn btn-primary"
                 block
                 onClick={() => {
                   dispatch(addProduct(product));
                 }}
               >
-                <i class="fas fa-cart-plus"></i> Agregar al carrito
+                <i class="fas fa-cart-plus mr-3" style={{ color: "white" }}></i>{" "}
+                Agregar al carrito
               </Button>
             )}
           </div>

@@ -32,7 +32,7 @@ export default function SuccessfulBought() {
                   ¡Descubre nuestros productos destacados!
                 </Card.Title>
                 <Card.Text>¡Envío gratis a todo el país! </Card.Text>
-                <Button variant="success" as={Link} to={"/admin-product"}>
+                <Button variant="success" as={Link} to={"/"}>
                   Continúa comprando
                 </Button>
               </Card.Body>

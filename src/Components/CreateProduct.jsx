@@ -3,10 +3,7 @@ import axios from "axios";
 import "../App.css";
 import Navigation from "./Navigation";
 import { useDispatch } from "react-redux";
-import { login } from "../redux/actions/user";
 import { useHistory } from "react-router-dom";
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
 import { useSelector } from "react-redux";
 import Footer from "./Footer";
 
@@ -17,7 +14,7 @@ const AdminView = () => {
   const [price, setPrice] = useState("");
   const [stock, setStock] = useState("");
   const [slug, setSlug] = useState("");
-  const [featured, setFeatured] = useState(null);
+  const [featured, setFeatured] = useState("");
   const [category, setCategory] = useState("");
   const [categoriesList, setCategoriesList] = useState(null);
 
@@ -163,38 +160,35 @@ const AdminView = () => {
               </div>
 
               <div className="form-group mt-5">
-                <label for="description">Categoría</label>
-
-                <Form.Group controlId="exampleForm.SelectCustomSizeSm">
-                  <Form.Control
-                    as="select"
-                    onChange={(e) => {
-                      setCategory(e.target.value);
-                    }}
-                  >
-                    {categoriesList &&
-                      categoriesList.map((category) => {
-                        return <option>{category.name}</option>;
-                      })}
-                  </Form.Control>
-                </Form.Group>
+                <label for="category">Categoría</label>
+                <select
+                  name="category"
+                  class="form-control"
+                  id="exampleFormControlSelect1"
+                  onChange={(e) => {
+                    setCategory(e.target.value);
+                  }}
+                >
+                  {categoriesList &&
+                    categoriesList.map((category) => {
+                      return <option>{category.name}</option>;
+                    })}{" "}
+                </select>
               </div>
-
-              <div className="form-group mt-5">
+              <div class="form-group mt-5">
                 <label for="description">Destacado</label>
 
-                <Form.Group controlId="exampleForm.SelectCustomSizeSm">
-                  <Form.Control
-                    as="select"
-                    id="inlineFormCustomSelect"
-                    onChange={(e) => {
-                      setFeatured(e.target.value);
-                    }}
-                  >
-                    <option value={true}>Sí</option>;
-                    <option value={false}>No</option>;
-                  </Form.Control>
-                </Form.Group>
+                <select
+                  name="featured"
+                  class="form-control"
+                  id="exampleFormControlSelect1"
+                  onChange={(e) => {
+                    setFeatured(e.target.value);
+                  }}
+                >
+                  <option value={true}>Sí</option>;
+                  <option value={false}>No</option>;
+                </select>
               </div>
 
               <button

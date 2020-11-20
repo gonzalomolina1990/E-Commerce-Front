@@ -49,12 +49,12 @@ const AdminCategoryView = () => {
       <Navigation />
 
       <div className="container mt-5">
-        <div className="row topDiv">
-          <div className="col">
-            <h3 className="mt-4">Categorías</h3>
+        <div className=" topDiv">
+          <h3 className="mt-4">Categorías</h3>
+          <div style={{ overflow: "scroll" }}>
             <Link
               to={"/create-category"}
-              className="btn btn-success btn-lg btn-block mt-4"
+              className="btn btn-primary btn-lg btn-block mt-4"
             >
               Crear categoría nueva
             </Link>
@@ -73,7 +73,7 @@ const AdminCategoryView = () => {
                       <td>{category.name}</td>
                       <td>
                         <Link to={`/update-category/${category.slug}`}>
-                          <button className="btn btn-warning btn-sm">
+                          <button className="btn btn-info btn-sm mr-2">
                             Modificar
                           </button>
                         </Link>

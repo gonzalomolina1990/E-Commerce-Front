@@ -61,13 +61,11 @@ const AdminProductView = () => {
   return (
     <>
       <Navigation />
-
       <div className="container mt-5">
-        <div className="row topDiv">
-          <div className="col">
-            <h3 className="mt-4">Usuarios</h3>
-
-            <Table striped bordered hover className="mt-4">
+        <div className="topDiv">
+          <h3 className="mt-4">Usuarios</h3>
+          <div style={{ overflow: "scroll" }}>
+            <Table striped bordered hover className="mt-4 text-left">
               <thead>
                 <tr>
                   <th>Usuarios</th>
@@ -147,7 +145,7 @@ const AdminProductView = () => {
                           )}
 
                           <button
-                            className="btn btn-success btn-sm"
+                            className="btn btn-primary btn-sm"
                             type="button"
                             onClick={() => handleUpdateUser(user._id)}
                           >
