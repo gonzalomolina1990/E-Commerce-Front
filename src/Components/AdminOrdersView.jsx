@@ -99,10 +99,9 @@ const AdminOrdersView = () => {
       </Modal>
 
       <div className="container mt-5">
-        <div className="row topDiv">
-          <div className="col">
-            <h3 className="mt-4">Órdenes de compra</h3>
-
+        <div className=" topDiv">
+          <h3 className="mt-4">Órdenes de compra</h3>
+          <div style={{ overflow: "scroll" }}>
             <Table striped bordered hover className="mt-5">
               <thead className="bg-dark text-light">
                 <tr>
