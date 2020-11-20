@@ -43,10 +43,7 @@ function Navigation() {
 
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
-            <NavDropdown
-              title="Buscar por categorías"
-              id="collasible-nav-dropdown"
-            >
+            <NavDropdown title="Categorías" id="collasible-nav-dropdown">
               {categories &&
                 categories.map((category) => {
                   return (
@@ -78,6 +75,9 @@ function Navigation() {
                 </NavDropdown.Item>
               </NavDropdown>
             )}
+            <Nav.Link as={Link} to={"/about-us"}>
+              Sobre este proyecto
+            </Nav.Link>
           </Nav>
 
           {user && user.usertoken ? (

@@ -563,6 +563,5 @@ li {
   border-style: none;
 }
 .productCardImg {
-  height: 15vw;
   object-fit: cover;
 }
