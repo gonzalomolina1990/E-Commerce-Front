@@ -101,7 +101,7 @@ const AdminOrdersView = () => {
       <div className="container mt-5">
         <div className=" topDiv">
           <h3 className="mt-4">Órdenes de compra</h3>
-          <div style={{ overflow: "scroll" }}>
+          <div className="tableStyle">
             <Table striped bordered hover className="mt-5">
               <thead className="bg-dark text-light">
                 <tr>
@@ -137,6 +137,7 @@ const AdminOrdersView = () => {
                       <td>
                         {order.orderState}
                         <Button
+                          className="mt-2 ml-1"
                           onClick={() => (handleShow(), setOrder(order._id))}
                         >
                           Actualizar

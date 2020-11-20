@@ -29,7 +29,9 @@
   background-repeat: no-repeat;
   border-radius: 0px 5px 5px 0px;
 }
-
+.tableStyle {
+  overflow-y: auto;
+}
 .aboutUsLinks {
   color: #543884;
   font-weight: 700;

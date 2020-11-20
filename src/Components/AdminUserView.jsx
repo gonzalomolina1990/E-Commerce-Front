@@ -64,7 +64,7 @@ const AdminProductView = () => {
       <div className="container mt-5">
         <div className="topDiv">
           <h3 className="mt-4">Usuarios</h3>
-          <div style={{ overflow: "scroll" }}>
+          <div className="tableStyle">
             <Table striped bordered hover className="mt-4 text-left">
               <thead>
                 <tr>
