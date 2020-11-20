@@ -44,12 +44,12 @@ const AdminView = () => {
       <Navigation />
 
       <div className="container">
-        <div className="row">
-          <div className="col">
+        <div className="row mt-5">
+          <div className="col-md-3"></div>
+          <div className="col-md-6">
             <h3 className="mt-4">Crear nueva categoria</h3>
             <form noValidate autoComplete="off">
               <div className="form-group mt-5">
-                <label for="name">Name</label>
                 <input
                   className="form-control"
                   type="text"
@@ -63,7 +63,6 @@ const AdminView = () => {
               </div>
 
               <div className="form-group mt-5">
-                <label for="image">Slug</label>
                 <input
                   className="form-control"
                   type="text"
@@ -78,7 +77,7 @@ const AdminView = () => {
 
               <button
                 type="button"
-                className="mt-3 form-control"
+                className="mt-3 form-control bg-primary text-light"
                 variant="contained"
                 color="primary"
                 onClick={(e) => {
@@ -89,6 +88,7 @@ const AdminView = () => {
               </button>
             </form>
           </div>
+          <div className="col-md-3"></div>
         </div>
       </div>
       <Footer />

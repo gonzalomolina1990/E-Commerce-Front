@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux";
 import { login } from "../redux/actions/user";
 import { useHistory } from "react-router-dom";
 import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
 import { useSelector } from "react-redux";
 import Footer from "./Footer";
 
@@ -72,13 +73,15 @@ const AdminView = () => {
       <Navigation />
 
       <div className="container">
-        <div className="row">
-          <div className="col">
+        <div className="row mt-5">
+          <div className="col-md-3"></div>
+          <div className="col-md-6">
             <h3 className="mt-4">Crear nuevo producto</h3>
             <form noValidate autoComplete="off">
               <div className="form-group mt-5">
                 <label for="name">Name</label>
                 <input
+                  className="form-control"
                   type="text"
                   id="name"
                   name="name"
@@ -92,6 +95,7 @@ const AdminView = () => {
               <div className="form-group mt-5">
                 <label for="description">Descripción</label>
                 <textarea
+                  className="form-control"
                   type="text"
                   id="description"
                   name="description"
@@ -105,6 +109,7 @@ const AdminView = () => {
               <div className="form-group mt-5">
                 <label for="image">Imagen</label>
                 <input
+                  className="form-control"
                   type="text"
                   id="image"
                   name="image"
@@ -118,7 +123,8 @@ const AdminView = () => {
               <div className="form-group mt-5">
                 <label for="price">Precio</label>
                 <input
-                  type="text"
+                  className="form-control"
+                  type="number"
                   id="price"
                   name="price"
                   placeholder="Precio"
@@ -131,6 +137,7 @@ const AdminView = () => {
               <div className="form-group mt-5">
                 <label for="price">Stock</label>
                 <input
+                  className="form-control"
                   type="number"
                   id="stock"
                   name="stock"
@@ -144,6 +151,7 @@ const AdminView = () => {
               <div className="form-group mt-5">
                 <label for="price">Slug</label>
                 <input
+                  className="form-control"
                   type="text"
                   id="slug"
                   name="slug"
@@ -191,9 +199,7 @@ const AdminView = () => {
 
               <button
                 type="button"
-                className="mt-3"
-                variant="contained"
-                color="primary"
+                className="mt-5 form-control bg-primary text-light"
                 onClick={(e) => {
                   handleCreateProduct(e);
                 }}
@@ -202,6 +208,7 @@ const AdminView = () => {
               </button>
             </form>
           </div>
+          <div className="col-md-3"></div>
         </div>
       </div>
       <Footer />
