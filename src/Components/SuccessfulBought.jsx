@@ -3,13 +3,15 @@ import Navigation from "./Navigation";
 import Alert from "react-bootstrap/Alert";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
+import { Link } from "react-router-dom";
+
 import Footer from "./Footer";
 export default function SuccessfulBought() {
   return (
     <>
       <Navigation />
-      <div className="container mt-5">
-        <div className="row">
+      <div className="container topDiv">
+        <div className="row topDiv">
           <div className="col-md-6 text-left">
             <Alert variant="success">
               <Alert.Heading>¡Gracias por elegirnos!</Alert.Heading>
@@ -30,7 +32,9 @@ export default function SuccessfulBought() {
                   ¡Descubre nuestros productos destacados!
                 </Card.Title>
                 <Card.Text>¡Envío gratis a todo el país! </Card.Text>
-                <Button variant="success">Continúa comprando</Button>
+                <Button variant="success" as={Link} to={"/admin-product"}>
+                  Continúa comprando
+                </Button>
               </Card.Body>
             </Card>
           </div>
