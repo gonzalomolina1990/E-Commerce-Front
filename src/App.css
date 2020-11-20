@@ -17,6 +17,18 @@
   text-decoration: none;
   text-shadow: 2px 2px 8px #eeeeee80;
 }
+
+.rowStyles {
+  border-radius: 5px;
+  box-shadow: 5px 8px 40px #e6e6e671;
+}
+
+.bkImg {
+  background-image: url("https://images.pexels.com/photos/2479312/pexels-photo-2479312.jpeg");
+  background-color: #ec4176;
+  background-size: cover;
+  border-radius: 0px 5px 5px 0px;
+}
 /*
  Carrito Nav
  */

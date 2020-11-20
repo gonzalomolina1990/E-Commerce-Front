@@ -103,7 +103,7 @@ function Navigation() {
               </Nav>{" "}
             </div>
           ) : (
-            <Link to={"/login"} className="loginLink">
+            <Link to={"/login"} className="loginLink mr-3 ml-3">
               Login
             </Link>
           )}
