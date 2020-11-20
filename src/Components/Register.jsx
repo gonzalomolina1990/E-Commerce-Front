@@ -49,9 +49,9 @@ const Register = () => {
         <div className="container-login100">
           <div className="wrap-login100 ">
             <form className="login100-form center" onSubmit={handleSubmit}>
-              <span className="login100-form-title mt-5"> Registro </span>
+              <h3 className="mt-5 login100-form-title"> Registro </h3>
               <div
-                className="wrap-input100 mt-3 ml-3 mr-3"
+                className="wrap-input100 mt-5 ml-3 mr-3"
                 data-validate="Password is required"
               >
                 <input

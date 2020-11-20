@@ -44,56 +44,51 @@ const Login = () => {
   return (
     <>
       <Navigation />
-      <div className="container">
-        <div className="row">
-          <div className="col-md-3"></div>
-          <div className="col-md-6">
-            <h3 className="mt-5">Iniciar Sesión</h3>
-            <form>
-              <div className="form-group mt-5">
-                <label for="email">Email</label>
-                <input
-                  className="form-control"
-                  type="text"
-                  id="email"
-                  name="email"
-                  placeholder=" Ej: tunombre@mail.com"
-                  onChange={(e) => {
-                    setEmail(e.target.value);
-                  }}
-                />
-              </div>
+      <div className="container-login100">
+        <div className="wrap-login100">
+          <form className="login100-form center">
+            <h3 className="mt-5 login100-form-title">Iniciar Sesión</h3>
+            <div className="form-group wrap-input100  mt-5">
+              <input
+                className="form-control"
+                type="text"
+                id="email"
+                name="email"
+                placeholder="Ingrese un email..."
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                }}
+              />
+            </div>
 
-              <div className="form-group">
-                <label for="password">Contraseña</label>
-                <input
-                  className="form-control"
-                  type="password"
-                  onChange={(e) => {
-                    setPassword(e.target.value);
-                  }}
-                  placeholder="Ingrese su contraseña..."
-                  id="password"
-                  name="password"
-                />
-              </div>
-
+            <div className="form-group wrap-input100">
+              <input
+                className="form-control"
+                type="password"
+                onChange={(e) => {
+                  setPassword(e.target.value);
+                }}
+                placeholder="Ingrese su contraseña..."
+                id="password"
+                name="password"
+              />
+            </div>
+            <div className="container-login100-form-btn  mt-3 ml-3 mr-3">
               <button
-                className="btn btn-primary mt-3"
+                className="btn btn-primary"
                 onClick={(e) => {
                   handleLogin(e);
                 }}
               >
                 Iniciar sesión
               </button>
-            </form>
-            <div className="mt-4">
-              <Link to={"/register"}>
-                Si no tenes cuenta, podes crearte una pa gastar la kiki
-              </Link>
             </div>
+          </form>
+          <div className="mt-4 wrap-input100">
+            <Link to={"/register"}>
+              Si no tenes cuenta, podes crearte una pa gastar la kiki
+            </Link>
           </div>
-          <div className="col-md-3"></div>
         </div>
       </div>
     </>
