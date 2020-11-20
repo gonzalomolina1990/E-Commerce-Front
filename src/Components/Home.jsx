@@ -50,7 +50,7 @@ const Home = () => {
         </Carousel>
       </div>
       <div className="container">
-        <h3 className="mt-4">Productos destacados</h3>
+        <h2 className="mt-5 mb-5">Productos destacados</h2>
 
         <div className="row mt-4">
           {productsList &&
