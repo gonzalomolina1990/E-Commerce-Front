@@ -558,3 +558,7 @@ li {
   transform: translateY(-0.1rem);
   border-style: none;
 }
+.productCardImg {
+  height: 15vw;
+  object-fit: cover;
+}
