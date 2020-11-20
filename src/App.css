@@ -485,13 +485,13 @@ li {
 }
 
 .btn-warning {
-  background-color: #ffa45e;
+  background-color: #ffa345;
   transition: 0.25s ease-in-out;
   border-style: none;
 }
 
 .btn-warning:hover {
-  background-color: #fac196;
+  background-color: #f2ad73;
   box-shadow: 0 0 0.5rem rgba(128, 128, 128, 0.699);
   transform: translateY(-0.1rem);
 }
