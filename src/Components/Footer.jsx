@@ -20,7 +20,7 @@ export default function Footer() {
               <ul className="mt-5">
                 <h4>Sobre Nosotros</h4>
                 <li>
-                  <Link>Quiénes somos</Link>
+                  <Link to={"/about-us"}>Quienes somos</Link>
                 </li>
 
                 <li>
