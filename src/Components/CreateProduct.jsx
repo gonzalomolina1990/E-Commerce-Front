@@ -17,7 +17,7 @@ const AdminView = () => {
   const [price, setPrice] = useState("");
   const [stock, setStock] = useState("");
   const [slug, setSlug] = useState("");
-  const [featured, setFeatured] = useState("");
+  const [featured, setFeatured] = useState(null);
   const [category, setCategory] = useState("");
   const [categoriesList, setCategoriesList] = useState(null);
 
