@@ -54,7 +54,7 @@ const AdminCategoryView = () => {
             <h3 className="mt-4">Categorías</h3>
             <Link
               to={"/create-category"}
-              className="btn btn-success btn-lg btn-block mt-4"
+              className="btn btn-primary btn-lg btn-block mt-4"
             >
               Crear categoría nueva
             </Link>

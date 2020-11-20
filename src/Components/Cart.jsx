@@ -167,17 +167,21 @@ export default function Cart() {
             </div>
             {user && user.usertoken ? (
               <Button
-                className="btn btn-warning mt-2"
+                className="btn btn-primary mt-2"
                 onClick={(e) => {
                   return handlePurchase(e), dispatch(clearCart([]));
                 }}
                 block
               >
-                <i class="fas fa-cart-plus"></i> Proceder al pago
+                <i
+                  class="fas fa-cart-plus mr-2 "
+                  style={{ color: "white" }}
+                ></i>{" "}
+                Proceder al pago
               </Button>
             ) : (
               <Link to={"/login"}>
-                <Button className="btn btn-warning mt-2" block>
+                <Button className="btn btn-primary mt-2" block>
                   <i class="fas fa-cart-plus"></i> Proceder al pago
                 </Button>
               </Link>
