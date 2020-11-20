@@ -24,10 +24,19 @@
 }
 
 .bkImg {
-  background-image: url("https://images.pexels.com/photos/2479312/pexels-photo-2479312.jpeg");
-  background-color: #ec4176;
-  background-size: cover;
+  background-image: url("https://electrohack.vercel.app/img/team.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
   border-radius: 0px 5px 5px 0px;
+}
+
+.aboutUsLinks {
+  color: #543884;
+  font-weight: 700;
+}
+.aboutUsLinks:hover {
+  color: #7b53c2;
+  font-weight: 700;
 }
 /*
  Carrito Nav
