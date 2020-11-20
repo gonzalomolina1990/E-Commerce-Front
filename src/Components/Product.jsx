@@ -31,6 +31,27 @@ export default function Product() {
     };
     getProduct();
   }, []);
+  let stockAlert = () => {
+    if (product.stock < 10) {
+      return (
+        <Alert variant="danger" className="mt-3">
+          Últimas {product.stock} unidades!!
+        </Alert>
+      );
+    } else if (product.stock >= 10) {
+      return (
+        <Alert variant="success" className="mt-3">
+          Quedan {product.stock} unidades!!
+        </Alert>
+      );
+    } else {
+      return (
+        <Alert variant="warning" className="mt-3">
+          Actualmente no tenemos este producto en stock
+        </Alert>
+      );
+    }
+  };
 
   return (
     <>
@@ -81,17 +102,7 @@ export default function Product() {
                 </h2>
               </div>
 
-              <div className="col-8">
-                {product.stock > 0 ? (
-                  <Alert variant="danger" className="mt-3">
-                    Últimas {product.stock} unidades!!
-                  </Alert>
-                ) : (
-                  <Alert variant="warning" className="mt-3">
-                    Actualmente no tenemos este producto en stock
-                  </Alert>
-                )}
-              </div>
+              <div className="col-8">{stockAlert()}</div>
 
               <p className="p-4">
                 Comprá seguro con la garantía de ElectroHack. Recibe el producto
