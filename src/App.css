@@ -452,7 +452,7 @@ li {
   );
   padding-top: 7rem;
   padding-bottom: 5rem;
-  opacity: 100%;
+  opacity: 100% !important;
   color: white;
 }
 
