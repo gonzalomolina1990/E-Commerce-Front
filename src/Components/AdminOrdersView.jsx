@@ -33,7 +33,7 @@ const AdminOrdersView = () => {
         },
         url: `${process.env.REACT_APP_URL}/api/v1/orders`,
       });
-      console.log(response.data);
+
       dispatch(listOrders(response.data));
     };
     getOrders();
@@ -54,7 +54,6 @@ const AdminOrdersView = () => {
       data: { orderState: orderState },
     });
     dispatch(updateState(id, orderState));
-    console.log();
   };
 
   return (

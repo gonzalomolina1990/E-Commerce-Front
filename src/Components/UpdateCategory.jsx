@@ -18,7 +18,6 @@ const UpdateCategory = ({ slug }) => {
 
   const history = useHistory();
   const token = useSelector((state) => state.users.usertoken);
-  console.log(params.slug);
 
   React.useEffect(() => {
     const getCategory = async () => {
@@ -30,7 +29,7 @@ const UpdateCategory = ({ slug }) => {
         },
         url: `${process.env.REACT_APP_URL}/api/v1/categories/${params.slug}`,
       });
-      console.log(response.data);
+
       setName(response.data.name);
       setNewSlug(response.data.slug);
       setCategoryId(response.data._id);

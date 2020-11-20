@@ -9,10 +9,10 @@ export default function ProductCard({ product }) {
       <CardGroup>
         <Card border="light" className="mb-4 productCard">
           <Link className="cardLink" to={`/product/${product.slug}`}>
-            <Card.Img variant="top" src={product.image} width="100" />
+            <Card.Img variant="top" src={product.image} width="80" />
           </Link>
           <Card.Header>{product.name} </Card.Header>
-          <Card.Footer>
+          <Card.Footer bg="warning">
             <p>U$S {product.price}</p>
             <small className="text-muted">{product.category.name}</small>
           </Card.Footer>

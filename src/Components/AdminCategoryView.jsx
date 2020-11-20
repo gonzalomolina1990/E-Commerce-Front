@@ -27,7 +27,6 @@ const AdminCategoryView = () => {
         url: `${process.env.REACT_APP_URL}/api/v1/categories/`,
       });
       dispatch(listCategories(response.data));
-      console.log(response.data);
     };
     getCategories();
   }, []);
@@ -41,7 +40,7 @@ const AdminCategoryView = () => {
       },
       url: `${process.env.REACT_APP_URL}/api/v1/categories/${id}`,
     });
-    console.log(response);
+
     dispatch(deleteCategory(id));
   };
   //

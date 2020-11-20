@@ -51,6 +51,7 @@ const AdminView = () => {
               <div className="form-group mt-5">
                 <label for="name">Name</label>
                 <input
+                  className="form-control"
                   type="text"
                   id="name"
                   name="name"
@@ -64,6 +65,7 @@ const AdminView = () => {
               <div className="form-group mt-5">
                 <label for="image">Slug</label>
                 <input
+                  className="form-control"
                   type="text"
                   id="slug"
                   name="slug"
@@ -76,7 +78,7 @@ const AdminView = () => {
 
               <button
                 type="button"
-                className="mt-3"
+                className="mt-3 form-control"
                 variant="contained"
                 color="primary"
                 onClick={(e) => {

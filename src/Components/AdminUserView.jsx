@@ -42,7 +42,6 @@ const AdminProductView = () => {
       url: `${process.env.REACT_APP_URL}/api/v1/users/${id}`,
     });
     dispatch(deleteUser(id));
-    console.log(id);
   };
 
   const handleUpdateUser = async (id) => {
@@ -55,7 +54,7 @@ const AdminProductView = () => {
       url: `${process.env.REACT_APP_URL}/api/v1/users/${id}`,
       data: { admin: admin },
     });
-    console.log(response.data);
+
     /*     setAdmin(response.data.admin); */
   };
 

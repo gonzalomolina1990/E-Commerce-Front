@@ -28,7 +28,6 @@ export default function Product() {
       );
 
       setProduct(response.data);
-      /*   console.log(response.data); */
     };
     getProduct();
   }, []);

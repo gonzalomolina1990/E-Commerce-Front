@@ -15,7 +15,6 @@ const Home = () => {
         `${process.env.REACT_APP_URL}/api/v1/products?featured=true`
       );
       setProductsList(response.data);
-      console.log(response.data);
     };
     getProducts();
   }, []);

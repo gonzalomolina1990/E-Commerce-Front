@@ -24,7 +24,6 @@ function Navigation() {
         url: `${process.env.REACT_APP_URL}/api/v1/categories/`,
       });
       dispatch(listCategories(response.data));
-      console.log(response.data);
     };
     getCategories(); //sacar populate
   }, []);

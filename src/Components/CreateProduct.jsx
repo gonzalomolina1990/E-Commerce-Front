@@ -63,7 +63,6 @@ const AdminView = () => {
         url: `${process.env.REACT_APP_URL}/api/v1/categories/`,
       });
       setCategoriesList(response.data);
-      console.log(response.data);
     };
     getCategories();
   }, []);
