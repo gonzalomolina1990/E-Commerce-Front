@@ -565,3 +565,7 @@ li {
 .productCardImg {
   object-fit: cover;
 }
+
+.arrowStyle i {
+  color: #543884;
+}

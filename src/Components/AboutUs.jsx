@@ -64,34 +64,66 @@ export default function AboutUs() {
 
         <div className="mt-5 text-left">
           <div className="row">
-            <div className="col-md-6">
+            <div className="col-md-6 arrowStyle">
               <ul>
                 <h5 className="mt-5 mb-4">
                   Este sitio web fue desarrollado desde cero, utilizando las
                   siguientes tecnologías:
                 </h5>
-                <li className="mt-2">React.js</li>
-                <li className="mt-2">Node.js</li>
-                <li className="mt-2">MongoDB</li>
-                <li className="mt-2">Redux</li>
-                <li className="mt-2">Bootstrap</li>
-                <li className="mt-2">JWT para validar los token</li>
-                <li className="mt-2">Bcrypt para encriptar las contraseñas</li>
+                <li className="mt-2">
+                  <i class="fas fa-chevron-circle-right "></i> React.js
+                </li>
+                <li className="mt-2">
+                  <i class="fas fa-chevron-circle-right "></i> Node.js
+                </li>
+                <li className="mt-2">
+                  <i class="fas fa-chevron-circle-right "></i> MongoDB
+                </li>
+                <li className="mt-2">
+                  <i class="fas fa-chevron-circle-right "></i> Redux
+                </li>
+                <li className="mt-2">
+                  <i class="fas fa-chevron-circle-right "></i> Bootstrap
+                </li>
+                <li className="mt-2">
+                  <i class="fas fa-chevron-circle-right "></i> JWT para validar
+                  los token
+                </li>
+                <li className="mt-2">
+                  <i class="fas fa-chevron-circle-right "></i> Bcrypt para
+                  encriptar las contraseñas
+                </li>
               </ul>
             </div>
-            <div className="col-md-6">
+            <div className="col-md-6 arrowStyle">
               <ul>
                 <h5 className="mt-5 mb-4">
                   Actualmente nos encontramos trabajando en las siguientes
                   funcionalidades:
                 </h5>
-                <li className="mt-2">Efectuar un método de pago</li>
-                <li className="mt-2">Buscador de productos</li>
-                <li className="mt-2">Cargar imágenes a AWS S3</li>
-                <li className="mt-2">Categorizar por marcas</li>
-                <li className="mt-2">Reestablecer la contraseña</li>
                 <li className="mt-2">
-                  Seguir puliendo el front-end (responsive)
+                  <i class="fas fa-long-arrow-alt-right "></i> Efectuar un
+                  método de pago
+                </li>
+                <li className="mt-2">
+                  <i class="fas fa-long-arrow-alt-right "></i> Buscador de
+                  productos
+                </li>
+                <li className="mt-2">
+                  <i class="fas fa-long-arrow-alt-right "></i> Cargar imágenes a
+                  AWS S3
+                </li>
+                <li className="mt-2">
+                  <i class="fas fa-long-arrow-alt-right "></i> Categorizar por
+                  marcas
+                </li>
+                <li className="mt-2">
+                  <i class="fas fa-long-arrow-alt-right "></i> Reestablecer la
+                  contraseña
+                </li>
+                <li className="mt-2">
+                  <i class="fas fa-long-arrow-alt-right "></i> Seguir puliendo
+                  el front-end (responsive)
                 </li>
               </ul>
             </div>
