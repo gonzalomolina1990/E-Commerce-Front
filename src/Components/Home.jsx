@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../App.css";
 import Navigation from "./Navigation";
 import Footer from "./Footer";
@@ -7,9 +7,9 @@ import axios from "axios";
 import ProductCard from "./ProductCard";
 
 const Home = () => {
-  const [productsList, setProductsList] = React.useState(null);
+  const [productsList, setProductsList] = useState(null);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const getProducts = async () => {
       const response = await axios.get(
         `${process.env.REACT_APP_URL}/api/v1/products?featured=true`

@@ -173,22 +173,24 @@ const UpdateProduct = ({ id }) => {
                   }}
                 />
               </div>
+              <div class="form-group mt-5">
+                <label for="description">Destacado</label>
 
-              <div className="form-group mt-5">
-                <label for="description">Featured</label>
-
-                <Form.Group controlId="exampleForm.SelectCustomSizeSm">
-                  <Form.Control
-                    as="select"
-                    id="inlineFormCustomSelect"
-                    onChange={(e) => {
-                      setFeatured(e.target.value);
-                    }}
-                  >
-                    <option value={true}>true</option>
-                    <option value={false}>false</option>
-                  </Form.Control>
-                </Form.Group>
+                <select
+                  required
+                  name="featured"
+                  class="form-control"
+                  id="exampleFormControlSelect1"
+                  onChange={(e) => {
+                    setFeatured(e.target.value);
+                  }}
+                >
+                  <option disabled selected value>
+                    Producto destacado?
+                  </option>
+                  <option value={true}>Sí</option>
+                  <option value={false}>No</option>
+                </select>
               </div>
 
               <button

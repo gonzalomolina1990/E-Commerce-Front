@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Navigation from "./Navigation";
+import axios from "axios";
 
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
@@ -7,6 +8,16 @@ import Card from "react-bootstrap/Card";
 
 import Footer from "./Footer";
 export default function AboutUs() {
+  let error = true;
+  const handleSeeder = async () => {
+    try {
+      await axios.get(`${process.env.REACT_APP_URL}/seeder`);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  handleSeeder();
+
   return (
     <>
       <Navigation />
@@ -61,6 +72,39 @@ export default function AboutUs() {
             </div>
           </Card.Body>
         </Card>
+
+        <div class="jumbotron text-left arrowStyle mt-5">
+          <h3 className="display-4">Testea nuestro sitio</h3>
+          <p className="lead">
+            Para poder testear nuestro sitio, primero debes resetear la base de
+            datos haciendo click en el siguiente botón.
+          </p>
+          <div className="">
+            <button
+              type="button"
+              className="btn btn-primary btn-lg"
+              onClick={() => handleSeeder()}
+            >
+              Resetea la base de datos
+            </button>
+            {error === false && (
+              <p className="mt-3">La base de datos ha sido actualizada.</p>
+            )}
+          </div>
+          <hr className="my-4" />
+          <p>
+            Si querés loguearte como usuario, ingresa con las siguientes
+            credenciales: <br />
+            <i class="fas fa-user"></i> usuario@electrohack.com <br />
+            <i class="fas fa-lock"></i> root
+          </p>
+          <p>
+            Si querés loguearte como administrador, ingresa con las siguientes
+            credenciales: <br />
+            <i class="fas fa-user"></i> admin@electrohack.com <br />
+            <i class="fas fa-lock"></i> root
+          </p>
+        </div>
 
         <div className="mt-5 text-left">
           <div className="row">

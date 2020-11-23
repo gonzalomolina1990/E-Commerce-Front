@@ -32,7 +32,7 @@ export default function Product() {
     getProduct();
   }, []);
   let stockAlert = () => {
-    if (product.stock < 10) {
+    if (0 < product.stock && product.stock < 10) {
       return (
         <Alert variant="danger" className="mt-3">
           Últimas {product.stock} unidades!!
@@ -41,13 +41,13 @@ export default function Product() {
     } else if (product.stock >= 10) {
       return (
         <Alert variant="success" className="mt-3">
-          Quedan {product.stock} unidades!!
+          Quedan {product.stock} unidades.
         </Alert>
       );
     } else {
       return (
         <Alert variant="warning" className="mt-3">
-          Actualmente no tenemos este producto en stock
+          Actualmente no tenemos este producto en stock.
         </Alert>
       );
     }

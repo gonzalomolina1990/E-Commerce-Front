@@ -188,7 +188,6 @@ const AdminView = () => {
                   class="form-control"
                   id="exampleFormControlSelect1"
                   onChange={(e) => {
-                    console.log(e.target.value);
                     setFeatured(e.target.value);
                   }}
                 >
