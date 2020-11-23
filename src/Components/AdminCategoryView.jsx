@@ -70,7 +70,7 @@ const AdminCategoryView = () => {
                 categories.map((category) => {
                   return (
                     <tbody>
-                      <td>{category.name}</td>
+                      <td className="text-left">{category.name}</td>
                       <td>
                         <Link to={`/update-category/${category.slug}`}>
                           <button className="btn btn-info btn-sm mr-2 ">

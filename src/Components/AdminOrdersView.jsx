@@ -118,8 +118,8 @@ const AdminOrdersView = () => {
                   return (
                     <tbody>
                       <td>{order._id}</td>
-                      <td>{order.buyer.name}</td>
-                      <td>
+                      <td className="text-left">{order.buyer.name}</td>
+                      <td className="text-left">
                         <ul>
                           {order &&
                             order.cart.map((c) => {

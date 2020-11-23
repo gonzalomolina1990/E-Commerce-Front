@@ -72,8 +72,8 @@ const AdminProductView = () => {
                 products.map((product) => {
                   return (
                     <tbody>
-                      <td>{product.name}</td>
-                      <td>{product.category.name}</td>
+                      <td className="text-left">{product.name}</td>
+                      <td className="text-left">{product.category.name}</td>
                       <td>
                         <Link to={`/update-product/${product._id}`}>
                           <button className="btn btn-info btn-sm">
