@@ -83,7 +83,7 @@ function Navigation() {
           </Nav>
 
           {user && user.usertoken ? (
-            <div className="d-flex ">
+            <div>
               <Nav>
                 <NavDropdown
                   title={
