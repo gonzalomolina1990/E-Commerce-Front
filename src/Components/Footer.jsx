@@ -54,11 +54,14 @@ export default function Footer() {
 
             <div className="col-md-3">
               <h4 className="mt-5">Testea nuestro sitio</h4>
-              <p>Ingresar como usuario:</p>
-              <p>usuario@electrohack.com</p>
-              <p>Ingresar como administrador:</p>
-              <p>admin@electrohack.com</p>
-              <p>Contraseñas: root</p>
+              <p>
+                Ingresa{" "}
+                <Link to={"/about-us"} style={{ textDecoration: "underline" }}>
+                  aquí
+                </Link>{" "}
+                para resetear la base de datos y loguearte con los usuarios de
+                prueba.
+              </p>
             </div>
             <div className="col-md-3">
               <h4 className="mt-5">

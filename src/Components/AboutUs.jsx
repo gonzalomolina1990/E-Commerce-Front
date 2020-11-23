@@ -48,7 +48,7 @@ export default function AboutUs() {
               pueden contactar en los siguientes links.
               <p>¡Muchas gracias por su tiempo!</p>
             </Card.Text>
-            <div className="d-flex justify-content-between mt-5 mr-5 ml-5  ">
+            <div className="d-flex justify-content-around mt-5 mr-5 ml-5  ">
               <Link
                 to={{ pathname: "https://www.linkedin.com/in/agustinrivero" }}
                 target="_blank"
