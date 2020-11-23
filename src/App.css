@@ -115,6 +115,10 @@ Footer
   .priceCart {
     display: none;
   }
+
+  .bannerBox {
+    bottom: 5rem;
+  }
 }
 
 @media (min-width: 768px) {
@@ -122,6 +126,12 @@ Footer
     font-weight: 500;
     line-height: 1.2;
     display: none;
+  }
+
+  .bannerBox {
+    bottom: 25%;
+
+    width: fit-content;
   }
 }
 
@@ -427,9 +437,7 @@ body {
 }
 
 .bannerBox {
-  bottom: 29%;
   text-align: left;
-  width: fit-content;
   background-color: rgba(0, 0, 0, 0.349);
   padding: 2rem;
   border-radius: 0.25rem;
