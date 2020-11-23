@@ -15,6 +15,8 @@ function Navigation() {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+
     const getCategories = async () => {
       const response = await axios({
         method: "GET",
