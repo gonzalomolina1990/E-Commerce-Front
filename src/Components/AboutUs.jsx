@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Navigation from "./Navigation";
 import axios from "axios";
 
@@ -7,16 +7,19 @@ import { Link } from "react-router-dom";
 import Card from "react-bootstrap/Card";
 
 import Footer from "./Footer";
+
 export default function AboutUs() {
-  let error = true;
+  const [showMessage, setShowMessage] = useState(true);
   const handleSeeder = async () => {
-    try {
-      await axios.get(`${process.env.REACT_APP_URL}/seeder`);
-    } catch (err) {
-      console.log(err);
-    }
+    await axios
+      .get(`${process.env.REACT_APP_URL}/seeder`)
+      .then((res) => {
+        setShowMessage(false);
+      })
+      .catch((res) => {
+        console.log("fallo");
+      });
   };
-  handleSeeder();
 
   return (
     <>
@@ -87,7 +90,7 @@ export default function AboutUs() {
             >
               Resetea la base de datos
             </button>
-            {error === false && (
+            {showMessage === false && (
               <p className="mt-3">La base de datos ha sido actualizada.</p>
             )}
           </div>
