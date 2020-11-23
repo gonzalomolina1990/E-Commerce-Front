@@ -7,72 +7,64 @@ export default function Footer() {
         <div className="container">
           <div className="row">
             <div className="col-md-3">
-              <ul className="mt-5">
-                <h4>Casa central</h4>
-                <li>Hack Academy pegadito a la estación.</li>
-                <li>Lun. a Vie. 09:00 - 18:00hs.</li>
-                <li>Sab. no molestar.</li>
-                <li>Estacionamiento por la paralela que hay lugar.</li>
-              </ul>
+              <h4 className="mt-5">Casa central</h4>
+              <p>Hack Academy pegadito a la estación.</p>
+              <p>Lun. a Vie. 09:00 - 18:00hs.</p>
+              <p>Sab. no molestar.</p>
+              <p>Estacionamiento por la paralela que hay lugar.</p>
             </div>
 
             <div className="col-md-3">
-              <ul className="mt-5">
-                <h4>Sobre Nosotros</h4>
-                <li>
-                  <Link to={"/about-us"}>Quienes somos</Link>
-                </li>
+              <h4 className="mt-5">Sobre Nosotros</h4>
+              <p>
+                <Link to={"/about-us"}>Quienes somos</Link>
+              </p>
 
-                <li>
-                  <Link
-                    to={{
-                      pathname: "https://www.linkedin.com/in/agustinrivero",
-                    }}
-                    target="_blank"
-                  >
-                    Agustin Rivero
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to={{
-                      pathname: "https://www.linkedin.com/in/gonzalomolina1990",
-                    }}
-                    target="_blank"
-                  >
-                    Gonzalo Molina
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to={{
-                      pathname: "https://www.linkedin.com/in/soledadsienra",
-                    }}
-                    target="_blank"
-                  >
-                    Soledad Sienra
-                  </Link>
-                </li>
-              </ul>
+              <p>
+                <Link
+                  to={{
+                    pathname: "https://www.linkedin.com/in/agustinrivero",
+                  }}
+                  target="_blank"
+                >
+                  Agustin Rivero
+                </Link>
+              </p>
+              <p>
+                <Link
+                  to={{
+                    pathname: "https://www.linkedin.com/in/gonzalomolina1990",
+                  }}
+                  target="_blank"
+                >
+                  Gonzalo Molina
+                </Link>
+              </p>
+              <p>
+                <Link
+                  to={{
+                    pathname: "https://www.linkedin.com/in/soledadsienra",
+                  }}
+                  target="_blank"
+                >
+                  Soledad Sienra
+                </Link>
+              </p>
             </div>
 
             <div className="col-md-3">
-              <ul className="mt-5">
-                <h4>Testea nuestro sitio</h4>
-                <li>Ingresar como usuario:</li>
-                <li>usuario@electrohack.com</li>
-                <li>Ingresar como administrador:</li>
-                <li>admin@electrohack.com</li>
-                <li>Contraseñas: root</li>
-              </ul>
+              <h4 className="mt-5">Testea nuestro sitio</h4>
+              <p>Ingresar como usuario:</p>
+              <p>usuario@electrohack.com</p>
+              <p>Ingresar como administrador:</p>
+              <p>admin@electrohack.com</p>
+              <p>Contraseñas: root</p>
             </div>
             <div className="col-md-3">
-              <ul className="mt-5">
-                <h4>
-                  Charly Gut <small>©</small>
-                </h4>
-                <li>Todos los derechos reservados.</li>
-              </ul>
+              <h4 className="mt-5">
+                Charly Gut <small>©</small>
+              </h4>
+              <p>Todos los derechos reservados.</p>
             </div>
           </div>
         </div>

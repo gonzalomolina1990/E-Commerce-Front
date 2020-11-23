@@ -24,15 +24,15 @@ export default function AboutUs() {
               Somos un grupo de estudiantes que realizamos este proyecto como
               trabajo final de nuestro curso. Buscamos nuestra primera
               experiencia laboral, siendo este proyecto el puntapié inicial para
-              poder seguir formándonos como programadores. Utilizamos la una
+              poder seguir formándonos como programadores. Utilizamos una
               metodología agil, con reuniones diarias y estableciéndonos plazos
               para testear nuestra app.
             </Card.Text>
             <Card.Text>
-              Nuestra idea es seguir mejorandolo, agregando funcionalidades y
-              haciendo que su rendimiento sea más óptimo. Por cualquier consulta
-              u oportunidad de mejora, nos pueden contactar en los siguientes
-              links. ¡Muchas gracias por su tiempo!
+              Nuestra idea es seguir mejorándolo, agregando funcionalidades y
+              optimizándolo. Por cualquier consulta u oportunidad de mejora, nos
+              pueden contactar en los siguientes links.
+              <p>¡Muchas gracias por su tiempo!</p>
             </Card.Text>
             <div className="d-flex justify-content-between mt-5 mr-5 ml-5  ">
               <Link
@@ -47,7 +47,7 @@ export default function AboutUs() {
                   pathname: "https://www.linkedin.com/in/gonzalomolina1990",
                 }}
                 target="_blank"
-                className="aboutUsLinks"
+                className="aboutUsLinks ml-3 mr-3"
               >
                 Soledad Sienra
               </Link>
