@@ -61,12 +61,14 @@ const AdminProductView = () => {
   return (
     <>
       <Navigation />
+      <div className="overlay"></div>
+
       <div className="container mt-5">
         <div className="topDiv">
           <h3 className="mt-4">Usuarios</h3>
           <div className="tableStyle">
             <table className="mt-4 text-left table table-bordered table-hover">
-              <thead>
+              <thead className="bg-dark text-light">
                 <tr>
                   <th scope="col">Usuario</th>
                   <th scope="col">Acciones</th>
@@ -77,7 +79,7 @@ const AdminProductView = () => {
               {users &&
                 users.map((user) => {
                   return (
-                    <tbody>
+                    <tbody className="tbodyAdmin">
                       <td data-label="Usuarios">{user.email}</td>
 
                       <td data-label="Acciones">

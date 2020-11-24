@@ -60,6 +60,7 @@ const AdminOrdersView = () => {
   return (
     <>
       <Navigation />
+      <div className="overlay"></div>
 
       <Modal
         aria-labelledby="contained-modal-title-vcenter"
@@ -117,7 +118,7 @@ const AdminOrdersView = () => {
               {orders &&
                 orders.map((order) => {
                   return (
-                    <tbody>
+                    <tbody className="tbodyAdmin">
                       <tr>
                         {" "}
                         <td data-label="ID de Pedido">{order._id}</td>

@@ -62,6 +62,7 @@ const UpdateCategory = ({ slug }) => {
   return (
     <>
       <Navigation />
+      <div className="overlay"></div>
 
       <div className="container mt-5">
         <div className="row">

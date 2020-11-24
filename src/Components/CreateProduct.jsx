@@ -68,6 +68,7 @@ const AdminView = () => {
   return (
     <>
       <Navigation />
+      <div className="overlay"></div>
 
       <div className="container">
         <div className="row mt-5">

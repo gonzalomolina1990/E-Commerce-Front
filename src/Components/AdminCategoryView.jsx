@@ -47,6 +47,7 @@ const AdminCategoryView = () => {
   return (
     <>
       <Navigation />
+      <div className="overlay"></div>
 
       <div className="container mt-5">
         <div className=" topDiv">
@@ -59,7 +60,7 @@ const AdminCategoryView = () => {
               Crear categoría nueva
             </Link>
             <table className="table table-bordered mt-5 table-hover">
-              <thead>
+              <thead className="bg-dark text-light">
                 <tr>
                   <th scope="col">Categoria</th>
                   <th scope="col">Acciones</th>
@@ -69,7 +70,7 @@ const AdminCategoryView = () => {
               {categories &&
                 categories.map((category) => {
                   return (
-                    <tbody>
+                    <tbody className="tbodyAdmin">
                       <td data-label="Categoria" className="">
                         {category.name}
                       </td>

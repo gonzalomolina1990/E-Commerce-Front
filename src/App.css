@@ -639,12 +639,17 @@ li {
 }
 
 .overlay {
-  opacity: 0.25;
-  background: linear-gradient(-135deg, #543884 0%, #1c0c36 100%);
+  opacity: 0.4;
+
+  background: linear-gradient(0deg, #3f079e 0%, #c4adeb 100%);
   position: fixed;
   width: 100%;
   height: 100%;
   top: 0px;
   left: 0px;
   z-index: -1000;
+}
+
+.tbodyAdmin {
+  background: linear-gradient(90deg, #c0a4ee8a 0%, #9971df49 100%);
 }

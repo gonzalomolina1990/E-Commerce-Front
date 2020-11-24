@@ -47,6 +47,7 @@ const AdminProductView = () => {
   return (
     <>
       <Navigation />
+      <div className="overlay"></div>
 
       <div className="container mt-5">
         <div className=" topDiv">
@@ -54,13 +55,13 @@ const AdminProductView = () => {
           <div className="tableStyle">
             <Link
               to={"/create-product"}
-              className="btn btn-success btn-lg btn-block mt-3"
+              className="btn btn-primary btn-lg btn-block mt-3"
             >
               Crear producto nuevo
             </Link>
 
             <table className="table table-bordered  mt-5 table-hover">
-              <thead>
+              <thead className="bg-dark text-light">
                 <tr>
                   <th scope="col">Producto</th>
                   <th scope="col">Categoria</th>
@@ -71,7 +72,7 @@ const AdminProductView = () => {
               {products &&
                 products.map((product) => {
                   return (
-                    <tbody>
+                    <tbody className="tbodyAdmin">
                       <td data-label="Producto" className="">
                         {product.name}
                       </td>
