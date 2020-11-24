@@ -96,10 +96,7 @@ const PasswordReset = () => {
               </button>
             </div>
           </form>
-          <div>
-            hola
-            {passOkAlert()}
-          </div>
+          <div>{passOkAlert()}</div>
         </div>
       </div>
 
