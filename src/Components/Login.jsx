@@ -86,7 +86,7 @@ const Login = () => {
           </form>
           <div className="mt-4 wrap-input100">
             <Link to={"/register"}>
-              Si no tenes cuenta, podes crearte una pa gastar la kiki
+              ¿No tenés cuenta? Ingresa aquí para registrarte.
             </Link>
           </div>
         </div>
