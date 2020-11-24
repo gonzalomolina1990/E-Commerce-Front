@@ -9,6 +9,14 @@ const users = (state = {}, action) => {
     case "LOG_OUT":
       return action.payload;
 
+    case "UPDATE_USER":
+      return {
+        ...state,
+        name: action.payload.name,
+        lastname: action.payload.lastname,
+        phone: action.payload.phone,
+        address: action.payload.address,
+      };
     default:
       return state;
   }

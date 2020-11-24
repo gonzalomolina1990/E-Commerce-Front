@@ -19,4 +19,11 @@ const createUser = (user) => {
   };
 };
 
-export { login, createUser, logout };
+const updateUser = (name, lastname, address, phone) => {
+  return {
+    type: "UPDATE_USER",
+    payload: { name, lastname, address, phone },
+  };
+};
+
+export { login, createUser, logout, updateUser };

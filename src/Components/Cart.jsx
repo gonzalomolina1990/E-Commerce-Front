@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import Navigation from "./Navigation";
+
 import { useParams, Link, useHistory } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
@@ -10,6 +10,7 @@ import {
   removeProduct,
   clearCart,
 } from "../redux/actions/cart";
+import Navigation from "./Navigation";
 import Footer from "./Footer";
 
 export default function Cart() {
