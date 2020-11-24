@@ -68,8 +68,8 @@ const Settings = () => {
 
           <div className="col-md-6">
             <h3 className="mt-4">Actualice sus datos personales</h3>
-            <form noValidate className="text-left" autoComplete="off">
-              <div className="form-group mt-5">
+            <form noValidate className="" autoComplete="off">
+              <div className="form-group mt-5 text-left">
                 <label for="name">Nombre:</label>
                 <input
                   className="form-control"
@@ -84,7 +84,7 @@ const Settings = () => {
                 />
               </div>
 
-              <div className="form-group mt-5">
+              <div className="form-group mt-5 text-left">
                 <label for="lastname">Apellido:</label>
                 <input
                   className="form-control"
@@ -99,7 +99,7 @@ const Settings = () => {
                 />
               </div>
 
-              <div className="form-group mt-5">
+              <div className="form-group mt-5 text-left">
                 <label for="address">Dirección:</label>
                 <input
                   className="form-control"
@@ -114,7 +114,7 @@ const Settings = () => {
                 />
               </div>
 
-              <div className="form-group mt-5">
+              <div className="form-group mt-5 text-left">
                 <label for="phone">Teléfono:</label>
                 <input
                   className="form-control"

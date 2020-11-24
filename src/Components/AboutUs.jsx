@@ -165,10 +165,6 @@ export default function AboutUs() {
                   marcas
                 </li>
                 <li className="mt-2">
-                  <i class="fas fa-long-arrow-alt-right "></i> Reestablecer la
-                  contraseña
-                </li>
-                <li className="mt-2">
                   <i class="fas fa-long-arrow-alt-right "></i> Seguir puliendo
                   el front-end (responsive)
                 </li>

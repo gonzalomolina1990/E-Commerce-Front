@@ -58,11 +58,11 @@ const AdminCategoryView = () => {
             >
               Crear categoría nueva
             </Link>
-            <Table striped bordered hover>
+            <table className="table table-bordered mt-5 table-hover">
               <thead>
                 <tr>
-                  <th>Categoria</th>
-                  <th>Acciones</th>
+                  <th scope="col">Categoria</th>
+                  <th scope="col">Acciones</th>
                 </tr>
               </thead>
 
@@ -70,8 +70,10 @@ const AdminCategoryView = () => {
                 categories.map((category) => {
                   return (
                     <tbody>
-                      <td className="text-left">{category.name}</td>
-                      <td>
+                      <td data-label="Categoria" className="">
+                        {category.name}
+                      </td>
+                      <td data-label="Acciones">
                         <Link to={`/update-category/${category.slug}`}>
                           <button className="btn btn-info btn-sm mr-2 ">
                             Modificar
@@ -89,7 +91,7 @@ const AdminCategoryView = () => {
                     </tbody>
                   );
                 })}
-            </Table>
+            </table>
           </div>
         </div>
       </div>

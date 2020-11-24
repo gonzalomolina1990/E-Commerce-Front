@@ -65,12 +65,12 @@ const AdminProductView = () => {
         <div className="topDiv">
           <h3 className="mt-4">Usuarios</h3>
           <div className="tableStyle">
-            <Table striped bordered hover className="mt-4 text-left">
+            <table className="mt-4 text-left table table-bordered table-hover">
               <thead>
                 <tr>
-                  <th>Usuarios</th>
-                  <th>Acciones</th>
-                  <th>Eliminar</th>
+                  <th scope="col">Usuario</th>
+                  <th scope="col">Acciones</th>
+                  <th scope="col">Eliminar</th>
                 </tr>
               </thead>
 
@@ -78,9 +78,9 @@ const AdminProductView = () => {
                 users.map((user) => {
                   return (
                     <tbody>
-                      <td>{user.email}</td>
+                      <td data-label="Usuarios">{user.email}</td>
 
-                      <td>
+                      <td data-label="Acciones">
                         <form>
                           {user.admin ? (
                             <>
@@ -153,7 +153,7 @@ const AdminProductView = () => {
                           </button>
                         </form>
                       </td>
-                      <td>
+                      <td data-label="Eliminar">
                         <button
                           className="btn btn-danger btn-sm"
                           onClick={() => handleDeleteUser(user._id)}
@@ -164,7 +164,7 @@ const AdminProductView = () => {
                     </tbody>
                   );
                 })}
-            </Table>
+            </table>
           </div>
         </div>
       </div>
