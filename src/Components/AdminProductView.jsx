@@ -59,12 +59,12 @@ const AdminProductView = () => {
               Crear producto nuevo
             </Link>
 
-            <Table striped bordered hover className="mt-5">
+            <table className="table table-bordered  mt-5 table-hover">
               <thead>
                 <tr>
-                  <th>Producto</th>
-                  <th>Categoria</th>
-                  <th>Acciones</th>
+                  <th scope="col">Producto</th>
+                  <th scope="col">Categoria</th>
+                  <th scope="col">Acciones</th>
                 </tr>
               </thead>
 
@@ -72,9 +72,13 @@ const AdminProductView = () => {
                 products.map((product) => {
                   return (
                     <tbody>
-                      <td className="text-left">{product.name}</td>
-                      <td className="text-left">{product.category.name}</td>
-                      <td>
+                      <td data-label="Producto" className="">
+                        {product.name}
+                      </td>
+                      <td data-label="Categoria" className="">
+                        {product.category.name}
+                      </td>
+                      <td data-label="Acciones">
                         <Link to={`/update-product/${product._id}`}>
                           <button className="btn btn-info btn-sm">
                             Modificar
@@ -90,7 +94,7 @@ const AdminProductView = () => {
                     </tbody>
                   );
                 })}
-            </Table>
+            </table>
           </div>
         </div>
       </div>

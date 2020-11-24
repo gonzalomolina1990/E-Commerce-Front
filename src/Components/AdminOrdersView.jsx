@@ -10,6 +10,7 @@ import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 import { Button } from "react-bootstrap";
 import Footer from "./Footer";
+import moment from "moment";
 
 const AdminOrdersView = () => {
   const [orderState, setOrderState] = useState("");
@@ -101,15 +102,15 @@ const AdminOrdersView = () => {
       <div className="container mt-5">
         <div className=" topDiv">
           <h3 className="mt-4">Órdenes de compra</h3>
-          <div className="tableStyle">
-            <Table striped bordered hover className="mt-5">
+          <div className="tableStyle ">
+            <table className="table table-bordered mt-5 table-hover">
               <thead className="bg-dark text-light">
                 <tr>
-                  <th>ID de Pedido</th>
-                  <th>Usuario</th>
-                  <th>Productos</th>
-                  <th>Estado</th>
-                  <th>Fecha de creación</th>
+                  <th scope="col">ID de Pedido</th>
+                  <th scope="col">Usuario</th>
+                  <th scope="col">Productos</th>
+                  <th scope="col">Estado</th>
+                  <th scope="col">Fecha de creación</th>
                 </tr>
               </thead>
 
@@ -117,37 +118,50 @@ const AdminOrdersView = () => {
                 orders.map((order) => {
                   return (
                     <tbody>
-                      <td>{order._id}</td>
-                      <td className="text-left">{order.buyer.name}</td>
-                      <td className="text-left">
-                        <ul>
+                      <tr>
+                        {" "}
+                        <td data-label="ID de Pedido">{order._id}</td>
+                        <td className="" data-label="Usuario">
+                          {order.buyer.name}
+                        </td>
+                        <td className="" data-label="Productos">
                           {order &&
                             order.cart.map((c) => {
                               return (
-                                <>
+                                <div>
+                                  {" "}
                                   <li>
-                                    {c.product.name} / U$S {c.product.price} /{" "}
-                                    {c.quantity} un.
+                                    <u>
+                                      <b>{c.product.name}</b>
+                                    </u>
+                                    <ul>
+                                      <li>Precio: U$S {c.product.price}</li>
+                                      <li>Cantidad: {c.quantity} </li>
+                                    </ul>
                                   </li>
-                                </>
+                                </div>
                               );
                             })}
-                        </ul>
-                      </td>
-                      <td>
-                        {order.orderState}
-                        <Button
-                          className="mt-2 ml-1"
-                          onClick={() => (handleShow(), setOrder(order._id))}
-                        >
-                          Actualizar
-                        </Button>
-                      </td>
-                      <td>{order.createdAt}</td>
+                        </td>
+                        <td data-label="Estado">
+                          {order.orderState}
+                          <Button
+                            className="mt-2 ml-1"
+                            onClick={() => (handleShow(), setOrder(order._id))}
+                          >
+                            Editar
+                          </Button>
+                        </td>
+                        <td data-label="Fecha de creación">
+                          {moment(order.createdAt).format(
+                            "MMMM Do YYYY, h:mm:ss a"
+                          )}
+                        </td>
+                      </tr>
                     </tbody>
                   );
                 })}
-            </Table>
+            </table>
           </div>
         </div>
       </div>
