@@ -54,11 +54,7 @@ function App() {
             component={SuccessfulBought}
             path="/successful-purchase"
           />
-          <PublicRoute
-            restricted={false}
-            component={PasswordReset}
-            path="/reset-password"
-          />
+
           <PublicRoute
             restricted={false}
             component={Settings}
@@ -69,6 +65,13 @@ function App() {
             component={AboutUs}
             path="/about-us"
           />
+
+          <PublicRoute
+            restricted={false}
+            component={PasswordReset}
+            path="/reset-password"
+          />
+
           <PrivateRoute component={AdminProductView} path="/admin-product" />
           <PrivateRoute component={AdminCategoryView} path="/admin-category" />
 
