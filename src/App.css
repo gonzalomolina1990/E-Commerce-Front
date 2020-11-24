@@ -639,7 +639,7 @@ li {
 }
 
 .overlay {
-  opacity: 0.4;
+  opacity: 0.25;
 
   background: linear-gradient(0deg, #3f079e 0%, #c4adeb 100%);
   position: fixed;
@@ -651,5 +651,5 @@ li {
 }
 
 .tbodyAdmin {
-  background: linear-gradient(90deg, #c0a4ee8a 0%, #9971df49 100%);
+  background: linear-gradient(90deg, #c0a4ee28 0%, #9971df21 100%);
 }
