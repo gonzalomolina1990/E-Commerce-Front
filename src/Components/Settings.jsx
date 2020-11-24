@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import Navigation from "./Navigation";
 import Footer from "./Footer";
 import { updateUser } from "../redux/actions/user";
+import Alert from "react-bootstrap/Alert";
 
 const Settings = () => {
   const token = useSelector((state) => state.users.usertoken);
@@ -13,6 +14,7 @@ const Settings = () => {
   const [lastname, setLastname] = useState(user.lastname);
   const [address, setAddress] = useState(user.address);
   const [phone, setPhone] = useState(user.phone);
+  const [showMessage, setShowMessage] = useState(0);
 
   const dispatch = useDispatch();
 
@@ -33,17 +35,30 @@ const Settings = () => {
       },
     })
       .then((res) => {
-        console.log("data:", response.data);
         dispatch(updateUser(name, lastname, address, phone));
+        setShowMessage(1);
       })
-      /*       .then((res) => {
-        history.push("/");
-      })  */
       .catch((err) => {
+        setShowMessage(2);
         console.log(err);
       });
   };
-  console.log("users name:", user.name);
+  const passOkAlert = () => {
+    if (showMessage === 1) {
+      return (
+        <Alert variant="success" className="mt-3">
+          Sus datos se han actualizado correctamente.
+        </Alert>
+      );
+    } else if (showMessage === 2) {
+      return (
+        <Alert variant="danger" className="mt-3">
+          Hubo un error en la actualización. Vuelva a intentarlo o revise su
+          conexión.
+        </Alert>
+      );
+    }
+  };
   return (
     <>
       <Navigation />
@@ -125,6 +140,7 @@ const Settings = () => {
                 Guardar
               </button>
             </form>
+            <div>{passOkAlert()}</div>
           </div>
           <div className="col-md-3"></div>
         </div>
