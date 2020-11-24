@@ -94,12 +94,19 @@ function Navigation() {
                   }
                   id="collasible-nav-dropdown"
                 >
+                  <NavDropdown.Item as={Link} to={"/settings"}>
+                    Configuración
+                  </NavDropdown.Item>
+                  <NavDropdown.Item as={Link} to={"/reset-password"}>
+                    Actualizar contraseña
+                  </NavDropdown.Item>
+
                   <NavDropdown.Item
                     onClick={() => {
                       return dispatch(logout({})), dispatch(clearCart([]));
                     }}
                   >
-                    Logout
+                    Cerrar sesión
                   </NavDropdown.Item>
                 </NavDropdown>
               </Nav>{" "}

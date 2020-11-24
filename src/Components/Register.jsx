@@ -144,7 +144,7 @@ const Register = () => {
                 </button>
               </div>
               <div className="text-center  mt-5 ml-3 mr-3 mb-5 w-full ">
-                <span> ¿Ya tienes una cuenta? </span>
+                <span className="mr-3"> ¿Ya tienes una cuenta? </span>
 
                 <Link to={"/login"} className="btn btn-dark">
                   Inicia sesion

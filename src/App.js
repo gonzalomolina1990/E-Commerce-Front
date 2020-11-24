@@ -23,6 +23,8 @@ import AdminOrdersView from "./Components/AdminOrdersView";
 import Category from "./Components/Category";
 import SuccessfulBought from "./Components/SuccessfulBought";
 import AboutUs from "./Components/AboutUs";
+import PasswordReset from "./Components/PasswordReset";
+import Settings from "./Components/Settings";
 
 function App() {
   return (
@@ -51,6 +53,16 @@ function App() {
             restricted={false}
             component={SuccessfulBought}
             path="/successful-purchase"
+          />
+          <PublicRoute
+            restricted={false}
+            component={PasswordReset}
+            path="/reset-password"
+          />
+          <PublicRoute
+            restricted={false}
+            component={Settings}
+            path="/settings"
           />
           <PublicRoute
             restricted={false}
