@@ -170,6 +170,7 @@ const AdminProductView = () => {
           </div>
         </div>
       </div>
+      <div className="middleDiv"></div>
       <Footer />
     </>
   );

@@ -124,6 +124,7 @@ export default function Product() {
           </div>
         </div>
       </div>
+      <div className="middleDiv"></div>
       <Footer />
     </>
   );

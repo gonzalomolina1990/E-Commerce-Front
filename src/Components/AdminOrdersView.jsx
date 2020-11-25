@@ -166,6 +166,7 @@ const AdminOrdersView = () => {
           </div>
         </div>
       </div>
+      <div className="middleDiv"></div>
       <Footer />
     </>
   );

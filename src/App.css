@@ -153,6 +153,10 @@ table th {
   z-index: 1;
 }
 
+.marginCards {
+  margin-top: 10rem;
+}
+
 /* 
 
 Footer
@@ -175,6 +179,15 @@ Footer
   );
 }
 
+/* .iconFooter {
+  text-align: center !important;
+  min-height: 500px;
+  justify-content: center;
+  align-content: center;
+} */
+.middleDiv {
+  height: 200px;
+}
 .footer a {
   color: white;
 }
