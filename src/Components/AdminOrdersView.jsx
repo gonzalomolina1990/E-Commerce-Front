@@ -123,7 +123,7 @@ const AdminOrdersView = () => {
                         {" "}
                         <td data-label="ID de Pedido">{order._id}</td>
                         <td className="" data-label="Usuario">
-                          {order.buyer.name}
+                          {order.buyer}
                         </td>
                         <td className="" data-label="Productos">
                           {order &&

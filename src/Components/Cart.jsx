@@ -56,6 +56,7 @@ export default function Cart() {
       data: {
         cart: cart,
         totalPrice: total,
+        buyer: user.name + " " + user.lastname,
       },
     })
       .then((res) => {
