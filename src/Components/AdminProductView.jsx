@@ -49,7 +49,7 @@ const AdminProductView = () => {
       <Navigation />
       <div className="overlay"></div>
 
-      <div className="container mt-5">
+      <div className="container my-5">
         <div className=" topDiv">
           <h3 className="mt-4">Productos</h3>
           <div className="tableStyle">

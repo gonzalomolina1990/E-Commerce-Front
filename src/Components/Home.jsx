@@ -49,7 +49,7 @@ const Home = () => {
           </Carousel.Item>
         </Carousel>
       </div>
-      <div className="container">
+      <div className="container my-5">
         <h2 className="mt-5 mb-5">Productos destacados</h2>
 
         <div className="row mt-4">

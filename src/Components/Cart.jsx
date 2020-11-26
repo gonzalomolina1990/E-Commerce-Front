@@ -70,7 +70,7 @@ export default function Cart() {
     <>
       <Navigation />
 
-      <div className="container topDiv">
+      <div className="container topDiv my-5">
         <h2 className="text-left mt-5 mb-2">Carrito</h2>
         <hr className="mb-3" />
         <div className="row">
@@ -190,7 +190,7 @@ export default function Cart() {
           </div>
         </div>
       </div>
-      <div className="middleDiv"></div>
+
       <Footer />
     </>
   );

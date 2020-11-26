@@ -36,7 +36,7 @@ const Category = ({ slug }) => {
         <h1>{category.name}</h1>
       </div>
 
-      <div className="container">
+      <div className="container my-5">
         <div className="row">
           {category.products &&
             category.products.map((product) => {

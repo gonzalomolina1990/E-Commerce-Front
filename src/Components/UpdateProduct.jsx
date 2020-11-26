@@ -78,12 +78,12 @@ const UpdateProduct = ({ id }) => {
       <Navigation />
       <div className="overlay"></div>
 
-      <div className="container mt-5">
+      <div className="container my-5">
         <div className="row">
           <div className="col-md-3"></div>
 
           <div className="col-md-6">
-            <h3 className="mt-4">Actualizar producto</h3>
+            <h3 className="mt-5">Actualizar producto</h3>
             <form noValidate autoComplete="off">
               <div className="form-group mt-5">
                 <label for="name">Nombre</label>
@@ -187,7 +187,7 @@ const UpdateProduct = ({ id }) => {
                   }}
                 >
                   <option disabled selected value>
-                    Producto destacado?
+                    ¿Producto destacado?
                   </option>
                   <option value={true}>Sí</option>
                   <option value={false}>No</option>

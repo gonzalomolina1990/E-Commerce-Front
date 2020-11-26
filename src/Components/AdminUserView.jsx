@@ -61,9 +61,10 @@ const AdminProductView = () => {
   return (
     <>
       <Navigation />
+
       <div className="overlay"></div>
 
-      <div className="container mt-5">
+      <div className="container my-5">
         <div className="topDiv">
           <h3 className="mt-4">Usuarios</h3>
           <div className="tableStyle">
@@ -170,7 +171,7 @@ const AdminProductView = () => {
           </div>
         </div>
       </div>
-      <div className="middleDiv"></div>
+
       <Footer />
     </>
   );

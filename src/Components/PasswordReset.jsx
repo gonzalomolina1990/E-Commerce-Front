@@ -56,7 +56,7 @@ const PasswordReset = () => {
     <>
       <Navigation />
 
-      <div className="container-login100">
+      <div className="container-login100 my-5">
         <div className="wrap-login100">
           <form className="login100-form center">
             <h3 className="mt-5 login100-form-title">Actualizar contraseña</h3>

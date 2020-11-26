@@ -27,7 +27,7 @@ export default function AboutUs() {
       <div className="categoriesBanner">
         <h1>Sobre nosotros</h1>
       </div>
-      <div className="container">
+      <div className="container my-5">
         <Card className="mt-5">
           <Card.Img
             variant="top"

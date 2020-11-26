@@ -100,9 +100,9 @@ const AdminOrdersView = () => {
         </Modal.Footer>
       </Modal>
 
-      <div className="container mt-5">
+      <div className="container my-5">
         <div className=" topDiv">
-          <h3 className="mt-4">Órdenes de compra</h3>
+          <h3>Órdenes de compra</h3>
           <div className="tableStyle ">
             <table className="table table-bordered mt-5 table-hover">
               <thead className="bg-dark text-light">
@@ -166,7 +166,7 @@ const AdminOrdersView = () => {
           </div>
         </div>
       </div>
-      <div className="middleDiv"></div>
+
       <Footer />
     </>
   );

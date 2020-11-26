@@ -44,7 +44,7 @@ const AdminView = () => {
       <Navigation />
       <div className="overlay"></div>
 
-      <div className="container">
+      <div className="container my-5">
         <div className="row mt-5">
           <div className="col-md-3"></div>
           <div className="col-md-6">

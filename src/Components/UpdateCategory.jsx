@@ -64,11 +64,11 @@ const UpdateCategory = ({ slug }) => {
       <Navigation />
       <div className="overlay"></div>
 
-      <div className="container mt-5">
+      <div className="container my-5">
         <div className="row">
           <div className="col-md-3"></div>
           <div className="col-md-6">
-            <h3 className="mt-4">Actualizar categoría</h3>
+            <h3 className="mt-5">Actualizar categoría</h3>
             <form noValidate autoComplete="off">
               <div className="form-group mt-5">
                 <label for="name">Nombre</label>

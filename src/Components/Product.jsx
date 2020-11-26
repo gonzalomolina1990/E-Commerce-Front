@@ -74,7 +74,7 @@ export default function Product() {
         </Modal.Body>
       </Modal>
 
-      <div className="container mt-5">
+      <div className="container my-5">
         <div className="row topDiv">
           <div className="col-md-5">
             {" "}
@@ -124,7 +124,7 @@ export default function Product() {
           </div>
         </div>
       </div>
-      <div className="middleDiv"></div>
+
       <Footer />
     </>
   );

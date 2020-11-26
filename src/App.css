@@ -1,3 +1,18 @@
+html {
+  height: 100vh !important;
+}
+
+body {
+  font-family: "Comfortaa", cursive;
+  height: 100vh !important;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  height: 100vh !important;
+}
+
 @media (min-width: 506px) {
   .mediaLogoutSmall {
     display: none;
@@ -163,15 +178,16 @@ Footer
 
 */
 .footer {
-  padding-bottom: 5rem;
+  /*   bottom: 0; */
   width: 100%;
-  height: 300px;
-  margin-top: -300px;
-  height: fit-content;
+  /*   height: 300px; */
+  margin-top: auto !important;
+
+  /* display: block; */
+
+  /*  margin-top: -300px; */
+  padding: 3rem 0 5rem 0;
   color: white;
-  bottom: 0px;
-  padding-top: 5rem;
-  margin-top: 4rem;
   background: linear-gradient(
     45deg,
     rgb(124, 63, 144) 0%,
@@ -185,9 +201,9 @@ Footer
   justify-content: center;
   align-content: center;
 } */
-.middleDiv {
-  height: 200px;
-}
+/* .middleDiv {
+  height: 350px;
+} */
 .footer a {
   color: white;
 }
@@ -428,10 +444,6 @@ Footer
 
 .App-link {
   color: #61dafb;
-}
-
-body {
-  font-family: "Comfortaa", cursive;
 }
 
 .cardLink {

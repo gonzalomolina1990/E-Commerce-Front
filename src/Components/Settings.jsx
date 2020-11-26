@@ -62,7 +62,7 @@ const Settings = () => {
   return (
     <>
       <Navigation />
-      <div className="container mt-5">
+      <div className="container my-5">
         <div className="row">
           <div className="col-md-3"></div>
 

@@ -10,10 +10,10 @@ export default function SuccessfulBought() {
   return (
     <>
       <Navigation />
-      <div className="container topDiv">
+      <div className="container topDiv my-5">
         <div className="row topDiv">
           <div className="col-md-6 text-left">
-            <Alert variant="success" className="marginCards">
+            <Alert variant="success">
               <Alert.Heading>¡Gracias por elegirnos!</Alert.Heading>
               <p>
                 Su compra se ha realizado con éxito. Su pedido será entregado en
@@ -26,7 +26,7 @@ export default function SuccessfulBought() {
             </Alert>
           </div>
           <div className="col-md-6 ">
-            <Card className="marginCards">
+            <Card>
               <Card.Body>
                 <Card.Title>
                   ¡Descubre nuestros productos destacados!
