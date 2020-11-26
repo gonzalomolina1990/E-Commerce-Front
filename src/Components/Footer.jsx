@@ -70,6 +70,9 @@ export default function Footer() {
               <p>Todos los derechos reservados.</p>
             </div>
           </div>
+          {/*  <div className="d-flex">
+            <i className="fas fa-atom iconFooter"></i>
+          </div> */}
         </div>
       </div>
     </>

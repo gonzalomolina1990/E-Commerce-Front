@@ -13,7 +13,7 @@ export default function SuccessfulBought() {
       <div className="container topDiv">
         <div className="row topDiv">
           <div className="col-md-6 text-left">
-            <Alert variant="success">
+            <Alert variant="success" className="marginCards">
               <Alert.Heading>¡Gracias por elegirnos!</Alert.Heading>
               <p>
                 Su compra se ha realizado con éxito. Su pedido será entregado en
@@ -26,7 +26,7 @@ export default function SuccessfulBought() {
             </Alert>
           </div>
           <div className="col-md-6 ">
-            <Card>
+            <Card className="marginCards">
               <Card.Body>
                 <Card.Title>
                   ¡Descubre nuestros productos destacados!
@@ -40,6 +40,7 @@ export default function SuccessfulBought() {
           </div>
         </div>
       </div>
+      <div className="middleDiv"></div>
       <Footer />
     </>
   );

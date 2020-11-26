@@ -191,6 +191,7 @@ export default function Cart() {
           </div>
         </div>
       </div>
+      <div className="middleDiv"></div>
       <Footer />
     </>
   );
