@@ -118,7 +118,7 @@ const Settings = () => {
                 <label for="phone">Teléfono:</label>
                 <input
                   className="form-control"
-                  type="number"
+                  type="text"
                   id="phone"
                   value={phone}
                   name="phone"
